@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="CommunicationModes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="XMPP" />
+      <xs:enumeration value="Socket" />
+      <xs:enumeration value="WebService" />
+      <xs:enumeration value="HttpPooling" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CommunicationModes" nillable="true" type="tns:CommunicationModes" />
+  <xs:simpleType name="WorkflowResultCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="ACDS101" />
+      <xs:enumeration value="ACDE101" />
+      <xs:enumeration value="ACDE102" />
+      <xs:enumeration value="ACDS201" />
+      <xs:enumeration value="ACDS202" />
+      <xs:enumeration value="ACDE201" />
+      <xs:enumeration value="ACDS301" />
+      <xs:enumeration value="ACDS302" />
+      <xs:enumeration value="ACDE301" />
+      <xs:enumeration value="ACDE302" />
+      <xs:enumeration value="ACDE303" />
+      <xs:enumeration value="ACDS401" />
+      <xs:enumeration value="ACDS402" />
+      <xs:enumeration value="ACDS403" />
+      <xs:enumeration value="ACDS4031" />
+      <xs:enumeration value="ACDS4032" />
+      <xs:enumeration value="ACDS4033" />
+      <xs:enumeration value="ACDS404" />
+      <xs:enumeration value="ACDE401" />
+      <xs:enumeration value="ACDE402" />
+      <xs:enumeration value="ACDE403" />
+      <xs:enumeration value="ACDE404" />
+      <xs:enumeration value="ACDS405" />
+      <xs:enumeration value="ACDS501" />
+      <xs:enumeration value="ACDS502" />
+      <xs:enumeration value="ACDE501" />
+      <xs:enumeration value="ACDE502" />
+      <xs:enumeration value="ACDS601" />
+      <xs:enumeration value="ACDE601" />
+      <xs:enumeration value="ACDE603" />
+      <xs:enumeration value="ACDS701" />
+      <xs:enumeration value="ACDE701" />
+      <xs:enumeration value="ACDE702" />
+      <xs:enumeration value="ACDS801" />
+      <xs:enumeration value="ACDE801" />
+      <xs:enumeration value="ACDE802" />
+      <xs:enumeration value="ACDS901" />
+      <xs:enumeration value="ACDE901" />
+      <xs:enumeration value="ACDE902" />
+      <xs:enumeration value="ACDS1001" />
+      <xs:enumeration value="ACDE1001" />
+      <xs:enumeration value="ACDE1002" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkflowResultCode" nillable="true" type="tns:WorkflowResultCode" />
+</xs:schema>

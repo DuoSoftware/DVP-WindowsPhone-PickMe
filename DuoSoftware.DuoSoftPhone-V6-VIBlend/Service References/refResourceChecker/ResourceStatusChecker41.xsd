@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DuoSoftware.DC.ResourceMonitoringService.Classes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DuoSoftware.DC.ResourceMonitoringService.Classes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.2.35/DUOSLTV5/ContactV5Services/ResourceMonitoring/Implementation/ResourceStatusChecker.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DuoSoftware.DC.ResourceMonitoringService.Enums" />
+  <xs:import schemaLocation="http://192.168.2.35/DUOSLTV5/ContactV5Services/ResourceMonitoring/Implementation/ResourceStatusChecker.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="StatusReply.Info">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DuoSoftware.DC.ResourceMonitoringService.Enums" minOccurs="0" name="CurrentMode" type="q1:UiModes" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DuoSoftware.DC.ResourceMonitoringService.Enums" minOccurs="0" name="CurrentState" type="q2:UiStatus" />
+      <xs:element minOccurs="0" name="IsMatching" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusReply.Info" nillable="true" type="tns:StatusReply.Info" />
+</xs:schema>

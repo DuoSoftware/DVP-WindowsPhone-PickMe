@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9832/EngagementService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="DuoEngagements">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Case" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Commit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommunicationChannel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" nillable="true" type="xs:string" />
+      <xs:element name="CreatedDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DurationInMsec" type="xs:int" />
+      <xs:element minOccurs="0" name="EngageeAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EngagementCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EngagementChannelID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EngagementClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EngagementHistoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="EngagementId" type="xs:int" />
+      <xs:element minOccurs="0" name="EngagementName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EngagementType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GUEngID" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GUEngIDString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GUVersionID" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Header" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastModifyDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastModifyUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperationalStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Process" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefGuid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SLATime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScheduleDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SearchKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SequencesNumber" type="xs:int" />
+      <xs:element name="SessionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TempID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenantID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewObjectID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DuoEngagements" nillable="true" type="tns:DuoEngagements" />
+  <xs:complexType name="ArrayOfDuoEngagements">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DuoEngagements" nillable="true" type="tns:DuoEngagements" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDuoEngagements" nillable="true" type="tns:ArrayOfDuoEngagements" />
+  <xs:complexType name="ArrayOfPermissionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PermissionInfo" type="tns:PermissionInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPermissionInfo" nillable="true" type="tns:ArrayOfPermissionInfo" />
+  <xs:complexType name="PermissionInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClassName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="EngagementId" type="xs:int" />
+      <xs:element minOccurs="0" name="SessionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenantID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:long" />
+      <xs:element minOccurs="0" name="ViewObjectID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PermissionInfo" nillable="true" type="tns:PermissionInfo" />
+</xs:schema>

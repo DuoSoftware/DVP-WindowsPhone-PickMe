@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProfileManagementService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/V5ProfileManagement/duosubscriberprofilemangement/ProfileManagementService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/V5ProfileManagement/duosubscriberprofilemangement/ProfileManagementService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/V5ProfileManagement/duosubscriberprofilemangement/ProfileManagementService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" />
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/V5ProfileManagement/duosubscriberprofilemangement/ProfileManagementService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/V5ProfileManagement/duosubscriberprofilemangement/ProfileManagementService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/DuoSoftware.CommonTools" />
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/V5ProfileManagement/duosubscriberprofilemangement/ProfileManagementService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProfileManagementService_UpdateApps_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApps" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_UpdateApps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAppsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_AddApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddApplication" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_AddApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_EditApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditApplication" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_EditApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_DeleteApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteApplication" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_DeleteApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetAllApplications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllApplications" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetAllApplications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllApplicationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetApplicationsByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationsByCategory" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetApplicationsByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationsByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_AddCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategory" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_AddCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_EditCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditCategory" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_EditCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_DeleteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategory" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_DeleteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetApplicationsForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationsForUser" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetApplicationsForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationsForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetPersonalizedUi_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalizedUi" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetPersonalizedUi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalizedUiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_CreatePersonalizedUI_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePersonalizedUI" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_CreatePersonalizedUI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePersonalizedUIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_EditPersonalizedUI_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditPersonalizedUI" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_EditPersonalizedUI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditPersonalizedUIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_DeletePersonalizedUI_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePersonalizedUI" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_DeletePersonalizedUI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePersonalizedUIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_getSpecificApplicationByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSpecificApplicationByCode" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_getSpecificApplicationByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSpecificApplicationByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_getSpecificApplicationByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSpecificApplicationByID" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_getSpecificApplicationByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSpecificApplicationByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetAppSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppSettings" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetAppSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetPersonalizedUiStream_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalizedUiStream" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetPersonalizedUiStream_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalizedUiStreamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_EditPersonalizedUiStream_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditPersonalizedUiStream" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_EditPersonalizedUiStream_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditPersonalizedUiStreamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetApplicationSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationSettings" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_GetApplicationSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_UpdateApplicationSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApplicationSettings" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_UpdateApplicationSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApplicationSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_UpdateUserSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserSettings" />
+  </wsdl:message>
+  <wsdl:message name="IProfileManagementService_UpdateUserSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserSettingsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IProfileManagementService">
+    <wsdl:operation name="UpdateApps">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/UpdateApps" message="tns:IProfileManagementService_UpdateApps_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/UpdateAppsResponse" message="tns:IProfileManagementService_UpdateApps_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddApplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/AddApplication" message="tns:IProfileManagementService_AddApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/AddApplicationResponse" message="tns:IProfileManagementService_AddApplication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditApplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/EditApplication" message="tns:IProfileManagementService_EditApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/EditApplicationResponse" message="tns:IProfileManagementService_EditApplication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteApplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/DeleteApplication" message="tns:IProfileManagementService_DeleteApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/DeleteApplicationResponse" message="tns:IProfileManagementService_DeleteApplication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllApplications">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/GetAllApplications" message="tns:IProfileManagementService_GetAllApplications_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/GetAllApplicationsResponse" message="tns:IProfileManagementService_GetAllApplications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationsByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/GetApplicationsByCategory" message="tns:IProfileManagementService_GetApplicationsByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/GetApplicationsByCategoryResponse" message="tns:IProfileManagementService_GetApplicationsByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/AddCategory" message="tns:IProfileManagementService_AddCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/AddCategoryResponse" message="tns:IProfileManagementService_AddCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/EditCategory" message="tns:IProfileManagementService_EditCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/EditCategoryResponse" message="tns:IProfileManagementService_EditCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/DeleteCategory" message="tns:IProfileManagementService_DeleteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/DeleteCategoryResponse" message="tns:IProfileManagementService_DeleteCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/GetAllCategories" message="tns:IProfileManagementService_GetAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/GetAllCategoriesResponse" message="tns:IProfileManagementService_GetAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationsForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/GetApplicationsForUser" message="tns:IProfileManagementService_GetApplicationsForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/GetApplicationsForUserResponse" message="tns:IProfileManagementService_GetApplicationsForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalizedUi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/GetPersonalizedUi" message="tns:IProfileManagementService_GetPersonalizedUi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/GetPersonalizedUiResponse" message="tns:IProfileManagementService_GetPersonalizedUi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePersonalizedUI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/CreatePersonalizedUI" message="tns:IProfileManagementService_CreatePersonalizedUI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/CreatePersonalizedUIResponse" message="tns:IProfileManagementService_CreatePersonalizedUI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditPersonalizedUI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/EditPersonalizedUI" message="tns:IProfileManagementService_EditPersonalizedUI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/EditPersonalizedUIResponse" message="tns:IProfileManagementService_EditPersonalizedUI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalizedUI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/DeletePersonalizedUI" message="tns:IProfileManagementService_DeletePersonalizedUI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/DeletePersonalizedUIResponse" message="tns:IProfileManagementService_DeletePersonalizedUI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificApplicationByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/getSpecificApplicationByCode" message="tns:IProfileManagementService_getSpecificApplicationByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/getSpecificApplicationByCodeResponse" message="tns:IProfileManagementService_getSpecificApplicationByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificApplicationByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/getSpecificApplicationByID" message="tns:IProfileManagementService_getSpecificApplicationByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/getSpecificApplicationByIDResponse" message="tns:IProfileManagementService_getSpecificApplicationByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/GetAppSettings" message="tns:IProfileManagementService_GetAppSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/GetAppSettingsResponse" message="tns:IProfileManagementService_GetAppSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalizedUiStream">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/GetPersonalizedUiStream" message="tns:IProfileManagementService_GetPersonalizedUiStream_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/GetPersonalizedUiStreamResponse" message="tns:IProfileManagementService_GetPersonalizedUiStream_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditPersonalizedUiStream">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/EditPersonalizedUiStream" message="tns:IProfileManagementService_EditPersonalizedUiStream_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/EditPersonalizedUiStreamResponse" message="tns:IProfileManagementService_EditPersonalizedUiStream_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/GetApplicationSettings" message="tns:IProfileManagementService_GetApplicationSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/GetApplicationSettingsResponse" message="tns:IProfileManagementService_GetApplicationSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApplicationSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/UpdateApplicationSettings" message="tns:IProfileManagementService_UpdateApplicationSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/UpdateApplicationSettingsResponse" message="tns:IProfileManagementService_UpdateApplicationSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileManagementService/UpdateUserSettings" message="tns:IProfileManagementService_UpdateUserSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileManagementService/UpdateUserSettingsResponse" message="tns:IProfileManagementService_UpdateUserSettings_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IProfileManagementService" type="tns:IProfileManagementService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateApps">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/UpdateApps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddApplication">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/AddApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditApplication">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/EditApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteApplication">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/DeleteApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllApplications">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/GetAllApplications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationsByCategory">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/GetApplicationsByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/AddCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditCategory">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/EditCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/DeleteCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/GetAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationsForUser">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/GetApplicationsForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalizedUi">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/GetPersonalizedUi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePersonalizedUI">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/CreatePersonalizedUI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditPersonalizedUI">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/EditPersonalizedUI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalizedUI">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/DeletePersonalizedUI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificApplicationByCode">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/getSpecificApplicationByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificApplicationByID">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/getSpecificApplicationByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppSettings">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/GetAppSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalizedUiStream">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/GetPersonalizedUiStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditPersonalizedUiStream">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/EditPersonalizedUiStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationSettings">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/GetApplicationSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApplicationSettings">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/UpdateApplicationSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserSettings">
+      <soap:operation soapAction="http://tempuri.org/IProfileManagementService/UpdateUserSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProfileManagementService">
+    <wsdl:port name="BasicHttpBinding_IProfileManagementService" binding="tns:BasicHttpBinding_IProfileManagementService">
+      <soap:address location="http://192.168.1.215/DuoSubscribe5/V5Services/V5ProfileManagement/duosubscriberprofilemangement/ProfileManagementService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

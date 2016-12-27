@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SipSetting version="2">
+  <User>
+    <userName>agent21_duo_lk</userName>
+    <password>123456</password>
+    <displayName>agent21_duo_lk</displayName>
+    <authName>agent21_duo_lk</authName>
+  </User>
+  <Phone>
+    <localPort>5060</localPort>
+    <licenceKey></licenceKey>
+    <serverPort>5060</serverPort>
+    <hostName>192.168.51.62</hostName>
+  </Phone>
+</SipSetting>

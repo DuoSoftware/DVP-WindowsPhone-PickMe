@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CommonData" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts" />
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICommonData_saveCommonDataRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveCommonDataRecord" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_saveCommonDataRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveCommonDataRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_getSpecificCommonDataRecordByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSpecificCommonDataRecordByCode" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_getSpecificCommonDataRecordByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSpecificCommonDataRecordByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_getAllCommonDataRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCommonDataRecords" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_getAllCommonDataRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCommonDataRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_CreateTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTable" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_CreateTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_InserTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserTable" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_InserTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_CheckTableExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTableExists" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_CheckTableExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTableExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetColumnData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetColumnData" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetColumnData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetColumnDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetAnyData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnyData" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetAnyData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnyDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_InsertData_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertData" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_InsertData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetDataSetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSetData" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetDataSetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_UpdateDuobase_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDuobase" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_UpdateDuobase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDuobaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_UpdateData_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateData" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_UpdateData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_DeleteData_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteData" />
+  </wsdl:message>
+  <wsdl:message name="ICommonData_DeleteData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICommonData">
+    <wsdl:operation name="saveCommonDataRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/saveCommonDataRecord" message="tns:ICommonData_saveCommonDataRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/saveCommonDataRecordResponse" message="tns:ICommonData_saveCommonDataRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificCommonDataRecordByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/getSpecificCommonDataRecordByCode" message="tns:ICommonData_getSpecificCommonDataRecordByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/getSpecificCommonDataRecordByCodeResponse" message="tns:ICommonData_getSpecificCommonDataRecordByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllCommonDataRecords">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/getAllCommonDataRecords" message="tns:ICommonData_getAllCommonDataRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/getAllCommonDataRecordsResponse" message="tns:ICommonData_getAllCommonDataRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/CreateTable" message="tns:ICommonData_CreateTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/CreateTableResponse" message="tns:ICommonData_CreateTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/InserTable" message="tns:ICommonData_InserTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/InserTableResponse" message="tns:ICommonData_InserTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/GetData" message="tns:ICommonData_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/GetDataResponse" message="tns:ICommonData_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTableExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/CheckTableExists" message="tns:ICommonData_CheckTableExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/CheckTableExistsResponse" message="tns:ICommonData_CheckTableExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/GetColumnData" message="tns:ICommonData_GetColumnData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/GetColumnDataResponse" message="tns:ICommonData_GetColumnData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnyData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/GetAnyData" message="tns:ICommonData_GetAnyData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/GetAnyDataResponse" message="tns:ICommonData_GetAnyData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/InsertData" message="tns:ICommonData_InsertData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/InsertDataResponse" message="tns:ICommonData_InsertData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/GetDataSetData" message="tns:ICommonData_GetDataSetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/GetDataSetDataResponse" message="tns:ICommonData_GetDataSetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDuobase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/UpdateDuobase" message="tns:ICommonData_UpdateDuobase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/UpdateDuobaseResponse" message="tns:ICommonData_UpdateDuobase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/UpdateData" message="tns:ICommonData_UpdateData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/UpdateDataResponse" message="tns:ICommonData_UpdateData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/DeleteData" message="tns:ICommonData_DeleteData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/DeleteDataResponse" message="tns:ICommonData_DeleteData_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICommonData" type="tns:ICommonData">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="saveCommonDataRecord">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/saveCommonDataRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificCommonDataRecordByCode">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/getSpecificCommonDataRecordByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCommonDataRecords">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/getAllCommonDataRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/CreateTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserTable">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/InserTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTableExists">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/CheckTableExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/GetColumnData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnyData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/GetAnyData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/InsertData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSetData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/GetDataSetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDuobase">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/UpdateDuobase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/UpdateData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/DeleteData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CommonData">
+    <wsdl:port name="BasicHttpBinding_ICommonData" binding="tns:BasicHttpBinding_ICommonData">
+      <soap:address location="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

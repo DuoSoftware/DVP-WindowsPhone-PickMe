@@ -1,0 +1,1663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DuoEngagementService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="customBindingEngagement_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:9832/EngagementService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:9832/EngagementService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9832/EngagementService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:9832/EngagementService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDuoEngagementService_Test_InputMessage">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_Test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_TestEngagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestEngagement" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_TestEngagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestEngagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_TestEngagements_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestEngagements" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_TestEngagements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestEngagementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_TestWithSecuritytoken_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestWithSecuritytoken" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_TestWithSecuritytoken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestWithSecuritytokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ConvertEngagementListToXElement_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertEngagementListToXElement" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ConvertEngagementListToXElement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertEngagementListToXElementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_FromXElementToEngagementList_InputMessage">
+    <wsdl:part name="parameters" element="tns:FromXElementToEngagementList" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_FromXElementToEngagementList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FromXElementToEngagementListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_SetParentID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetParentID" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_SetParentID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetParentIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ChangeElementValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeElementValue" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ChangeElementValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeElementValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_LoadEngagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadEngagement" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_LoadEngagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadEngagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_LoadPlugin_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadPlugin" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_LoadPlugin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadPluginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_CrateEngagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrateEngagement" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_CrateEngagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrateEngagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_CreateEngagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateEngagement" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_CreateEngagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateEngagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_CreateEngagementSync_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateEngagementSync" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_CreateEngagementSync_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateEngagementSyncResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_SavePartially_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePartially" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_SavePartially_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePartiallyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_RemoveEngagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEngagement" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_RemoveEngagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEngagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_RemoveEngagementBySessionID_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEngagementBySessionID" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_RemoveEngagementBySessionID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEngagementBySessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_RemovePartiallySavedEngagementBySessionID_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePartiallySavedEngagementBySessionID" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_RemovePartiallySavedEngagementBySessionID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePartiallySavedEngagementBySessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ClearRegions_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearRegions" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ClearRegions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearRegionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_UpdateEngagementWithDB_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEngagementWithDB" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_UpdateEngagementWithDB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEngagementWithDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_UpdateEngagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEngagement" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_UpdateEngagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEngagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_UpdateEngagementWithreply_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEngagementWithreply" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_UpdateEngagementWithreply_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEngagementWithreplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_UpdateEngagementNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEngagementNew" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_UpdateEngagementNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEngagementNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_UpdateEngagementNewSync_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEngagementNewSync" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_UpdateEngagementNewSync_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEngagementNewSyncResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_UpdateEngagementToAllDbSync_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEngagementToAllDbSync" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_UpdateEngagementToAllDbSync_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEngagementToAllDbSyncResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_AddTags_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTags" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_AddTags_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_DeleteTags_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTags" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_DeleteTags_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementPage" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewCurrentEngagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCurrentEngagement" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewCurrentEngagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCurrentEngagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewCurrentEngagementWithHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCurrentEngagementWithHistory" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewCurrentEngagementWithHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCurrentEngagementWithHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerach_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerach" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerach_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerachResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewCurrentEngagementByClassTypeCatogary_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCurrentEngagementByClassTypeCatogary" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewCurrentEngagementByClassTypeCatogary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCurrentEngagementByClassTypeCatogaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewCurrentEngagementDisplayInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCurrentEngagementDisplayInfo" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewCurrentEngagementDisplayInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCurrentEngagementDisplayInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewSpecificEngagementByClassTypeCatogary_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewSpecificEngagementByClassTypeCatogary" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewSpecificEngagementByClassTypeCatogary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewSpecificEngagementByClassTypeCatogaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementBySessionID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementBySessionID" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementBySessionID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementBySessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementBySessionIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementBySessionIDs" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementBySessionIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementBySessionIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementBySessionIDWithHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementBySessionIDWithHistory" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementBySessionIDWithHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementBySessionIDWithHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementOriginateBySessionID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementOriginateBySessionID" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementOriginateBySessionID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementOriginateBySessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementOriginateBySessionIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementOriginateBySessionIDs" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementOriginateBySessionIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementOriginateBySessionIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementOriginateBySessionIDinDB_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementOriginateBySessionIDinDB" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementOriginateBySessionIDinDB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementOriginateBySessionIDinDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByRefGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByRefGuid" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByRefGuid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByRefGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByRefEngageeAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByRefEngageeAccount" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByRefEngageeAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByRefEngageeAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByAgentName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByAgentName" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByAgentName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByAgentNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByRefEngageeAccountWithDurations_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByRefEngageeAccountWithDurations" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByRefEngageeAccountWithDurations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByRefEngageeAccountWithDurationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByRefCommunicationChannel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByRefCommunicationChannel" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByRefCommunicationChannel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByRefCommunicationChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByClassName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByClassName" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByClassName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByClassNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByClass" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByClassType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByClassType" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByClassType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByClassTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByClassTypeCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByClassTypeCategory" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByClassTypeCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByClassTypeCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByGUEngID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByGUEngID" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByGUEngID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByGUEngIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByGUEngIDWithHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByGUEngIDWithHistory" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByGUEngIDWithHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByGUEngIDWithHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByGUEngIDWithHistoryPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByGUEngIDWithHistoryPage" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByGUEngIDWithHistoryPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByGUEngIDWithHistoryPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByGUEngIDWithHistoryPageDateRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByGUEngIDWithHistoryPageDateRange" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementByGUEngIDWithHistoryPageDateRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementByGUEngIDWithHistoryPageDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_AddSpecificUsersOrGroupsToEngagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSpecificUsersOrGroupsToEngagement" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_AddSpecificUsersOrGroupsToEngagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSpecificUsersOrGroupsToEngagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_RemoveSpecificUsersOrGroupsFromEngagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSpecificUsersOrGroupsFromEngagement" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_RemoveSpecificUsersOrGroupsFromEngagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSpecificUsersOrGroupsFromEngagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementSupervisorList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementSupervisorList" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_ViewEngagementSupervisorList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewEngagementSupervisorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_SetEngagementSupervisor_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetEngagementSupervisor" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_SetEngagementSupervisor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetEngagementSupervisorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_RemoveEngagementSupervisor_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEngagementSupervisor" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_RemoveEngagementSupervisor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEngagementSupervisorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_SavePendingChange_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePendingChange" />
+  </wsdl:message>
+  <wsdl:message name="IDuoEngagementService_SavePendingChange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePendingChangeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDuoEngagementService">
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/Test" message="tns:IDuoEngagementService_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/TestResponse" message="tns:IDuoEngagementService_Test_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestEngagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/TestEngagement" message="tns:IDuoEngagementService_TestEngagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/TestEngagementResponse" message="tns:IDuoEngagementService_TestEngagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestEngagements">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/TestEngagements" message="tns:IDuoEngagementService_TestEngagements_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/TestEngagementsResponse" message="tns:IDuoEngagementService_TestEngagements_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestWithSecuritytoken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/TestWithSecuritytoken" message="tns:IDuoEngagementService_TestWithSecuritytoken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/TestWithSecuritytokenResponse" message="tns:IDuoEngagementService_TestWithSecuritytoken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertEngagementListToXElement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ConvertEngagementListToXElement" message="tns:IDuoEngagementService_ConvertEngagementListToXElement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ConvertEngagementListToXElementResponse" message="tns:IDuoEngagementService_ConvertEngagementListToXElement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FromXElementToEngagementList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/FromXElementToEngagementList" message="tns:IDuoEngagementService_FromXElementToEngagementList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/FromXElementToEngagementListResponse" message="tns:IDuoEngagementService_FromXElementToEngagementList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetParentID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/SetParentID" message="tns:IDuoEngagementService_SetParentID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/SetParentIDResponse" message="tns:IDuoEngagementService_SetParentID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeElementValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ChangeElementValue" message="tns:IDuoEngagementService_ChangeElementValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ChangeElementValueResponse" message="tns:IDuoEngagementService_ChangeElementValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadEngagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/LoadEngagement" message="tns:IDuoEngagementService_LoadEngagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/LoadEngagementResponse" message="tns:IDuoEngagementService_LoadEngagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadPlugin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/LoadPlugin" message="tns:IDuoEngagementService_LoadPlugin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/LoadPluginResponse" message="tns:IDuoEngagementService_LoadPlugin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrateEngagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/CrateEngagement" message="tns:IDuoEngagementService_CrateEngagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/CrateEngagementResponse" message="tns:IDuoEngagementService_CrateEngagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEngagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/CreateEngagement" message="tns:IDuoEngagementService_CreateEngagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/CreateEngagementResponse" message="tns:IDuoEngagementService_CreateEngagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEngagementSync">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/CreateEngagementSync" message="tns:IDuoEngagementService_CreateEngagementSync_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/CreateEngagementSyncResponse" message="tns:IDuoEngagementService_CreateEngagementSync_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePartially">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/SavePartially" message="tns:IDuoEngagementService_SavePartially_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/SavePartiallyResponse" message="tns:IDuoEngagementService_SavePartially_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEngagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/RemoveEngagement" message="tns:IDuoEngagementService_RemoveEngagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/RemoveEngagementResponse" message="tns:IDuoEngagementService_RemoveEngagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEngagementBySessionID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/RemoveEngagementBySessionID" message="tns:IDuoEngagementService_RemoveEngagementBySessionID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/RemoveEngagementBySessionIDResponse" message="tns:IDuoEngagementService_RemoveEngagementBySessionID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePartiallySavedEngagementBySessionID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/RemovePartiallySavedEngagementBySessionID" message="tns:IDuoEngagementService_RemovePartiallySavedEngagementBySessionID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/RemovePartiallySavedEngagementBySessionIDResponse" message="tns:IDuoEngagementService_RemovePartiallySavedEngagementBySessionID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearRegions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ClearRegions" message="tns:IDuoEngagementService_ClearRegions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ClearRegionsResponse" message="tns:IDuoEngagementService_ClearRegions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementWithDB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/UpdateEngagementWithDB" message="tns:IDuoEngagementService_UpdateEngagementWithDB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/UpdateEngagementWithDBResponse" message="tns:IDuoEngagementService_UpdateEngagementWithDB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/UpdateEngagement" message="tns:IDuoEngagementService_UpdateEngagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/UpdateEngagementResponse" message="tns:IDuoEngagementService_UpdateEngagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementWithreply">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/UpdateEngagementWithreply" message="tns:IDuoEngagementService_UpdateEngagementWithreply_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/UpdateEngagementWithreplyResponse" message="tns:IDuoEngagementService_UpdateEngagementWithreply_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/UpdateEngagementNew" message="tns:IDuoEngagementService_UpdateEngagementNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/UpdateEngagementNewResponse" message="tns:IDuoEngagementService_UpdateEngagementNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementNewSync">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/UpdateEngagementNewSync" message="tns:IDuoEngagementService_UpdateEngagementNewSync_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/UpdateEngagementNewSyncResponse" message="tns:IDuoEngagementService_UpdateEngagementNewSync_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementToAllDbSync">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/UpdateEngagementToAllDbSync" message="tns:IDuoEngagementService_UpdateEngagementToAllDbSync_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/UpdateEngagementToAllDbSyncResponse" message="tns:IDuoEngagementService_UpdateEngagementToAllDbSync_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTags">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/AddTags" message="tns:IDuoEngagementService_AddTags_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/AddTagsResponse" message="tns:IDuoEngagementService_AddTags_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTags">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/DeleteTags" message="tns:IDuoEngagementService_DeleteTags_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/DeleteTagsResponse" message="tns:IDuoEngagementService_DeleteTags_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementPage" message="tns:IDuoEngagementService_ViewEngagementPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementPageResponse" message="tns:IDuoEngagementService_ViewEngagementPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagement" message="tns:IDuoEngagementService_ViewCurrentEngagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementResponse" message="tns:IDuoEngagementService_ViewCurrentEngagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagementWithHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementWithHistory" message="tns:IDuoEngagementService_ViewCurrentEngagementWithHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementWithHistoryResponse" message="tns:IDuoEngagementService_ViewCurrentEngagementWithHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerach">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerach" message="tns:IDuoEngagementService_ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerach_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerachResponse" message="tns:IDuoEngagementService_ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerach_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagementByClassTypeCatogary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementByClassTypeCatogary" message="tns:IDuoEngagementService_ViewCurrentEngagementByClassTypeCatogary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementByClassTypeCatogaryResponse" message="tns:IDuoEngagementService_ViewCurrentEngagementByClassTypeCatogary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagementDisplayInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementDisplayInfo" message="tns:IDuoEngagementService_ViewCurrentEngagementDisplayInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementDisplayInfoResponse" message="tns:IDuoEngagementService_ViewCurrentEngagementDisplayInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewSpecificEngagementByClassTypeCatogary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewSpecificEngagementByClassTypeCatogary" message="tns:IDuoEngagementService_ViewSpecificEngagementByClassTypeCatogary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewSpecificEngagementByClassTypeCatogaryResponse" message="tns:IDuoEngagementService_ViewSpecificEngagementByClassTypeCatogary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementBySessionID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementBySessionID" message="tns:IDuoEngagementService_ViewEngagementBySessionID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementBySessionIDResponse" message="tns:IDuoEngagementService_ViewEngagementBySessionID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementBySessionIDs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementBySessionIDs" message="tns:IDuoEngagementService_ViewEngagementBySessionIDs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementBySessionIDsResponse" message="tns:IDuoEngagementService_ViewEngagementBySessionIDs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementBySessionIDWithHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementBySessionIDWithHistory" message="tns:IDuoEngagementService_ViewEngagementBySessionIDWithHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementBySessionIDWithHistoryResponse" message="tns:IDuoEngagementService_ViewEngagementBySessionIDWithHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementOriginateBySessionID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementOriginateBySessionID" message="tns:IDuoEngagementService_ViewEngagementOriginateBySessionID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementOriginateBySessionIDResponse" message="tns:IDuoEngagementService_ViewEngagementOriginateBySessionID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementOriginateBySessionIDs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementOriginateBySessionIDs" message="tns:IDuoEngagementService_ViewEngagementOriginateBySessionIDs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementOriginateBySessionIDsResponse" message="tns:IDuoEngagementService_ViewEngagementOriginateBySessionIDs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementOriginateBySessionIDinDB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementOriginateBySessionIDinDB" message="tns:IDuoEngagementService_ViewEngagementOriginateBySessionIDinDB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementOriginateBySessionIDinDBResponse" message="tns:IDuoEngagementService_ViewEngagementOriginateBySessionIDinDB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByRefGuid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefGuid" message="tns:IDuoEngagementService_ViewEngagementByRefGuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefGuidResponse" message="tns:IDuoEngagementService_ViewEngagementByRefGuid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByRefEngageeAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefEngageeAccount" message="tns:IDuoEngagementService_ViewEngagementByRefEngageeAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefEngageeAccountResponse" message="tns:IDuoEngagementService_ViewEngagementByRefEngageeAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByAgentName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByAgentName" message="tns:IDuoEngagementService_ViewEngagementByAgentName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByAgentNameResponse" message="tns:IDuoEngagementService_ViewEngagementByAgentName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByRefEngageeAccountWithDurations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefEngageeAccountWithDurations" message="tns:IDuoEngagementService_ViewEngagementByRefEngageeAccountWithDurations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefEngageeAccountWithDurationsResponse" message="tns:IDuoEngagementService_ViewEngagementByRefEngageeAccountWithDurations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByRefCommunicationChannel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefCommunicationChannel" message="tns:IDuoEngagementService_ViewEngagementByRefCommunicationChannel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefCommunicationChannelResponse" message="tns:IDuoEngagementService_ViewEngagementByRefCommunicationChannel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByClassName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByClassName" message="tns:IDuoEngagementService_ViewEngagementByClassName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByClassNameResponse" message="tns:IDuoEngagementService_ViewEngagementByClassName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByClass" message="tns:IDuoEngagementService_ViewEngagementByClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByClassResponse" message="tns:IDuoEngagementService_ViewEngagementByClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByClassType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByClassType" message="tns:IDuoEngagementService_ViewEngagementByClassType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByClassTypeResponse" message="tns:IDuoEngagementService_ViewEngagementByClassType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByClassTypeCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByClassTypeCategory" message="tns:IDuoEngagementService_ViewEngagementByClassTypeCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByClassTypeCategoryResponse" message="tns:IDuoEngagementService_ViewEngagementByClassTypeCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByGUEngID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngID" message="tns:IDuoEngagementService_ViewEngagementByGUEngID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngIDResponse" message="tns:IDuoEngagementService_ViewEngagementByGUEngID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByGUEngIDWithHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngIDWithHistory" message="tns:IDuoEngagementService_ViewEngagementByGUEngIDWithHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngIDWithHistoryResponse" message="tns:IDuoEngagementService_ViewEngagementByGUEngIDWithHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByGUEngIDWithHistoryPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngIDWithHistoryPage" message="tns:IDuoEngagementService_ViewEngagementByGUEngIDWithHistoryPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngIDWithHistoryPageResponse" message="tns:IDuoEngagementService_ViewEngagementByGUEngIDWithHistoryPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByGUEngIDWithHistoryPageDateRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngIDWithHistoryPageDateRange" message="tns:IDuoEngagementService_ViewEngagementByGUEngIDWithHistoryPageDateRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngIDWithHistoryPageDateRangeResponse" message="tns:IDuoEngagementService_ViewEngagementByGUEngIDWithHistoryPageDateRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSpecificUsersOrGroupsToEngagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/AddSpecificUsersOrGroupsToEngagement" message="tns:IDuoEngagementService_AddSpecificUsersOrGroupsToEngagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/AddSpecificUsersOrGroupsToEngagementResponse" message="tns:IDuoEngagementService_AddSpecificUsersOrGroupsToEngagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSpecificUsersOrGroupsFromEngagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/RemoveSpecificUsersOrGroupsFromEngagement" message="tns:IDuoEngagementService_RemoveSpecificUsersOrGroupsFromEngagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/RemoveSpecificUsersOrGroupsFromEngagementResponse" message="tns:IDuoEngagementService_RemoveSpecificUsersOrGroupsFromEngagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementSupervisorList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementSupervisorList" message="tns:IDuoEngagementService_ViewEngagementSupervisorList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/ViewEngagementSupervisorListResponse" message="tns:IDuoEngagementService_ViewEngagementSupervisorList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEngagementSupervisor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/SetEngagementSupervisor" message="tns:IDuoEngagementService_SetEngagementSupervisor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/SetEngagementSupervisorResponse" message="tns:IDuoEngagementService_SetEngagementSupervisor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEngagementSupervisor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/RemoveEngagementSupervisor" message="tns:IDuoEngagementService_RemoveEngagementSupervisor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/RemoveEngagementSupervisorResponse" message="tns:IDuoEngagementService_RemoveEngagementSupervisor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePendingChange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDuoEngagementService/SavePendingChange" message="tns:IDuoEngagementService_SavePendingChange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDuoEngagementService/SavePendingChangeResponse" message="tns:IDuoEngagementService_SavePendingChange_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="basicEngagementEndpoint" type="tns:IDuoEngagementService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestEngagement">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/TestEngagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestEngagements">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/TestEngagements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestWithSecuritytoken">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/TestWithSecuritytoken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertEngagementListToXElement">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ConvertEngagementListToXElement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FromXElementToEngagementList">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/FromXElementToEngagementList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParentID">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/SetParentID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeElementValue">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ChangeElementValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadEngagement">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/LoadEngagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadPlugin">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/LoadPlugin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrateEngagement">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/CrateEngagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEngagement">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/CreateEngagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEngagementSync">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/CreateEngagementSync" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePartially">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/SavePartially" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEngagement">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/RemoveEngagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEngagementBySessionID">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/RemoveEngagementBySessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePartiallySavedEngagementBySessionID">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/RemovePartiallySavedEngagementBySessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearRegions">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ClearRegions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementWithDB">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/UpdateEngagementWithDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagement">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/UpdateEngagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementWithreply">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/UpdateEngagementWithreply" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementNew">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/UpdateEngagementNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementNewSync">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/UpdateEngagementNewSync" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementToAllDbSync">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/UpdateEngagementToAllDbSync" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTags">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/AddTags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTags">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/DeleteTags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementPage">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagement">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagementWithHistory">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementWithHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerach">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerach" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagementByClassTypeCatogary">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementByClassTypeCatogary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagementDisplayInfo">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementDisplayInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewSpecificEngagementByClassTypeCatogary">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewSpecificEngagementByClassTypeCatogary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementBySessionID">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementBySessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementBySessionIDs">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementBySessionIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementBySessionIDWithHistory">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementBySessionIDWithHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementOriginateBySessionID">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementOriginateBySessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementOriginateBySessionIDs">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementOriginateBySessionIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementOriginateBySessionIDinDB">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementOriginateBySessionIDinDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByRefGuid">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByRefEngageeAccount">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefEngageeAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByAgentName">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByAgentName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByRefEngageeAccountWithDurations">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefEngageeAccountWithDurations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByRefCommunicationChannel">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefCommunicationChannel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByClassName">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByClassName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByClass">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByClassType">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByClassType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByClassTypeCategory">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByClassTypeCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByGUEngID">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByGUEngIDWithHistory">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngIDWithHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByGUEngIDWithHistoryPage">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngIDWithHistoryPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByGUEngIDWithHistoryPageDateRange">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngIDWithHistoryPageDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSpecificUsersOrGroupsToEngagement">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/AddSpecificUsersOrGroupsToEngagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSpecificUsersOrGroupsFromEngagement">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/RemoveSpecificUsersOrGroupsFromEngagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementSupervisorList">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementSupervisorList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEngagementSupervisor">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/SetEngagementSupervisor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEngagementSupervisor">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/RemoveEngagementSupervisor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePendingChange">
+      <soap:operation soapAction="http://tempuri.org/IDuoEngagementService/SavePendingChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="customBindingEngagement" type="tns:IDuoEngagementService">
+    <wsp:PolicyReference URI="#customBindingEngagement_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestEngagement">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/TestEngagement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestEngagements">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/TestEngagements" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestWithSecuritytoken">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/TestWithSecuritytoken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertEngagementListToXElement">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ConvertEngagementListToXElement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FromXElementToEngagementList">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/FromXElementToEngagementList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParentID">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/SetParentID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeElementValue">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ChangeElementValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadEngagement">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/LoadEngagement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadPlugin">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/LoadPlugin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrateEngagement">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/CrateEngagement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEngagement">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/CreateEngagement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEngagementSync">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/CreateEngagementSync" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePartially">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/SavePartially" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEngagement">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/RemoveEngagement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEngagementBySessionID">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/RemoveEngagementBySessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePartiallySavedEngagementBySessionID">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/RemovePartiallySavedEngagementBySessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearRegions">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ClearRegions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementWithDB">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/UpdateEngagementWithDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagement">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/UpdateEngagement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementWithreply">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/UpdateEngagementWithreply" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementNew">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/UpdateEngagementNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementNewSync">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/UpdateEngagementNewSync" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEngagementToAllDbSync">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/UpdateEngagementToAllDbSync" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTags">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/AddTags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTags">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/DeleteTags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementPage">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagement">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagementWithHistory">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementWithHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerach">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerach" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagementByClassTypeCatogary">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementByClassTypeCatogary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewCurrentEngagementDisplayInfo">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewCurrentEngagementDisplayInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewSpecificEngagementByClassTypeCatogary">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewSpecificEngagementByClassTypeCatogary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementBySessionID">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementBySessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementBySessionIDs">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementBySessionIDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementBySessionIDWithHistory">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementBySessionIDWithHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementOriginateBySessionID">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementOriginateBySessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementOriginateBySessionIDs">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementOriginateBySessionIDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementOriginateBySessionIDinDB">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementOriginateBySessionIDinDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByRefGuid">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefGuid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByRefEngageeAccount">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefEngageeAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByAgentName">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByAgentName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByRefEngageeAccountWithDurations">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefEngageeAccountWithDurations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByRefCommunicationChannel">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByRefCommunicationChannel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByClassName">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByClassName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByClass">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByClassType">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByClassType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByClassTypeCategory">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByClassTypeCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByGUEngID">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByGUEngIDWithHistory">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngIDWithHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByGUEngIDWithHistoryPage">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngIDWithHistoryPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementByGUEngIDWithHistoryPageDateRange">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementByGUEngIDWithHistoryPageDateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSpecificUsersOrGroupsToEngagement">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/AddSpecificUsersOrGroupsToEngagement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSpecificUsersOrGroupsFromEngagement">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/RemoveSpecificUsersOrGroupsFromEngagement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewEngagementSupervisorList">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/ViewEngagementSupervisorList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEngagementSupervisor">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/SetEngagementSupervisor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEngagementSupervisor">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/RemoveEngagementSupervisor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePendingChange">
+      <soap12:operation soapAction="http://tempuri.org/IDuoEngagementService/SavePendingChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DuoEngagementService">
+    <wsdl:port name="basicEngagementEndpoint" binding="tns:basicEngagementEndpoint">
+      <soap:address location="http://localhost:9832/EngagementService.svc/basicEngagementEndpoint" />
+    </wsdl:port>
+    <wsdl:port name="customBindingEngagement" binding="tns:customBindingEngagement">
+      <soap12:address location="http://localhost:9832/EngagementService.svc/customBinding" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:9832/EngagementService.svc/customBinding</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

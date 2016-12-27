@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+  <xs:complexType name="CommonDataRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cache" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CommonData" nillable="true" type="tns:ArrayOfCommonDataField" />
+      <xs:element minOccurs="0" name="CommonDataApps" nillable="true" type="tns:ArrayOfCommonDataApps" />
+      <xs:element minOccurs="0" name="CommonDataValues" nillable="true" type="tns:ArrayOfCommonDataValue" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="GuTranID" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OperationalStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordCultureName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordID" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RecordName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordStatus" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RecordType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResourceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Separate" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TenantID" type="xs:int" />
+      <xs:element minOccurs="0" name="ViewObjectID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonDataRecord" nillable="true" type="tns:CommonDataRecord" />
+  <xs:complexType name="ArrayOfCommonDataField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommonDataField" nillable="true" type="tns:CommonDataField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommonDataField" nillable="true" type="tns:ArrayOfCommonDataField" />
+  <xs:complexType name="CommonDataField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldCultureName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldData" nillable="true" type="tns:ArrayOfCommonFieldValue" />
+      <xs:element minOccurs="0" name="FieldID" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPrimaryKey" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OnChangeToCulture" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RecordID" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ScheduleID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TenantID" type="xs:int" />
+      <xs:element minOccurs="0" name="ViewObjectID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonDataField" nillable="true" type="tns:CommonDataField" />
+  <xs:complexType name="ArrayOfCommonFieldValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommonFieldValue" nillable="true" type="tns:CommonFieldValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommonFieldValue" nillable="true" type="tns:ArrayOfCommonFieldValue" />
+  <xs:complexType name="CommonFieldValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldId" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FieldKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ScheduleId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TenantID" type="xs:int" />
+      <xs:element minOccurs="0" name="ViewObjectId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonFieldValue" nillable="true" type="tns:CommonFieldValue" />
+  <xs:complexType name="ArrayOfCommonDataApps">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommonDataApps" nillable="true" type="tns:CommonDataApps" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommonDataApps" nillable="true" type="tns:ArrayOfCommonDataApps" />
+  <xs:complexType name="CommonDataApps">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Application" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplicationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FieldID" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GUApplicationID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="RecordStatus" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ScheduleID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TenantID" type="xs:int" />
+      <xs:element minOccurs="0" name="ViewObjectID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonDataApps" nillable="true" type="tns:CommonDataApps" />
+  <xs:complexType name="ArrayOfCommonDataValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommonDataValue" nillable="true" type="tns:CommonDataValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommonDataValue" nillable="true" type="tns:ArrayOfCommonDataValue" />
+  <xs:complexType name="CommonDataValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="RecordDataID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RecordFieldData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RowID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TenantID" type="xs:int" />
+      <xs:element minOccurs="0" name="ViewObjectID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonDataValue" nillable="true" type="tns:CommonDataValue" />
+  <xs:complexType name="ArrayOfCommonDataRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommonDataRecord" nillable="true" type="tns:CommonDataRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommonDataRecord" nillable="true" type="tns:ArrayOfCommonDataRecord" />
+  <xs:complexType name="DynamicTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColumnDtl" nillable="true" type="tns:ArrayOfColumns" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicTable" nillable="true" type="tns:DynamicTable" />
+  <xs:complexType name="ArrayOfColumns">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Columns" nillable="true" type="tns:Columns" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfColumns" nillable="true" type="tns:ArrayOfColumns" />
+  <xs:complexType name="Columns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowNulls" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data" minOccurs="0" name="DataType" type="q1:SqlDbType" />
+      <xs:element minOccurs="0" name="PrimaryKey" type="xs:boolean" />
+      <xs:element minOccurs="0" name="columnLength" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="columnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="columnValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Columns" nillable="true" type="tns:Columns" />
+  <xs:complexType name="Column">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Column" nillable="true" type="tns:Column" />
+  <xs:complexType name="DataSetData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataXML" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tables" nillable="true" type="tns:ArrayOfDataTableInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataSetData" nillable="true" type="tns:DataSetData" />
+  <xs:complexType name="ArrayOfDataTableInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataTableInfo" nillable="true" type="tns:DataTableInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataTableInfo" nillable="true" type="tns:ArrayOfDataTableInfo" />
+  <xs:complexType name="DataTableInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatasetColumns" nillable="true" type="tns:ArrayOfDataColumnInfo" />
+      <xs:element minOccurs="0" name="DatasetTableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataTableInfo" nillable="true" type="tns:DataTableInfo" />
+  <xs:complexType name="ArrayOfDataColumnInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataColumnInfo" nillable="true" type="tns:DataColumnInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataColumnInfo" nillable="true" type="tns:ArrayOfDataColumnInfo" />
+  <xs:complexType name="DataColumnInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatasetColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatasetColumnTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatasetDataTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatasetDisplayIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="DatasetEditControlType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatasetIsKey" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DatasetIsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DatasetIsRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DatasetMaxLength" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataColumnInfo" nillable="true" type="tns:DataColumnInfo" />
+</xs:schema>

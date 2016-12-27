@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFServicesAPI" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFServicesAPI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="BargeMethod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LISTEN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BARGE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="THREEWAY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BargeMethod" nillable="true" type="tns:BargeMethod" />
+  <xs:simpleType name="PlaydOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="play" />
+      <xs:enumeration value="stop" />
+      <xs:enumeration value="pause" />
+      <xs:enumeration value="resume" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PlaydOperation" nillable="true" type="tns:PlaydOperation" />
+  <xs:simpleType name="RecordOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="strart" />
+      <xs:enumeration value="stop" />
+      <xs:enumeration value="pause" />
+      <xs:enumeration value="resume" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RecordOperation" nillable="true" type="tns:RecordOperation" />
+  <xs:simpleType name="RelatedOption">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="nospeak" />
+      <xs:enumeration value="nohear" />
+      <xs:enumeration value="clear" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RelatedOption" nillable="true" type="tns:RelatedOption" />
+  <xs:simpleType name="UserOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="kick" />
+      <xs:enumeration value="mute" />
+      <xs:enumeration value="deaf" />
+      <xs:enumeration value="unmute" />
+      <xs:enumeration value="undeaf" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserOperation" nillable="true" type="tns:UserOperation" />
+</xs:schema>

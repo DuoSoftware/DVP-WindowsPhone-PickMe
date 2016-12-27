@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DuoSoftware.DC.ResourceMonitoringService.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DuoSoftware.DC.ResourceMonitoringService.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="UiStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Initializing" />
+      <xs:enumeration value="Idle" />
+      <xs:enumeration value="Busy" />
+      <xs:enumeration value="Acw" />
+      <xs:enumeration value="Break" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UiStatus" nillable="true" type="tns:UiStatus" />
+  <xs:simpleType name="UiModes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Inbound" />
+      <xs:enumeration value="Outbound" />
+      <xs:enumeration value="Online" />
+      <xs:enumeration value="Offline" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UiModes" nillable="true" type="tns:UiModes" />
+</xs:schema>

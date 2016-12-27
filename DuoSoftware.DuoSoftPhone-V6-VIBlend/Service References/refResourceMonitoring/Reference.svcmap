@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b268d14f-1d63-4ec7-a8b7-6e7ee6c6d676" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.2.35/duosltv5/ContactV5Services/ResourceMonitoring/Implementation/ResourceMonitoring.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ResourceMonitoring.disco" MetadataType="Disco" ID="1ffa5cc4-cdb4-4b97-ae14-7fc86e1ee168" SourceId="1" SourceUrl="http://192.168.2.35/DUOSLTV5/ContactV5Services/ResourceMonitoring/Implementation/ResourceMonitoring.svc?disco" />
+    <MetadataFile FileName="ResourceMonitoring.xsd" MetadataType="Schema" ID="914f8e3a-5099-4fd6-b35e-75f70b3f821b" SourceId="1" SourceUrl="http://192.168.2.35/DUOSLTV5/ContactV5Services/ResourceMonitoring/Implementation/ResourceMonitoring.svc?xsd=xsd0" />
+    <MetadataFile FileName="ResourceMonitoring1.xsd" MetadataType="Schema" ID="ea44a6eb-84ca-4e6b-83f0-814a5489d8ed" SourceId="1" SourceUrl="http://192.168.2.35/DUOSLTV5/ContactV5Services/ResourceMonitoring/Implementation/ResourceMonitoring.svc?xsd=xsd2" />
+    <MetadataFile FileName="ResourceMonitoring2.xsd" MetadataType="Schema" ID="30847aaa-fedd-43a7-a756-ef65514aacc0" SourceId="1" SourceUrl="http://192.168.2.35/DUOSLTV5/ContactV5Services/ResourceMonitoring/Implementation/ResourceMonitoring.svc?xsd=xsd1" />
+    <MetadataFile FileName="ResourceMonitoring3.xsd" MetadataType="Schema" ID="811615c8-e65a-4d9e-b15f-b703121538be" SourceId="1" SourceUrl="http://192.168.2.35/DUOSLTV5/ContactV5Services/ResourceMonitoring/Implementation/ResourceMonitoring.svc?xsd=xsd3" />
+    <MetadataFile FileName="ResourceMonitoring.wsdl" MetadataType="Wsdl" ID="c7810b70-9f01-48ba-a4a4-5ef4808fbcc1" SourceId="1" SourceUrl="http://192.168.2.35/DUOSLTV5/ContactV5Services/ResourceMonitoring/Implementation/ResourceMonitoring.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

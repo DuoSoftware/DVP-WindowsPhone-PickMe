@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="28adc7cd-efe9-4a14-9fa5-516df1fd2d09" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CCDispatcher.xsd" MetadataType="Schema" ID="71f216ed-640d-4b97-b006-897ac41018dc" SourceId="1" SourceUrl="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc?xsd=xsd1" />
+    <MetadataFile FileName="CCDispatcher1.xsd" MetadataType="Schema" ID="10d285c2-858f-4aa0-b955-81200eb224f7" SourceId="1" SourceUrl="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc?xsd=xsd3" />
+    <MetadataFile FileName="CCDispatcher.disco" MetadataType="Disco" ID="6326090d-43d5-4ff2-b138-0cd60714fcf7" SourceId="1" SourceUrl="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc?disco" />
+    <MetadataFile FileName="CCDispatcher2.xsd" MetadataType="Schema" ID="8e49c411-28de-4b8a-b3ca-a3358c271c4d" SourceId="1" SourceUrl="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc?xsd=xsd0" />
+    <MetadataFile FileName="CCDispatcher3.xsd" MetadataType="Schema" ID="0d12ef15-dea0-4cba-903f-bf98bb21b097" SourceId="1" SourceUrl="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc?xsd=xsd2" />
+    <MetadataFile FileName="CCDispatchService.wsdl" MetadataType="Wsdl" ID="20d63330-5fa0-42da-bdea-b8145de0c451" SourceId="1" SourceUrl="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

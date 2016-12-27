@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7ce2ac07-4ced-4c60-86a0-c427a691fc86" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.1.215/Duosubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CommonData.xsd" MetadataType="Schema" ID="4421138f-e849-44ab-9f24-28d873c50989" SourceId="1" SourceUrl="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd3" />
+    <MetadataFile FileName="CommonData.wsdl" MetadataType="Wsdl" ID="9cfa62eb-b8e3-481f-b4a6-0e15faa14d96" SourceId="1" SourceUrl="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc?wsdl" />
+    <MetadataFile FileName="CommonData1.xsd" MetadataType="Schema" ID="4fb151e6-62c3-4ca7-9472-506c76387d6a" SourceId="1" SourceUrl="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd0" />
+    <MetadataFile FileName="CommonData.disco" MetadataType="Disco" ID="88dba7b9-4d52-4aca-ad2b-7605efa1208e" SourceId="1" SourceUrl="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc?disco" />
+    <MetadataFile FileName="CommonData2.xsd" MetadataType="Schema" ID="c0831854-a55f-4790-afcb-fd43bf381a59" SourceId="1" SourceUrl="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd2" />
+    <MetadataFile FileName="CommonData3.xsd" MetadataType="Schema" ID="11ae430b-69a6-4286-8716-40f4b146551e" SourceId="1" SourceUrl="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd4" />
+    <MetadataFile FileName="CommonData4.xsd" MetadataType="Schema" ID="9d16d6af-7aa3-45db-b644-ddb328cd9ae7" SourceId="1" SourceUrl="http://192.168.1.215/DuoSubscribe5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/V5ProfileManagement/duosubscriberprofilemangement/ProfileManagementService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/V5ProfileManagement/duosubscriberprofilemangement/ProfileManagementService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/DuoSoftware.CommonTools" />
+  <xs:complexType name="ArrayOfApplication">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Application" nillable="true" type="tns:Application" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplication" nillable="true" type="tns:ArrayOfApplication" />
+  <xs:complexType name="Application">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppURI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplicationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Caption" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Changes" nillable="true" type="tns:ArrayOfApplicationChanges" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ControllerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GUUserIDs" nillable="true" type="q1:ArrayOfdecimal" />
+      <xs:element minOccurs="0" name="GuApplicationId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="HTML5IconUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageURI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MethodName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DuoSoftware.CommonTools" minOccurs="0" name="RecordStatus" type="q2:RecordStatus" />
+      <xs:element minOccurs="0" name="RedirectionUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecretKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SetupVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateVersion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+      <xs:element minOccurs="0" name="WindowSize" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Application" nillable="true" type="tns:Application" />
+  <xs:complexType name="ArrayOfApplicationChanges">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApplicationChanges" nillable="true" type="tns:ApplicationChanges" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicationChanges" nillable="true" type="tns:ArrayOfApplicationChanges" />
+  <xs:complexType name="ApplicationChanges">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GUChangeID" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VersionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicationChanges" nillable="true" type="tns:ApplicationChanges" />
+  <xs:complexType name="Category">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+      <xs:element minOccurs="0" name="GuCatId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectId" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DuoSoftware.CommonTools" minOccurs="0" name="RecordStatus" type="q3:RecordStatus" />
+      <xs:element minOccurs="0" name="TenentId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Category" nillable="true" type="tns:Category" />
+  <xs:complexType name="ArrayOfCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategory" nillable="true" type="tns:ArrayOfCategory" />
+  <xs:complexType name="Personalization">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GuUserId" type="xs:decimal" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DuoSoftware.CommonTools" minOccurs="0" name="RecordStatus" type="q4:RecordStatus" />
+      <xs:element minOccurs="0" name="SerializedData" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Personalization" nillable="true" type="tns:Personalization" />
+</xs:schema>

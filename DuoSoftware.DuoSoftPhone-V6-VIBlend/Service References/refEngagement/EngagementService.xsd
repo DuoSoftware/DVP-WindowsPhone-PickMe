@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9832/EngagementService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:9832/EngagementService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" />
+  <xs:element name="Test">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TestResult" nillable="true" type="q1:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestEngagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestEngagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="TestEngagementResult" nillable="true" type="q2:DuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestEngagements">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestEngagementsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="TestEngagementsResult" nillable="true" type="q3:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestWithSecuritytoken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestWithSecuritytokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TestWithSecuritytokenResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertEngagementListToXElement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="engagements" nillable="true" type="q4:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertEngagementListToXElementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConvertEngagementListToXElementResult" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FromXElementToEngagementList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xElement" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FromXElementToEngagementListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="FromXElementToEngagementListResult" nillable="true" type="q5:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetParentID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xElement" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="parentID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetParentIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetParentIDResult" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeElementValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xElement" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="elementName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="elementValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeElementValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChangeElementValueResult" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadEngagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadEngagementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadPlugin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="path" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadPluginResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrateEngagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="duoEngagements" nillable="true" type="q6:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrateEngagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CrateEngagementResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateEngagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="duoEngagements" nillable="true" type="q7:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateEngagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CreateEngagementResult" nillable="true" type="q8:ArrayOfKeyValueOfstringdecimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateEngagementSync">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="duoEngagement" nillable="true" type="q9:DuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateEngagementSyncResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CreateEngagementSyncResult" nillable="true" type="q10:ArrayOfKeyValueOfstringdecimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePartially">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="duoEngagements" nillable="true" type="q11:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePartiallyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePartiallyResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEngagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="duoEngagements" nillable="true" type="q12:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEngagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveEngagementResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEngagementBySessionID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sessionIDs" nillable="true" type="q13:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEngagementBySessionIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveEngagementBySessionIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePartiallySavedEngagementBySessionID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sessionIDs" nillable="true" type="q14:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePartiallySavedEngagementBySessionIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemovePartiallySavedEngagementBySessionIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearRegions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearRegionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ClearRegionsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEngagementWithDB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="duoEngagements" nillable="true" type="q15:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEngagementWithDBResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEngagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="duoEngagementss" nillable="true" type="q16:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEngagementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEngagementWithreply">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="duoEngagement" nillable="true" type="q17:DuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEngagementWithreplyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateEngagementWithreplyResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEngagementNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="duoEngagements" nillable="true" type="q18:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEngagementNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UpdateEngagementNewResult" nillable="true" type="q19:ArrayOfKeyValueOfstringdecimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEngagementNewSync">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="duoEngagements" nillable="true" type="q20:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEngagementNewSyncResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UpdateEngagementNewSyncResult" nillable="true" type="q21:ArrayOfKeyValueOfstringdecimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEngagementToAllDbSync">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="duoEngagements" nillable="true" type="q22:ArrayOfDuoEngagements" />
+        <xs:element minOccurs="0" name="applicationName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEngagementToAllDbSyncResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UpdateEngagementToAllDbSyncResult" nillable="true" type="q23:ArrayOfKeyValueOfstringdecimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="tags" nillable="true" type="q24:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddTagsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="tags" nillable="true" type="q25:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTagsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementPage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageNo" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="engagementClass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementPageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementPageResult" nillable="true" type="q26:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewCurrentEngagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageNo" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewCurrentEngagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewCurrentEngagementResult" nillable="true" type="q27:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewCurrentEngagementWithHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageNo" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewCurrentEngagementWithHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewCurrentEngagementWithHistoryResult" nillable="true" type="q28:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerach">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageNo" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="engagementClass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="engagementType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="engagementCategory" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerachResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewCurrentEngagementByClassTypeCatogaryWithOutHistorySerachResult" nillable="true" type="q29:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewCurrentEngagementByClassTypeCatogary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageNo" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="engagementClass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="engagementType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="engagementCategory" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewCurrentEngagementByClassTypeCatogaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewCurrentEngagementByClassTypeCatogaryResult" nillable="true" type="q30:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewCurrentEngagementDisplayInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="engagementClass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="engagementType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="engagementCategory" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewCurrentEngagementDisplayInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewCurrentEngagementDisplayInfoResult" nillable="true" type="q31:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewSpecificEngagementByClassTypeCatogary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageNo" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="engagementClass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="engagementType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="engagementCategory" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewSpecificEngagementByClassTypeCatogaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewSpecificEngagementByClassTypeCatogaryResult" nillable="true" type="q32:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementBySessionID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementBySessionIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementBySessionIDResult" nillable="true" type="q33:DuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementBySessionIDs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sessionID" nillable="true" type="q34:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementBySessionIDsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementBySessionIDsResult" nillable="true" type="q35:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementBySessionIDWithHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageNo" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementBySessionIDWithHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementBySessionIDWithHistoryResult" nillable="true" type="q36:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementOriginateBySessionID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementOriginateBySessionIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementOriginateBySessionIDResult" nillable="true" type="q37:DuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementOriginateBySessionIDs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sessionID" nillable="true" type="q38:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementOriginateBySessionIDsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementOriginateBySessionIDsResult" nillable="true" type="q39:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementOriginateBySessionIDinDB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementOriginateBySessionIDinDBResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementOriginateBySessionIDinDBResult" nillable="true" type="q40:DuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByRefGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="refGuid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByRefGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementByRefGuidResult" nillable="true" type="q41:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByRefEngageeAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="engageeAccount" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByRefEngageeAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementByRefEngageeAccountResult" nillable="true" type="q42:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByAgentName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="agentName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="durationInDate" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByAgentNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementByAgentNameResult" nillable="true" type="q43:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByRefEngageeAccountWithDurations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="engageeAccount" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="durationInDate" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByRefEngageeAccountWithDurationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementByRefEngageeAccountWithDurationsResult" nillable="true" type="q44:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByRefCommunicationChannel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="communicationChannel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByRefCommunicationChannelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementByRefCommunicationChannelResult" nillable="true" type="q45:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByClassName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="className" nillable="true" type="q46:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByClassNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementByClassNameResult" nillable="true" type="q47:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="className" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByClassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementByClassResult" nillable="true" type="q48:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByClassType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="className" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByClassTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementByClassTypeResult" nillable="true" type="q49:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByClassTypeCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="className" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByClassTypeCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementByClassTypeCategoryResult" nillable="true" type="q50:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByGUEngID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="guEngId" nillable="true" type="q51:ArrayOfdecimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByGUEngIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementByGUEngIDResult" nillable="true" type="q52:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByGUEngIDWithHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q53="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="guEngId" nillable="true" type="q53:ArrayOfdecimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByGUEngIDWithHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementByGUEngIDWithHistoryResult" nillable="true" type="q54:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByGUEngIDWithHistoryPage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q55="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="guEngId" nillable="true" type="q55:ArrayOfdecimal" />
+        <xs:element minOccurs="0" name="pageNo" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByGUEngIDWithHistoryPageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementByGUEngIDWithHistoryPageResult" nillable="true" type="q56:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByGUEngIDWithHistoryPageDateRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securitytoken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q57="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="guEngId" nillable="true" type="q57:ArrayOfdecimal" />
+        <xs:element minOccurs="0" name="pageNo" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="from" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="to" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementByGUEngIDWithHistoryPageDateRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="ViewEngagementByGUEngIDWithHistoryPageDateRangeResult" nillable="true" type="q58:ArrayOfDuoEngagements" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSpecificUsersOrGroupsToEngagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="specificUsersGroups" nillable="true" type="q59:ArrayOfPermissionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSpecificUsersOrGroupsToEngagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddSpecificUsersOrGroupsToEngagementResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSpecificUsersOrGroupsFromEngagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/DuoSoftware.IDuoEngagementService" minOccurs="0" name="specificUsersGroups" nillable="true" type="q60:ArrayOfPermissionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSpecificUsersOrGroupsFromEngagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveSpecificUsersOrGroupsFromEngagementResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementSupervisorList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q61="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sessionIDs" nillable="true" type="q61:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewEngagementSupervisorListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ViewEngagementSupervisorListResult" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetEngagementSupervisor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q62="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sessionIDs" nillable="true" type="q62:ArrayOfstring" />
+        <xs:element minOccurs="0" name="supervisorID" type="xs:long" />
+        <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="viewObjectIDs" nillable="true" type="q63:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetEngagementSupervisorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetEngagementSupervisorResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEngagementSupervisor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q64="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sessionIDs" nillable="true" type="q64:ArrayOfstring" />
+        <xs:element minOccurs="0" name="supervisorID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEngagementSupervisorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveEngagementSupervisorResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePendingChange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePendingChangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePendingChangeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

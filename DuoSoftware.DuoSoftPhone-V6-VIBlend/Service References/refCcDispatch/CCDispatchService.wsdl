@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CCDispatchService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFServicesAPI" />
+      <xsd:import schemaLocation="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DS.DC.CCDispatchService.CCDispatchDataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFaxSender_SendFax_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendFax" />
+  </wsdl:message>
+  <wsdl:message name="IFaxSender_SendFax_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendFaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICallMonitor_CallMonitorOpRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CallMonitorOpRequest" />
+  </wsdl:message>
+  <wsdl:message name="ICallMonitor_CallMonitorOpRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CallMonitorOpRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICallMonitor_DisconnectCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisconnectCall" />
+  </wsdl:message>
+  <wsdl:message name="ICallMonitor_DisconnectCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisconnectCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConference_ConferenceDial_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConferenceDial" />
+  </wsdl:message>
+  <wsdl:message name="IConference_ConferenceDial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConferenceDialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConference_LockConferenceRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:LockConferenceRoom" />
+  </wsdl:message>
+  <wsdl:message name="IConference_LockConferenceRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LockConferenceRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConference_UnlockConferenceRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockConferenceRoom" />
+  </wsdl:message>
+  <wsdl:message name="IConference_UnlockConferenceRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockConferenceRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConference_PlayConference_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayConference" />
+  </wsdl:message>
+  <wsdl:message name="IConference_PlayConference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayConferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConference_RecordConference_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecordConference" />
+  </wsdl:message>
+  <wsdl:message name="IConference_RecordConference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecordConferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConference_RelateConference_InputMessage">
+    <wsdl:part name="parameters" element="tns:RelateConference" />
+  </wsdl:message>
+  <wsdl:message name="IConference_RelateConference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RelateConferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConference_SetMaxConfMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetMaxConfMember" />
+  </wsdl:message>
+  <wsdl:message name="IConference_SetMaxConfMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetMaxConfMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConference_ConferenceUserOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConferenceUserOperation" />
+  </wsdl:message>
+  <wsdl:message name="IConference_ConferenceUserOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConferenceUserOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceServerHelper_MemberAdded_InputMessage">
+    <wsdl:part name="parameters" element="tns:MemberAdded" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceServerHelper_MemberAdded_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MemberAddedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceServerHelper_UpdateMemberOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMemberOperation" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceServerHelper_UpdateMemberOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMemberOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceServerHelper_UpdateMemberStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMemberStatus" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceServerHelper_UpdateMemberStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMemberStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceServerHelper_ValidateConferenceUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateConferenceUser" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceServerHelper_ValidateConferenceUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateConferenceUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceServerHelper_SetActiveTalker_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetActiveTalker" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceServerHelper_SetActiveTalker_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetActiveTalkerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFaxSender">
+    <wsdl:operation name="SendFax">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaxSender/SendFax" message="tns:IFaxSender_SendFax_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaxSender/SendFaxResponse" message="tns:IFaxSender_SendFax_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICallMonitor">
+    <wsdl:operation name="CallMonitorOpRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICallMonitor/CallMonitorOpRequest" message="tns:ICallMonitor_CallMonitorOpRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICallMonitor/CallMonitorOpRequestResponse" message="tns:ICallMonitor_CallMonitorOpRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisconnectCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICallMonitor/DisconnectCall" message="tns:ICallMonitor_DisconnectCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICallMonitor/DisconnectCallResponse" message="tns:ICallMonitor_DisconnectCall_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IConference">
+    <wsdl:operation name="ConferenceDial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConference/ConferenceDial" message="tns:IConference_ConferenceDial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConference/ConferenceDialResponse" message="tns:IConference_ConferenceDial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LockConferenceRoom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConference/LockConferenceRoom" message="tns:IConference_LockConferenceRoom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConference/LockConferenceRoomResponse" message="tns:IConference_LockConferenceRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockConferenceRoom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConference/UnlockConferenceRoom" message="tns:IConference_UnlockConferenceRoom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConference/UnlockConferenceRoomResponse" message="tns:IConference_UnlockConferenceRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayConference">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConference/PlayConference" message="tns:IConference_PlayConference_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConference/PlayConferenceResponse" message="tns:IConference_PlayConference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecordConference">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConference/RecordConference" message="tns:IConference_RecordConference_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConference/RecordConferenceResponse" message="tns:IConference_RecordConference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RelateConference">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConference/RelateConference" message="tns:IConference_RelateConference_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConference/RelateConferenceResponse" message="tns:IConference_RelateConference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMaxConfMember">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConference/SetMaxConfMember" message="tns:IConference_SetMaxConfMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConference/SetMaxConfMemberResponse" message="tns:IConference_SetMaxConfMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConferenceUserOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConference/ConferenceUserOperation" message="tns:IConference_ConferenceUserOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConference/ConferenceUserOperationResponse" message="tns:IConference_ConferenceUserOperation_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IConferenceServerHelper">
+    <wsdl:operation name="MemberAdded">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConferenceServerHelper/MemberAdded" message="tns:IConferenceServerHelper_MemberAdded_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConferenceServerHelper/MemberAddedResponse" message="tns:IConferenceServerHelper_MemberAdded_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConferenceServerHelper/UpdateMemberOperation" message="tns:IConferenceServerHelper_UpdateMemberOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConferenceServerHelper/UpdateMemberOperationResponse" message="tns:IConferenceServerHelper_UpdateMemberOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConferenceServerHelper/UpdateMemberStatus" message="tns:IConferenceServerHelper_UpdateMemberStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConferenceServerHelper/UpdateMemberStatusResponse" message="tns:IConferenceServerHelper_UpdateMemberStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateConferenceUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConferenceServerHelper/ValidateConferenceUser" message="tns:IConferenceServerHelper_ValidateConferenceUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConferenceServerHelper/ValidateConferenceUserResponse" message="tns:IConferenceServerHelper_ValidateConferenceUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetActiveTalker">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConferenceServerHelper/SetActiveTalker" message="tns:IConferenceServerHelper_SetActiveTalker_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConferenceServerHelper/SetActiveTalkerResponse" message="tns:IConferenceServerHelper_SetActiveTalker_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CCFaxOp" type="tns:IFaxSender">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendFax">
+      <soap:operation soapAction="http://tempuri.org/IFaxSender/SendFax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CCCallMonitorEp" type="tns:ICallMonitor">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CallMonitorOpRequest">
+      <soap:operation soapAction="http://tempuri.org/ICallMonitor/CallMonitorOpRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisconnectCall">
+      <soap:operation soapAction="http://tempuri.org/ICallMonitor/DisconnectCall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceEp" type="tns:IConference">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConferenceDial">
+      <soap:operation soapAction="http://tempuri.org/IConference/ConferenceDial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LockConferenceRoom">
+      <soap:operation soapAction="http://tempuri.org/IConference/LockConferenceRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockConferenceRoom">
+      <soap:operation soapAction="http://tempuri.org/IConference/UnlockConferenceRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayConference">
+      <soap:operation soapAction="http://tempuri.org/IConference/PlayConference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecordConference">
+      <soap:operation soapAction="http://tempuri.org/IConference/RecordConference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RelateConference">
+      <soap:operation soapAction="http://tempuri.org/IConference/RelateConference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMaxConfMember">
+      <soap:operation soapAction="http://tempuri.org/IConference/SetMaxConfMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConferenceUserOperation">
+      <soap:operation soapAction="http://tempuri.org/IConference/ConferenceUserOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceServerHelperEp" type="tns:IConferenceServerHelper">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MemberAdded">
+      <soap:operation soapAction="http://tempuri.org/IConferenceServerHelper/MemberAdded" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberOperation">
+      <soap:operation soapAction="http://tempuri.org/IConferenceServerHelper/UpdateMemberOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberStatus">
+      <soap:operation soapAction="http://tempuri.org/IConferenceServerHelper/UpdateMemberStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateConferenceUser">
+      <soap:operation soapAction="http://tempuri.org/IConferenceServerHelper/ValidateConferenceUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetActiveTalker">
+      <soap:operation soapAction="http://tempuri.org/IConferenceServerHelper/SetActiveTalker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CCDispatchService">
+    <wsdl:port name="CCFaxOp" binding="tns:CCFaxOp">
+      <soap:address location="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc/CCFaxOp" />
+    </wsdl:port>
+    <wsdl:port name="CCCallMonitorEp" binding="tns:CCCallMonitorEp">
+      <soap:address location="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc/CCCallMonitorEp" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceEp" binding="tns:ConferenceEp">
+      <soap:address location="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc/ConferenceEp" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceServerHelperEp" binding="tns:ConferenceServerHelperEp">
+      <soap:address location="http://192.168.1.215/DuoSubscribe5/ContactV5Services/CCDispatchService/CCDispatcher.svc/ConferenceServerHelperEp" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

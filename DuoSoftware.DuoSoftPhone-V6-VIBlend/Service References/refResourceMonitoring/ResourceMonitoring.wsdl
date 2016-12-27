@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ResourceMonitoring" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.2.35/DUOSLTV5/ContactV5Services/ResourceMonitoring/Implementation/ResourceMonitoring.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.2.35/DUOSLTV5/ContactV5Services/ResourceMonitoring/Implementation/ResourceMonitoring.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.2.35/DUOSLTV5/ContactV5Services/ResourceMonitoring/Implementation/ResourceMonitoring.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DuoSoftware.DC.ResourceMonitoringService.Classes" />
+      <xsd:import schemaLocation="http://192.168.2.35/DUOSLTV5/ContactV5Services/ResourceMonitoring/Implementation/ResourceMonitoring.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IResourceMonitoring_GetOnlineAgentList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineAgentList" />
+  </wsdl:message>
+  <wsdl:message name="IResourceMonitoring_GetOnlineAgentList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineAgentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceMonitoring_GetCommunicationFaultedAgentList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommunicationFaultedAgentList" />
+  </wsdl:message>
+  <wsdl:message name="IResourceMonitoring_GetCommunicationFaultedAgentList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommunicationFaultedAgentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceMonitoring_GetOnlineAgentDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineAgentDetail" />
+  </wsdl:message>
+  <wsdl:message name="IResourceMonitoring_GetOnlineAgentDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineAgentDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceMonitoring_GetOnlineIdleAgentList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineIdleAgentList" />
+  </wsdl:message>
+  <wsdl:message name="IResourceMonitoring_GetOnlineIdleAgentList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineIdleAgentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceMonitoring_ChangeAgentSkills_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeAgentSkills" />
+  </wsdl:message>
+  <wsdl:message name="IResourceMonitoring_ChangeAgentSkills_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeAgentSkillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceMonitoring_LogoffAgent_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogoffAgent" />
+  </wsdl:message>
+  <wsdl:message name="IResourceMonitoring_LogoffAgent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoffAgentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceMonitoring_GetOnlineAgentsBySkills_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineAgentsBySkills" />
+  </wsdl:message>
+  <wsdl:message name="IResourceMonitoring_GetOnlineAgentsBySkills_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineAgentsBySkillsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IResourceMonitoring">
+    <wsdl:operation name="GetOnlineAgentList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceMonitoring/GetOnlineAgentList" message="tns:IResourceMonitoring_GetOnlineAgentList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceMonitoring/GetOnlineAgentListResponse" message="tns:IResourceMonitoring_GetOnlineAgentList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommunicationFaultedAgentList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceMonitoring/GetCommunicationFaultedAgentList" message="tns:IResourceMonitoring_GetCommunicationFaultedAgentList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceMonitoring/GetCommunicationFaultedAgentListResponse" message="tns:IResourceMonitoring_GetCommunicationFaultedAgentList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineAgentDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceMonitoring/GetOnlineAgentDetail" message="tns:IResourceMonitoring_GetOnlineAgentDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceMonitoring/GetOnlineAgentDetailResponse" message="tns:IResourceMonitoring_GetOnlineAgentDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineIdleAgentList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceMonitoring/GetOnlineIdleAgentList" message="tns:IResourceMonitoring_GetOnlineIdleAgentList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceMonitoring/GetOnlineIdleAgentListResponse" message="tns:IResourceMonitoring_GetOnlineIdleAgentList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAgentSkills">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceMonitoring/ChangeAgentSkills" message="tns:IResourceMonitoring_ChangeAgentSkills_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceMonitoring/ChangeAgentSkillsResponse" message="tns:IResourceMonitoring_ChangeAgentSkills_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogoffAgent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceMonitoring/LogoffAgent" message="tns:IResourceMonitoring_LogoffAgent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceMonitoring/LogoffAgentResponse" message="tns:IResourceMonitoring_LogoffAgent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineAgentsBySkills">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceMonitoring/GetOnlineAgentsBySkills" message="tns:IResourceMonitoring_GetOnlineAgentsBySkills_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceMonitoring/GetOnlineAgentsBySkillsResponse" message="tns:IResourceMonitoring_GetOnlineAgentsBySkills_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IResourceMonitoring" type="tns:IResourceMonitoring">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOnlineAgentList">
+      <soap:operation soapAction="http://tempuri.org/IResourceMonitoring/GetOnlineAgentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommunicationFaultedAgentList">
+      <soap:operation soapAction="http://tempuri.org/IResourceMonitoring/GetCommunicationFaultedAgentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineAgentDetail">
+      <soap:operation soapAction="http://tempuri.org/IResourceMonitoring/GetOnlineAgentDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineIdleAgentList">
+      <soap:operation soapAction="http://tempuri.org/IResourceMonitoring/GetOnlineIdleAgentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAgentSkills">
+      <soap:operation soapAction="http://tempuri.org/IResourceMonitoring/ChangeAgentSkills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogoffAgent">
+      <soap:operation soapAction="http://tempuri.org/IResourceMonitoring/LogoffAgent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineAgentsBySkills">
+      <soap:operation soapAction="http://tempuri.org/IResourceMonitoring/GetOnlineAgentsBySkills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ResourceMonitoring">
+    <wsdl:port name="BasicHttpBinding_IResourceMonitoring" binding="tns:BasicHttpBinding_IResourceMonitoring">
+      <soap:address location="http://192.168.2.35/DUOSLTV5/ContactV5Services/ResourceMonitoring/Implementation/ResourceMonitoring.svc/soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

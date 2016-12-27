@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="auth" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.51.61/DUOSLTV5/CommonServices/Authorization/auth.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.51.61/DUOSLTV5/CommonServices/Authorization/auth.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.51.61/DUOSLTV5/CommonServices/Authorization/auth.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DuoAuthSvr" />
+      <xsd:import schemaLocation="http://192.168.51.61/DUOSLTV5/CommonServices/Authorization/auth.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://192.168.51.61/DUOSLTV5/CommonServices/Authorization/auth.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Iauth_getMD5Hash_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMD5Hash" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_getMD5Hash_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMD5HashResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_ClearLocks_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearLocks" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_ClearLocks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearLocksResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_login_InputMessage">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_Processlogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:Processlogin" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_Processlogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessloginResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_Applogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:Applogin" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_Applogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApploginResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_GetAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccess" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_GetAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_SetAccessCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetAccessCompany" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_SetAccessCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetAccessCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_SetWriteAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetWriteAccess" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_SetWriteAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetWriteAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_ProcessloginForWrite_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessloginForWrite" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_ProcessloginForWrite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessloginForWriteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_GetViewObjectList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewObjectList" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_GetViewObjectList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewObjectListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_getAccountContracts_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAccountContracts" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_getAccountContracts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAccountContractsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_LogOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogOut" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_LogOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_SaveLicense_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicense" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_SaveLicense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_ValidateLicense_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicense" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_ValidateLicense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_GetAccessCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessCompany" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_GetAccessCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_Lock_InputMessage">
+    <wsdl:part name="parameters" element="tns:Lock" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_Lock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LockResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_Release_InputMessage">
+    <wsdl:part name="parameters" element="tns:Release" />
+  </wsdl:message>
+  <wsdl:message name="Iauth_Release_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Iauth">
+    <wsdl:operation name="getMD5Hash">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/getMD5Hash" message="tns:Iauth_getMD5Hash_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/getMD5HashResponse" message="tns:Iauth_getMD5Hash_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearLocks">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/ClearLocks" message="tns:Iauth_ClearLocks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/ClearLocksResponse" message="tns:Iauth_ClearLocks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/login" message="tns:Iauth_login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/loginResponse" message="tns:Iauth_login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Processlogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/Processlogin" message="tns:Iauth_Processlogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/ProcessloginResponse" message="tns:Iauth_Processlogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Applogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/Applogin" message="tns:Iauth_Applogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/ApploginResponse" message="tns:Iauth_Applogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/GetAccess" message="tns:Iauth_GetAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/GetAccessResponse" message="tns:Iauth_GetAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAccessCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/SetAccessCompany" message="tns:Iauth_SetAccessCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/SetAccessCompanyResponse" message="tns:Iauth_SetAccessCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetWriteAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/SetWriteAccess" message="tns:Iauth_SetWriteAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/SetWriteAccessResponse" message="tns:Iauth_SetWriteAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessloginForWrite">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/ProcessloginForWrite" message="tns:Iauth_ProcessloginForWrite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/ProcessloginForWriteResponse" message="tns:Iauth_ProcessloginForWrite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViewObjectList">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/GetViewObjectList" message="tns:Iauth_GetViewObjectList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/GetViewObjectListResponse" message="tns:Iauth_GetViewObjectList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccountContracts">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/getAccountContracts" message="tns:Iauth_getAccountContracts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/getAccountContractsResponse" message="tns:Iauth_getAccountContracts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/LogOut" message="tns:Iauth_LogOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/LogOutResponse" message="tns:Iauth_LogOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicense">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/SaveLicense" message="tns:Iauth_SaveLicense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/SaveLicenseResponse" message="tns:Iauth_SaveLicense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicense">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/ValidateLicense" message="tns:Iauth_ValidateLicense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/ValidateLicenseResponse" message="tns:Iauth_ValidateLicense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/GetAccessCompany" message="tns:Iauth_GetAccessCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/GetAccessCompanyResponse" message="tns:Iauth_GetAccessCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Lock">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/Lock" message="tns:Iauth_Lock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/LockResponse" message="tns:Iauth_Lock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Release">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iauth/Release" message="tns:Iauth_Release_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iauth/ReleaseResponse" message="tns:Iauth_Release_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Iauth" type="tns:Iauth">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getMD5Hash">
+      <soap:operation soapAction="http://tempuri.org/Iauth/getMD5Hash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearLocks">
+      <soap:operation soapAction="http://tempuri.org/Iauth/ClearLocks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction="http://tempuri.org/Iauth/login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Processlogin">
+      <soap:operation soapAction="http://tempuri.org/Iauth/Processlogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Applogin">
+      <soap:operation soapAction="http://tempuri.org/Iauth/Applogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccess">
+      <soap:operation soapAction="http://tempuri.org/Iauth/GetAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAccessCompany">
+      <soap:operation soapAction="http://tempuri.org/Iauth/SetAccessCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetWriteAccess">
+      <soap:operation soapAction="http://tempuri.org/Iauth/SetWriteAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessloginForWrite">
+      <soap:operation soapAction="http://tempuri.org/Iauth/ProcessloginForWrite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViewObjectList">
+      <soap:operation soapAction="http://tempuri.org/Iauth/GetViewObjectList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountContracts">
+      <soap:operation soapAction="http://tempuri.org/Iauth/getAccountContracts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogOut">
+      <soap:operation soapAction="http://tempuri.org/Iauth/LogOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicense">
+      <soap:operation soapAction="http://tempuri.org/Iauth/SaveLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicense">
+      <soap:operation soapAction="http://tempuri.org/Iauth/ValidateLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessCompany">
+      <soap:operation soapAction="http://tempuri.org/Iauth/GetAccessCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lock">
+      <soap:operation soapAction="http://tempuri.org/Iauth/Lock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Release">
+      <soap:operation soapAction="http://tempuri.org/Iauth/Release" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="auth">
+    <wsdl:port name="BasicHttpBinding_Iauth" binding="tns:BasicHttpBinding_Iauth">
+      <soap:address location="http://192.168.51.61/DUOSLTV5/CommonServices/Authorization/auth.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

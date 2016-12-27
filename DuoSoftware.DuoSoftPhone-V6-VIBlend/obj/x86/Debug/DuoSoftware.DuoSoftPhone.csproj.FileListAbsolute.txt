@@ -1,0 +1,133 @@
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\SIPSetting.xml
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.exe.config
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.exe.manifest
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.application
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.exe
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.pdb
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoCallTesterLicenseKey.dll
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\Infragistics2.Shared.v10.2.dll
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\Infragistics2.Win.UltraWinExplorerBar.v10.2.dll
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\Infragistics2.Win.v10.2.dll
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoCallTesterLicenseKey.pdb
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\Infragistics2.Shared.v10.2.xml
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\Infragistics2.Win.UltraWinExplorerBar.v10.2.xml
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\Infragistics2.Win.v10.2.xml
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.csprojResolveAssemblyReference.cache
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\Interop.TAPI3Lib.dll
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.csproj.ResolveComReference.cache
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Properties.Resources.resources
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.AudioWiz.resources
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.CallLogItem.resources
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.frmCallLogs.resources
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.frmIncomingCall.resources
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.FormDialPad.resources
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.frmPhoneConfig.resources
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.Login.resources
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.csproj.GenerateResource.Cache
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.exe.licenses
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.exe.manifest
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.application
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.exe
+I:\Duo Projects\Team Foundation[TFS]\Phone App\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.pdb
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.exe.config
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\Interop.TAPI3Lib.dll
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.csproj.ResolveComReference.cache
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.exe
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.pdb
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\SIPSetting.xml
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.exe.manifest
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.application
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.exe
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.pdb
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoCallTesterLicenseKey.dll
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\Infragistics2.Shared.v10.2.dll
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\Infragistics2.Win.UltraWinExplorerBar.v10.2.dll
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\Infragistics2.Win.v10.2.dll
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\DuoCallTesterLicenseKey.pdb
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\Infragistics2.Shared.v10.2.xml
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\Infragistics2.Win.UltraWinExplorerBar.v10.2.xml
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\bin\Debug\Infragistics2.Win.v10.2.xml
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.csprojResolveAssemblyReference.cache
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Properties.Resources.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.AudioWiz.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.CallLogItem.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.frmCallLogs.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.frmIncomingCall.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.FormDialPad.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.frmPhoneConfig.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.Login.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.csproj.GenerateResource.Cache
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.exe.licenses
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.exe.manifest
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V5.1-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.application
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\SIPSetting.xml
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.exe.config
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.exe.manifest
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.application
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.exe
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.pdb
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoCallTesterLicenseKey.dll
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\Infragistics2.Shared.v10.2.dll
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\Infragistics2.Win.UltraWinExplorerBar.v10.2.dll
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\Infragistics2.Win.v10.2.dll
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\jose-jwt.dll
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoCallTesterLicenseKey.pdb
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\Infragistics2.Shared.v10.2.xml
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\Infragistics2.Win.UltraWinExplorerBar.v10.2.xml
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\Infragistics2.Win.v10.2.xml
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.csprojResolveAssemblyReference.cache
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\Interop.TAPI3Lib.dll
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.csproj.ResolveComReference.cache
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Properties.Resources.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.AgentList.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.AudioWiz.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.CallLogItem.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.frmCallLogs.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.frmIncomingCall.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.FormDialPad.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.frmPhoneConfig.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.Login.resources
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.csproj.GenerateResource.Cache
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.exe.licenses
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.exe.manifest
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.application
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.exe
+I:\Duo Projects\TFS Online\Duo Softphone\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.pdb
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.csprojResolveAssemblyReference.cache
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\Interop.TAPI3Lib.dll
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.csproj.ResolveComReference.cache
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Properties.Resources.resources
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.AgentList.resources
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.AudioWiz.resources
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.CallLogItem.resources
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.frmCallLogs.resources
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.frmIncomingCall.resources
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.FormDialPad.resources
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.frmPhoneConfig.resources
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.Login.resources
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.csproj.GenerateResource.Cache
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\SIPSetting.xml
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.exe.config
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.exe.manifest
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.application
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.exe
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoSoftware.DuoSoftPhone.pdb
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoCallTesterLicenseKey.dll
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\jose-jwt.dll
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\DuoCallTesterLicenseKey.pdb
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\Infragistics2.Shared.v10.2.xml
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\Infragistics2.Win.UltraWinExplorerBar.v10.2.xml
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\Infragistics2.Win.v10.2.xml
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.exe.manifest
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.application
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.exe
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.pdb
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\SuperSocket.Common.dll
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\SuperSocket.SocketBase.dll
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\SuperSocket.SocketEngine.dll
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\SuperWebSocket.dll
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\SuperSocket.Common.pdb
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\SuperSocket.SocketBase.pdb
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\SuperSocket.SocketEngine.pdb
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\SuperWebSocket.pdb
+E:\DuoProject\Applications\DuoSoftware.DuoSoftPhone-V6-VIBlend\bin\Debug\SuperWebSocket.xml

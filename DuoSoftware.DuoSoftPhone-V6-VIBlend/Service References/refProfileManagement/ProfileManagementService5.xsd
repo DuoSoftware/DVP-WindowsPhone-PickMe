@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/V5ProfileManagement/duosubscriberprofilemangement/ProfileManagementService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" />
+  <xs:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/V5ProfileManagement/duosubscriberprofilemangement/ProfileManagementService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://192.168.1.215/DuoSubscribe5/V5Services/V5ProfileManagement/duosubscriberprofilemangement/ProfileManagementService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/Message" />
+  <xs:element name="UpdateApps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="Applications" nillable="true" type="q1:ArrayOfApplication" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAppsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="UpdateAppsResult" nillable="true" type="q2:ArrayOfApplication" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="newApplication" nillable="true" type="q3:Application" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="AddApplicationResult" nillable="true" type="q4:Application" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="editApplication" nillable="true" type="q5:Application" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="EditApplicationResult" nillable="true" type="q6:Application" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="deleteApplication" nillable="true" type="q7:Application" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="DeleteApplicationResult" nillable="true" type="q8:Application" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllApplications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllApplicationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="GetAllApplicationsResult" nillable="true" type="q9:ArrayOfApplication" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationsByCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationsByCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="GetApplicationsByCategoryResult" nillable="true" type="q10:ArrayOfApplication" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="newCataegory" nillable="true" type="q11:Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="AddCategoryResult" nillable="true" type="q12:Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="editCategory" nillable="true" type="q13:Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="EditCategoryResult" nillable="true" type="q14:Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="deleteCategory" nillable="true" type="q15:Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="DeleteCategoryResult" nillable="true" type="q16:Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="GetAllCategoriesResult" nillable="true" type="q17:ArrayOfCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationsForUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationsForUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="GetApplicationsForUserResult" nillable="true" type="q18:ArrayOfApplication" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalizedUi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalizedUiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="GetPersonalizedUiResult" nillable="true" type="q19:Personalization" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePersonalizedUI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePersonalizedUIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="CreatePersonalizedUIResult" nillable="true" type="q20:Personalization" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditPersonalizedUI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="editPersonalization" nillable="true" type="q21:Personalization" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditPersonalizedUIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="EditPersonalizedUIResult" nillable="true" type="q22:Personalization" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePersonalizedUI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePersonalizedUIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePersonalizedUIResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSpecificApplicationByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSpecificApplicationByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="getSpecificApplicationByCodeResult" nillable="true" type="q23:Application" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSpecificApplicationByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guApplicationID" type="xs:decimal" />
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSpecificApplicationByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DuoSoftware.Subscriber.ProfileManagement" minOccurs="0" name="getSpecificApplicationByIDResult" nillable="true" type="q24:Application" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAppSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="settings" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="guUserId" type="xs:decimal" />
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAppSettingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAppSettingsResult" nillable="true" type="q25:ArrayOfKeyValueOfstringanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalizedUiStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalizedUiStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.microsoft.com/Message" name="GetPersonalizedUiStreamResult" type="q26:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditPersonalizedUiStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.microsoft.com/Message" name="xmlStream" type="q27:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditPersonalizedUiStreamResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guApplicationID" type="xs:decimal" />
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationSettingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetApplicationSettingsResult" nillable="true" type="q28:ArrayOfKeyValueOfstringanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateApplicationSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="applicationData" nillable="true" type="q29:ArrayOfKeyValueOfdecimalArrayOfKeyValueOfstringanyTypety7Ep6D1" />
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateApplicationSettingsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GUUserId" type="xs:decimal" />
+        <xs:element minOccurs="0" name="configurationName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="configurationSettings" nillable="true" type="q30:ArrayOfKeyValueOfstringanyType" />
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserSettingsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

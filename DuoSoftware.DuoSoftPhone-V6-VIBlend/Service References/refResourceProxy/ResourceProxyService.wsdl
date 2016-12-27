@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ResourceProxyService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://duo-appsvr01:5430/ResourceProxy?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://duo-appsvr01:5430/ResourceProxy?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://duo-appsvr01:5430/ResourceProxy?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" />
+      <xsd:import schemaLocation="http://duo-appsvr01:5430/ResourceProxy?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IResourceProxyServices_ResourceRegistration_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceRegistration" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_ResourceRegistration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_ResourceUnregistration_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceUnregistration" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_ResourceUnregistration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceUnregistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_ResourceForceLogoff_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceForceLogoff" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_ResourceForceLogoff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceForceLogoffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_CancelResourceUnregisterRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelResourceUnregisterRequest" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_CancelResourceUnregisterRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelResourceUnregisterRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendACWFreezRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendACWFreezRequest" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendACWFreezRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendACWFreezRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_CancelModeChangeRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelModeChangeRequest" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_CancelModeChangeRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelModeChangeRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_CancelStatusChangeRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelStatusChangeRequest" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_CancelStatusChangeRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelStatusChangeRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendModeChangeRequestInbound_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendModeChangeRequestInbound" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendModeChangeRequestInbound_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendModeChangeRequestInboundResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendModeChangeRequestOutbound_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendModeChangeRequestOutbound" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendModeChangeRequestOutbound_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendModeChangeRequestOutboundResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendModeChangeRequestOffline_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendModeChangeRequestOffline" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendModeChangeRequestOffline_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendModeChangeRequestOfflineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendStatusChangeRequestIdel_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendStatusChangeRequestIdel" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendStatusChangeRequestIdel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendStatusChangeRequestIdelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendStatusChangeRequestBreak_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendStatusChangeRequestBreak" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendStatusChangeRequestBreak_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendStatusChangeRequestBreakResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_ResourceModeChange_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceModeChange" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_ResourceModeChange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceModeChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_ResourceStatusChangeBreak_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceStatusChangeBreak" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_ResourceStatusChangeBreak_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceStatusChangeBreakResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_ResourceStatusChangeACW_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceStatusChangeACW" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_ResourceStatusChangeACW_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceStatusChangeACWResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_ResourceStatusChangeBusy_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceStatusChangeBusy" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_ResourceStatusChangeBusy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResourceStatusChangeBusyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendStatusChangeRequestDoNotDisturb_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendStatusChangeRequestDoNotDisturb" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_SendStatusChangeRequestDoNotDisturb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendStatusChangeRequestDoNotDisturbResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_AddResourceToSuspendList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddResourceToSuspendList" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_AddResourceToSuspendList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResourceToSuspendListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_RemoveResourceFromSuspendList_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveResourceFromSuspendList" />
+  </wsdl:message>
+  <wsdl:message name="IResourceProxyServices_RemoveResourceFromSuspendList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveResourceFromSuspendListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IResourceProxyServices">
+    <wsdl:operation name="ResourceRegistration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceRegistration" message="tns:IResourceProxyServices_ResourceRegistration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceRegistrationResponse" message="tns:IResourceProxyServices_ResourceRegistration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResourceUnregistration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceUnregistration" message="tns:IResourceProxyServices_ResourceUnregistration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceUnregistrationResponse" message="tns:IResourceProxyServices_ResourceUnregistration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResourceForceLogoff">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceForceLogoff" message="tns:IResourceProxyServices_ResourceForceLogoff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceForceLogoffResponse" message="tns:IResourceProxyServices_ResourceForceLogoff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelResourceUnregisterRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/CancelResourceUnregisterRequest" message="tns:IResourceProxyServices_CancelResourceUnregisterRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/CancelResourceUnregisterRequestResponse" message="tns:IResourceProxyServices_CancelResourceUnregisterRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendACWFreezRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/SendACWFreezRequest" message="tns:IResourceProxyServices_SendACWFreezRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/SendACWFreezRequestResponse" message="tns:IResourceProxyServices_SendACWFreezRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelModeChangeRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/CancelModeChangeRequest" message="tns:IResourceProxyServices_CancelModeChangeRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/CancelModeChangeRequestResponse" message="tns:IResourceProxyServices_CancelModeChangeRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelStatusChangeRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/CancelStatusChangeRequest" message="tns:IResourceProxyServices_CancelStatusChangeRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/CancelStatusChangeRequestResponse" message="tns:IResourceProxyServices_CancelStatusChangeRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendModeChangeRequestInbound">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/SendModeChangeRequestInbound" message="tns:IResourceProxyServices_SendModeChangeRequestInbound_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/SendModeChangeRequestInboundResponse" message="tns:IResourceProxyServices_SendModeChangeRequestInbound_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendModeChangeRequestOutbound">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/SendModeChangeRequestOutbound" message="tns:IResourceProxyServices_SendModeChangeRequestOutbound_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/SendModeChangeRequestOutboundResponse" message="tns:IResourceProxyServices_SendModeChangeRequestOutbound_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendModeChangeRequestOffline">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/SendModeChangeRequestOffline" message="tns:IResourceProxyServices_SendModeChangeRequestOffline_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/SendModeChangeRequestOfflineResponse" message="tns:IResourceProxyServices_SendModeChangeRequestOffline_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendStatusChangeRequestIdel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/SendStatusChangeRequestIdel" message="tns:IResourceProxyServices_SendStatusChangeRequestIdel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/SendStatusChangeRequestIdelResponse" message="tns:IResourceProxyServices_SendStatusChangeRequestIdel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendStatusChangeRequestBreak">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/SendStatusChangeRequestBreak" message="tns:IResourceProxyServices_SendStatusChangeRequestBreak_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/SendStatusChangeRequestBreakResponse" message="tns:IResourceProxyServices_SendStatusChangeRequestBreak_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResourceModeChange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceModeChange" message="tns:IResourceProxyServices_ResourceModeChange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceModeChangeResponse" message="tns:IResourceProxyServices_ResourceModeChange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResourceStatusChangeBreak">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceStatusChangeBreak" message="tns:IResourceProxyServices_ResourceStatusChangeBreak_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceStatusChangeBreakResponse" message="tns:IResourceProxyServices_ResourceStatusChangeBreak_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResourceStatusChangeACW">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceStatusChangeACW" message="tns:IResourceProxyServices_ResourceStatusChangeACW_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceStatusChangeACWResponse" message="tns:IResourceProxyServices_ResourceStatusChangeACW_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResourceStatusChangeBusy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceStatusChangeBusy" message="tns:IResourceProxyServices_ResourceStatusChangeBusy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/ResourceStatusChangeBusyResponse" message="tns:IResourceProxyServices_ResourceStatusChangeBusy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendStatusChangeRequestDoNotDisturb">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/SendStatusChangeRequestDoNotDisturb" message="tns:IResourceProxyServices_SendStatusChangeRequestDoNotDisturb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/SendStatusChangeRequestDoNotDisturbResponse" message="tns:IResourceProxyServices_SendStatusChangeRequestDoNotDisturb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddResourceToSuspendList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/AddResourceToSuspendList" message="tns:IResourceProxyServices_AddResourceToSuspendList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/AddResourceToSuspendListResponse" message="tns:IResourceProxyServices_AddResourceToSuspendList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveResourceFromSuspendList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceProxyServices/RemoveResourceFromSuspendList" message="tns:IResourceProxyServices_RemoveResourceFromSuspendList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceProxyServices/RemoveResourceFromSuspendListResponse" message="tns:IResourceProxyServices_RemoveResourceFromSuspendList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IResourceProxyServices" type="tns:IResourceProxyServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ResourceRegistration">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/ResourceRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResourceUnregistration">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/ResourceUnregistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResourceForceLogoff">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/ResourceForceLogoff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelResourceUnregisterRequest">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/CancelResourceUnregisterRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendACWFreezRequest">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/SendACWFreezRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelModeChangeRequest">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/CancelModeChangeRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelStatusChangeRequest">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/CancelStatusChangeRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendModeChangeRequestInbound">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/SendModeChangeRequestInbound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendModeChangeRequestOutbound">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/SendModeChangeRequestOutbound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendModeChangeRequestOffline">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/SendModeChangeRequestOffline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendStatusChangeRequestIdel">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/SendStatusChangeRequestIdel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendStatusChangeRequestBreak">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/SendStatusChangeRequestBreak" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResourceModeChange">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/ResourceModeChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResourceStatusChangeBreak">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/ResourceStatusChangeBreak" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResourceStatusChangeACW">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/ResourceStatusChangeACW" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResourceStatusChangeBusy">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/ResourceStatusChangeBusy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendStatusChangeRequestDoNotDisturb">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/SendStatusChangeRequestDoNotDisturb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddResourceToSuspendList">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/AddResourceToSuspendList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveResourceFromSuspendList">
+      <soap:operation soapAction="http://tempuri.org/IResourceProxyServices/RemoveResourceFromSuspendList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ResourceProxyService">
+    <wsdl:port name="BasicHttpBinding_IResourceProxyServices" binding="tns:BasicHttpBinding_IResourceProxyServices">
+      <soap:address location="http://duo-appsvr01:5430/ResourceProxy" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

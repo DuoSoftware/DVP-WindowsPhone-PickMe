@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://duo-appsvr01:5430/ResourceProxy?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" />
+  <xs:import schemaLocation="http://duo-appsvr01:5430/ResourceProxy?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ResourceProxyReplyData.ResourceProxyReply">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="Command" type="q1:WorkflowResultCode" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="CommunicationMode" type="q2:CommunicationModes" />
+      <xs:element minOccurs="0" name="ExtraData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Port" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SequenceNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="SessionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="XMPPUser" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceProxyReplyData.ResourceProxyReply" nillable="true" type="tns:ResourceProxyReplyData.ResourceProxyReply" />
+</xs:schema>

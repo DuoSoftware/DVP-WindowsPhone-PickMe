@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DuoAuthSvr" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DuoAuthSvr" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.51.61/DUOSLTV5/CommonServices/Authorization/auth.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="UserAuth">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountContracts" nillable="true" type="tns:ArrayOfAccountContracts" />
+      <xs:element minOccurs="0" name="AccountRelated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Application" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CompanyIDs" nillable="true" type="q1:ArrayOfint" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Data" nillable="true" type="q2:ArrayOfKeyValueOfstringstring" />
+      <xs:element minOccurs="0" name="IgnoreViweObj" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ObjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenantID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TenantIDs" nillable="true" type="q3:ArrayOfint" />
+      <xs:element minOccurs="0" name="TokenExpireOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Write" type="xs:boolean" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="guUserGrpID" nillable="true" type="q4:ArrayOfdecimal" />
+      <xs:element minOccurs="0" name="guUserId" type="xs:long" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="viweObjectIDs" nillable="true" type="q5:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserAuth" nillable="true" type="tns:UserAuth" />
+  <xs:complexType name="ArrayOfAccountContracts">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountContracts" nillable="true" type="tns:AccountContracts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccountContracts" nillable="true" type="tns:ArrayOfAccountContracts" />
+  <xs:complexType name="AccountContracts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GUAccountID" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GUPromotionID" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountContracts" nillable="true" type="tns:AccountContracts" />
+  <xs:complexType name="ArrayOfViewObjects">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewObjects" nillable="true" type="tns:ViewObjects" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViewObjects" nillable="true" type="tns:ArrayOfViewObjects" />
+  <xs:complexType name="ViewObjects">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parentID" type="xs:int" />
+      <xs:element minOccurs="0" name="viweObjectID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewObjects" nillable="true" type="tns:ViewObjects" />
+</xs:schema>

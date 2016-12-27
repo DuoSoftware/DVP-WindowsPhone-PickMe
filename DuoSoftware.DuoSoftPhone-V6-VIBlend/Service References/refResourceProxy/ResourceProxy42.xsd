@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://duo-appsvr01:5430/ResourceProxy?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" />
+  <xs:import schemaLocation="http://duo-appsvr01:5430/ResourceProxy?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" />
+  <xs:element name="ResourceRegistration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q1:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceRegistrationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="ResourceRegistrationResult" type="q2:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceUnregistration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q3:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceUnregistrationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="ResourceUnregistrationResult" type="q4:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceForceLogoff">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q5:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceForceLogoffResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="ResourceForceLogoffResult" type="q6:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelResourceUnregisterRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q7:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelResourceUnregisterRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="CancelResourceUnregisterRequestResult" type="q8:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendACWFreezRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q9:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendACWFreezRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="SendACWFreezRequestResult" type="q10:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelModeChangeRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q11:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelModeChangeRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="CancelModeChangeRequestResult" type="q12:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelStatusChangeRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q13:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelStatusChangeRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="CancelStatusChangeRequestResult" type="q14:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendModeChangeRequestInbound">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q15:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendModeChangeRequestInboundResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="SendModeChangeRequestInboundResult" type="q16:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendModeChangeRequestOutbound">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q17:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendModeChangeRequestOutboundResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="SendModeChangeRequestOutboundResult" type="q18:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendModeChangeRequestOffline">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q19:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendModeChangeRequestOfflineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="SendModeChangeRequestOfflineResult" type="q20:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendStatusChangeRequestIdel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q21:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="breakReason" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendStatusChangeRequestIdelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="SendStatusChangeRequestIdelResult" type="q22:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendStatusChangeRequestBreak">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q23:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="breakReason" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendStatusChangeRequestBreakResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="SendStatusChangeRequestBreakResult" type="q24:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceModeChange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q25:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceModeChangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="ResourceModeChangeResult" type="q26:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceStatusChangeBreak">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q27:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceStatusChangeBreakResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="ResourceStatusChangeBreakResult" type="q28:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceStatusChangeACW">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q29:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceStatusChangeACWResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="ResourceStatusChangeACWResult" type="q30:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceStatusChangeBusy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q31:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceStatusChangeBusyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="ResourceStatusChangeBusyResult" type="q32:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendStatusChangeRequestDoNotDisturb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmppUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew.Enums" minOccurs="0" name="communicationMode" type="q33:CommunicationModes" />
+        <xs:element minOccurs="0" name="sequenceNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="breakReason" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraData" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendStatusChangeRequestDoNotDisturbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/ResourceProxyConsoleAppNew" minOccurs="0" name="SendStatusChangeRequestDoNotDisturbResult" type="q34:ResourceProxyReplyData.ResourceProxyReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResourceToSuspendList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="guUserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="company" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResourceToSuspendListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddResourceToSuspendListResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveResourceFromSuspendList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="guUserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="company" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveResourceFromSuspendListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveResourceFromSuspendListResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
