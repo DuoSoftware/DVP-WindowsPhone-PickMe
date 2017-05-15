@@ -36,6 +36,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
         {
             settingObject = System.Configuration.ConfigurationSettings.AppSettings;
             jsonSerializer = new JavaScriptSerializer();
+            
         }
 
         public static AgentProfile Instance
@@ -65,7 +66,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
         public Server server { private set; get; }
         public object veeryFormat { private set; get; }
         public int acwTime { private set; get; }
-
+        public bool autoAnswer { private set; get; }
         private string GetLocalIPAddress()
         {
             try
@@ -137,6 +138,16 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
             if (!data["IsSuccess"]) return false;
             veeryFormat = data["Result"];
             return true;
+        }
+
+        private bool IsAutoAnswerEnable()
+        {
+            var url = settingObject["userServiceBaseUrl"] + "Phone/Config";
+            var responseData = HttpHandler.MakeRequest(url, "Bearer " + server.token, null, "get");
+
+            var data = jsonSerializer.Deserialize<Dictionary<string, dynamic>>(responseData.ToString());
+            if (!data["IsSuccess"]) return false;
+            return data["Result"]["autoAnswer"];
         }
 
         private struct HandlingTypes
@@ -236,8 +247,10 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                 };
                 localIPAddress = GetLocalIPAddress();
                 acwTime = ardsHandler.GetAcwTime(this);
-
-                return GetContactVeeryFormat() && RegisterWithArds();
+                var retValue = GetContactVeeryFormat() && RegisterWithArds();
+                if (retValue)
+                    autoAnswer = IsAutoAnswerEnable();
+                return retValue;
             }
             catch (Exception exception)
             {

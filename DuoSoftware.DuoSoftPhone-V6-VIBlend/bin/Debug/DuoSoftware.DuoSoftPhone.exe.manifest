@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>f6NFtofYsALBkwm4rcl3kGMWGPKfEA8aJg18nEdx8jk=</dsig:DigestValue>
+        <dsig:DigestValue>ivu09C2gsRLdQfeeaczIzAroqLr/vgqo7q1RyaaKVnY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2129408">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2129920">
       <assemblyIdentity name="DuoSoftware.DuoSoftPhone" version="5.0.0.7" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>x1wgYS6G+2zsaZGVa/XFGzDvcCZyiz3Wx2td+7p8WEU=</dsig:DigestValue>
+        <dsig:DigestValue>VJjZFN5sJGz+uNEjovUKcHk5+Vyl+++SWVsVc5he9yk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

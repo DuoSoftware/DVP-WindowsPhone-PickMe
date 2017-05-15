@@ -2263,6 +2263,10 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
                 InitiateWebSocket();
 
+                AutoAnswer.Enabled = !_agent.Profile.autoAnswer;
+                AutoAnswer.Checked= _agent.Profile.autoAnswer;
+                AutoAnswer.BackColor = AutoAnswer.Checked ? Color.DarkGreen : Color.Black;
+
             }
             catch (Exception exception)
             {
