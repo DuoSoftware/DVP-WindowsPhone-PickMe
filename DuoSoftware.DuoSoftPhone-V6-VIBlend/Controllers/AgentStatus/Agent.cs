@@ -10,6 +10,7 @@ using DuoSoftware.DuoSoftPhone.Controllers.Common;
 using DuoSoftware.DuoSoftPhone.Controllers.Service;
 using DuoSoftware.DuoSoftPhone.refResourceProxy;
 using DuoSoftware.DuoSoftPhone.refUserAuth;
+using System.Web.Script.Serialization;
 
 namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
 {
@@ -220,6 +221,8 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger2, "InitializeArdsEvent", exception,Logger.LogLevel.Error);
             }
         }
+
+       
 
         #endregion
 

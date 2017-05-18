@@ -1322,7 +1322,59 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             }
         }
 
-        
+        private void TransferIvr()
+        {
+            try
+            {
+                Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, string.Format("transferIvr_Click-> Session Id : {0} , Status : {1}", call.CallSessionId, call.CallCurrentState), Logger.LogLevel.Info);
+                if (!String.IsNullOrEmpty(textBoxNumber.Text))
+                {
+                    var setting = VeerySetting.Instance;
+                    var tranNo = textBoxNumber.Text.Trim();
+
+                    var dtmfSet = setting.TransferIvrCode;
+
+                    foreach (var d in dtmfSet)
+                    {
+                        try
+                        {
+                            SendDTMF(setting.DtmfValues[d]);
+                        }
+                        catch (Exception exception)
+                        {
+                            Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "TransferIvr-SendDTMF", exception, Logger.LogLevel.Error);
+                        }
+                    }
+                    Thread.Sleep(1000);
+                    tranNo = string.Format("{0}#", tranNo);
+                    foreach (var d in tranNo.ToCharArray())
+                    {
+                        try
+                        {
+                            SendDTMF(setting.DtmfValues[d]);
+
+                        }
+                        catch (Exception exception)
+                        {
+                            Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "TransferIvr-SendDTMF", exception, Logger.LogLevel.Error);
+                        }
+                    }
+
+                    //var res = phoneController.sendInfo(call.portSipSessionId, "text", "plain", "transfer:" + textBoxNumber.Text);
+                    //if (res == 0)
+                    //    call.CallCurrentState.OnTransferReq(ref call, CallActions.Call_Transfer_Requested);
+                    //txtStatus.Text = Environment.NewLine + (res != 0 ? "Transfer Failed." : "Transferring Call...");
+                    if (!source.Contains(textBoxNumber.Text))
+                        source.Add(textBoxNumber.Text);
+
+
+                }
+            }
+            catch (Exception exception)
+            {
+                Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "", exception, Logger.LogLevel.Error);
+            }
+        }
         private void MakeCall(string no)
         {
             try
@@ -1534,8 +1586,9 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         {
             try
             {
-                return;
+                
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, string.Format("transferIvr_Click-> Session Id : {0} , Status : {1}", _agent.CallSessionId, call.CallCurrentState), Logger.LogLevel.Info);
+                panelIvrList.Visible = true;
                 //if (this.State != DialerState.NotOnCall)
                 //{
                 //    if (this.State == DialerState.OnHold)
@@ -1814,7 +1867,15 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
         #region FormEvents
 
-        
+        private void grdIvrList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxNumber.Text = grdIvrList[1, e.RowIndex].Value.ToString();
+            TransferIvr();
+        }
+        private void btnIvrList_Click(object sender, System.EventArgs e)
+        {
+            panelIvrList.Visible = false;
+        }
 
         private void btnLoadAgentList_Click(object sender, System.EventArgs e)
         {
@@ -2267,6 +2328,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 AutoAnswer.Checked= _agent.Profile.autoAnswer;
                 AutoAnswer.BackColor = AutoAnswer.Checked ? Color.DarkGreen : Color.Black;
 
+                grdIvrList.DataSource = _agent.Profile.ivrList;
             }
             catch (Exception exception)
             {
@@ -3790,6 +3852,9 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     }
                     setPhonePanelLocation();
                     //PanelPhone.Visible = true;
+                    panelIvrList.Visible = false;
+
+                    
                 })));
 
                 //_agent.CallSessionId = string.Empty;
@@ -3850,7 +3915,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
                     buttonAnswer.Enabled = false;
                     buttonReject.Enabled = true;
-                    buttontransferIvr.Enabled = false;
+                    buttontransferIvr.Enabled = true;
                     buttontransferCall.Enabled = true;
                     buttonEtl.Enabled = true;
                     buttonswapCall.Enabled = false;
@@ -4101,7 +4166,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     answerCallToolStripMenuItem.Enabled = false;
                     rejectCallToolStripMenuItem.Enabled = false;
                     holdCallToolStripMenuItem.Enabled = false;
-
+                    panelIvrList.Visible = false;
                 })));
             }
             catch (Exception exception)
@@ -4378,6 +4443,10 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
 
         #endregion
+
+        
+
+       
 
        
     }

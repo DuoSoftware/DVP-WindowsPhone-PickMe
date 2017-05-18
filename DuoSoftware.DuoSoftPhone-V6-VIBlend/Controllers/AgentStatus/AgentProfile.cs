@@ -11,6 +11,7 @@ using DuoSoftware.DuoTools.DuoLogger;
 using Newtonsoft.Json.Linq;
 using Quobject.Collections.Immutable;
 using Quobject.SocketIoClientDotNet.Client;
+using System.Data;
 
 namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
 {
@@ -36,7 +37,9 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
         {
             settingObject = System.Configuration.ConfigurationSettings.AppSettings;
             jsonSerializer = new JavaScriptSerializer();
-            
+            ivrList = new DataTable("ivrlist");
+            ivrList.Columns.Add("ExtensionName");
+            ivrList.Columns.Add("Extension");
         }
 
         public static AgentProfile Instance
@@ -67,6 +70,8 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
         public object veeryFormat { private set; get; }
         public int acwTime { private set; get; }
         public bool autoAnswer { private set; get; }
+        public DataTable ivrList { get; set; }
+
         private string GetLocalIPAddress()
         {
             try
@@ -150,6 +155,27 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
             return data["Result"]["autoAnswer"];
         }
 
+        private void GetIvrList()
+        {
+            try
+            {
+                var url = settingObject["sipuserUrl"] + "SipUser/ExtensionsByCategory/IVR";
+                var responseData = HttpHandler.MakeRequest(url, "Bearer " + server.token, null, "get");
+
+                var data = jsonSerializer.Deserialize<Dictionary<string, dynamic>>(responseData.ToString());
+                foreach(var row in data["Result"]){
+                    DataRow rw = ivrList.NewRow();
+                    rw["ExtensionName"] = row["ExtensionName"];
+                    rw["Extension"] = row["Extension"];
+                    ivrList.Rows.Add(rw);
+                }                
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
+
         private struct HandlingTypes
         {
             public string Type;
@@ -219,8 +245,9 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                 data.grant_type = "password";
                 data.username = username;
                 data.password = txtPassword;
+                //["all_all", "profile_veeryaccount", "write_ardsresource", "write_notification", "read_myUserProfile", "read_productivity", "profile_veeryaccount", "resourceid"];
                 data.scope =
-                    "write_ardsresource write_notification read_myUserProfile read_requestmeta write_sysmonitoring profile_veeryaccount resourceid";
+                    "all_all write_ardsresource write_notification read_myUserProfile read_requestmeta write_sysmonitoring profile_veeryaccount resourceid";
 
 
                 var token = HttpHandler.MakeRequest(userServiceUrl, "Basic " + encoded, data, "post");
@@ -250,6 +277,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                 var retValue = GetContactVeeryFormat() && RegisterWithArds();
                 if (retValue)
                     autoAnswer = IsAutoAnswerEnable();
+                GetIvrList();
                 return retValue;
             }
             catch (Exception exception)
@@ -258,6 +286,8 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                 return false;
             }
         }
+
+
 
         
     }

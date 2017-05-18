@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ivu09C2gsRLdQfeeaczIzAroqLr/vgqo7q1RyaaKVnY=</dsig:DigestValue>
+        <dsig:DigestValue>gprgC/8gPrbRj3Kz+uQXz/lRX4vdBzuG68oYvNA9OH4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2129920">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2134016">
       <assemblyIdentity name="DuoSoftware.DuoSoftPhone" version="5.0.0.7" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VJjZFN5sJGz+uNEjovUKcHk5+Vyl+++SWVsVc5he9yk=</dsig:DigestValue>
+        <dsig:DigestValue>kqAQwCWdkZZueIEu9NxqcRvRTY4kzZRNmncORIha9WI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -471,13 +471,13 @@
       <dsig:DigestValue>enpuLqVkc2SCHBgx9vP86a+CvIo8FeksjGwqkwPbAvM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DuoSoftware.DuoSoftPhone.exe.config" size="29158">
+  <file name="DuoSoftware.DuoSoftPhone.exe.config" size="29311">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>a9r+wjAFSmdBl9HAhzU/fXSyNf04MBcyufsSFKBp5/I=</dsig:DigestValue>
+      <dsig:DigestValue>eixgNzTHkpgQy9tKGin4jliXYORELHY71iVoq2rReQU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SIPSetting.xml" size="430" writeableType="applicationData">

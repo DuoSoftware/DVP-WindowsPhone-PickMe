@@ -22,6 +22,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers
                 var section = (NameValueCollection)ConfigurationManager.GetSection("VeerySetting");
                 TransferExtCode = section["TransferExtCode"].ToCharArray();
                 TransferPhnCode = section["TransferPhnCode"].ToCharArray();
+                TransferIvrCode = section["TransferIvrCode"].ToCharArray();
                 SwapCode = section["SwapCode"].ToCharArray();
                 ConferenceCode = section["ConferenceCode"].ToCharArray();
                 EtlCode = section["EtlCode"].ToCharArray();
@@ -75,6 +76,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers
 
         public char[] TransferExtCode { get; private set; }
         public char[] TransferPhnCode { get; private set; }
+        public char[] TransferIvrCode { get; private set; }
         public char[] SwapCode { get; private set; }
         public char[] ConferenceCode { get; private set; }
         public char[] EtlCode { get; private set; }

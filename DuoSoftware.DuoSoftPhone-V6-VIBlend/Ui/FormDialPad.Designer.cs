@@ -102,12 +102,19 @@
             this.picSpek = new System.Windows.Forms.PictureBox();
             this.LogoDisplay = new System.Windows.Forms.PictureBox();
             this.buttonReject = new VIBlend.WinForms.Controls.vButton();
+            this.panelIvrList = new System.Windows.Forms.Panel();
+            this.grdIvrList = new System.Windows.Forms.DataGridView();
+            this.ExtensionName = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Extension = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnIvrList = new System.Windows.Forms.Button();
             this.gbBreakMode.SuspendLayout();
             this.PhoneStatusStrip.SuspendLayout();
             this.phoner8ClickMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSpek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoDisplay)).BeginInit();
+            this.panelIvrList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdIvrList)).BeginInit();
             this.SuspendLayout();
             // 
             // button_key_1
@@ -408,7 +415,7 @@
             this.buttontransferIvr.RoundedCornersMask = ((byte)(15));
             this.buttontransferIvr.Size = new System.Drawing.Size(78, 42);
             this.buttontransferIvr.TabIndex = 42;
-            this.buttontransferIvr.Text = "...";
+            this.buttontransferIvr.Text = "IVR";
             this.buttontransferIvr.UseVisualStyleBackColor = false;
             this.buttontransferIvr.VIBlendTheme = VIBlend.Utilities.VIBLEND_THEME.VISTABLUE;
             this.buttontransferIvr.Click += new System.EventHandler(this.buttontransferIvr_Click);
@@ -1013,6 +1020,71 @@
             this.buttonReject.VIBlendTheme = VIBlend.Utilities.VIBLEND_THEME.VISTABLUE;
             this.buttonReject.Click += new System.EventHandler(this.buttonReject_Click);
             // 
+            // panelIvrList
+            // 
+            this.panelIvrList.Controls.Add(this.grdIvrList);
+            this.panelIvrList.Controls.Add(this.btnIvrList);
+            this.panelIvrList.Location = new System.Drawing.Point(0, 198);
+            this.panelIvrList.Name = "panelIvrList";
+            this.panelIvrList.Size = new System.Drawing.Size(257, 296);
+            this.panelIvrList.TabIndex = 64;
+            this.panelIvrList.Visible = false;
+            // 
+            // grdIvrList
+            // 
+            this.grdIvrList.AllowUserToAddRows = false;
+            this.grdIvrList.AllowUserToDeleteRows = false;
+            this.grdIvrList.AllowUserToOrderColumns = true;
+            this.grdIvrList.AllowUserToResizeColumns = false;
+            this.grdIvrList.AllowUserToResizeRows = false;
+            this.grdIvrList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.grdIvrList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.grdIvrList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.grdIvrList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.grdIvrList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdIvrList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ExtensionName,
+            this.Extension});
+            this.grdIvrList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdIvrList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.grdIvrList.Location = new System.Drawing.Point(0, 20);
+            this.grdIvrList.Name = "grdIvrList";
+            this.grdIvrList.ReadOnly = true;
+            this.grdIvrList.RowHeadersVisible = false;
+            this.grdIvrList.Size = new System.Drawing.Size(257, 276);
+            this.grdIvrList.TabIndex = 1;
+            this.grdIvrList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdIvrList_CellDoubleClick);
+            // 
+            // ExtensionName
+            // 
+            this.ExtensionName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ExtensionName.DataPropertyName = "ExtensionName";
+            this.ExtensionName.HeaderText = "Name";
+            this.ExtensionName.Name = "ExtensionName";
+            this.ExtensionName.ReadOnly = true;
+            this.ExtensionName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ExtensionName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Extension
+            // 
+            this.Extension.DataPropertyName = "Extension";
+            this.Extension.HeaderText = "Extension";
+            this.Extension.Name = "Extension";
+            this.Extension.ReadOnly = true;
+            this.Extension.Width = 60;
+            // 
+            // btnIvrList
+            // 
+            this.btnIvrList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnIvrList.Image = global::DuoSoftware.DuoSoftPhone.Properties.Resources.close_button_red_1412058367_123_231_20_248;
+            this.btnIvrList.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIvrList.Location = new System.Drawing.Point(0, 0);
+            this.btnIvrList.Name = "btnIvrList";
+            this.btnIvrList.Size = new System.Drawing.Size(257, 20);
+            this.btnIvrList.TabIndex = 0;
+            this.btnIvrList.UseVisualStyleBackColor = true;
+            this.btnIvrList.Click += new System.EventHandler(this.btnIvrList_Click);
+            // 
             // FormDialPad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1020,6 +1092,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(258, 517);
             this.ContextMenuStrip = this.phoner8ClickMenu;
+            this.Controls.Add(this.panelIvrList);
             this.Controls.Add(this.ProgressBar);
             this.Controls.Add(this.OFFLINE);
             this.Controls.Add(this.gbBreakMode);
@@ -1075,6 +1148,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSpek)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoDisplay)).EndInit();
+            this.panelIvrList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdIvrList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1153,5 +1228,10 @@
         private System.Windows.Forms.ToolStripMenuItem trainingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem meetingToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel notificationStatus;
+        private System.Windows.Forms.Panel panelIvrList;
+        private System.Windows.Forms.Button btnIvrList;
+        private System.Windows.Forms.DataGridView grdIvrList;
+        private System.Windows.Forms.DataGridViewButtonColumn ExtensionName;
+        private System.Windows.Forms.DataGridViewButtonColumn Extension;
     }
 }
