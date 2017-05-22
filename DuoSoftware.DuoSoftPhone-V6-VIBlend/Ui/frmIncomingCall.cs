@@ -67,7 +67,6 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             this.ActiveControl = buttonAnswer;
             buttonAnswer.Focus();
             this.ContextMenu = phoner8ClickMenu;
-           
             timer1.Interval =(int) new TimeSpan(0, 0, Interval).TotalMilliseconds;
             timer1.Tick += (s, t) =>
             {

@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2134016">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2135040">
       <assemblyIdentity name="DuoSoftware.DuoSoftPhone" version="5.0.0.7" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kqAQwCWdkZZueIEu9NxqcRvRTY4kzZRNmncORIha9WI=</dsig:DigestValue>
+        <dsig:DigestValue>Z3BuElKRZtPrF05D/ACAyiK4FOEWFc7BCXIHXPIPsUE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -2326,6 +2326,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
                 AutoAnswer.Enabled = !_agent.Profile.autoAnswer;
                 AutoAnswer.Checked= _agent.Profile.autoAnswer;
+                IsNotAllowToReject = AutoAnswer.Checked;
                 AutoAnswer.BackColor = AutoAnswer.Checked ? Color.DarkGreen : Color.Black;
 
                 grdIvrList.DataSource = _agent.Profile.ivrList;

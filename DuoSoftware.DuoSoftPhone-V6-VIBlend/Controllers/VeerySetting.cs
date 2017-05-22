@@ -81,7 +81,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers
         public char[] ConferenceCode { get; private set; }
         public char[] EtlCode { get; private set; }
         public Dictionary<char, int> DtmfValues { get; private set; }
-        public int AutoAnswerDelay { get; private set; }
+        public int AutoAnswerDelay { get; set; }
         public bool NotificationStateValidationIgnore { get; private set; }
         public int AcwGap { get; private set; }
         public short WebSocketlistnerPort { get; private set; }

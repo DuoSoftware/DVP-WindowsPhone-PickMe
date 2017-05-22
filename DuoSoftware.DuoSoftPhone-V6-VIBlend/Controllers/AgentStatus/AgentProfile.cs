@@ -152,6 +152,9 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
 
             var data = jsonSerializer.Deserialize<Dictionary<string, dynamic>>(responseData.ToString());
             if (!data["IsSuccess"]) return false;
+
+            VeerySetting.Instance.AutoAnswerDelay = (int)TimeSpan.FromMilliseconds(Convert.ToInt16(data["Result"]["autoAnswerDelay"])).TotalMilliseconds;
+            
             return data["Result"]["autoAnswer"];
         }
 
