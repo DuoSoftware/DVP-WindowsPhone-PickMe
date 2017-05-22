@@ -4293,8 +4293,8 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     {
                         alert.Closed += (s, e) =>
                         {
-                            if (AutoAnswer.Checked)
-                                return;
+                            //if (AutoAnswer.Checked)
+                            //    return;
                             if (isCallAnswerd)
                                 return;
                             StopRingTone();
