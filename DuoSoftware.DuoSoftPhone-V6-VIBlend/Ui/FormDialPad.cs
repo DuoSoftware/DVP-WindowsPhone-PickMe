@@ -54,6 +54,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
         AgentList agentList;
         private string externalUrl;
+        private string Skill;
         private bool enable;
         SocketConnector socketCon;
         private int acwTime;
@@ -963,7 +964,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 var settingObject = System.Configuration.ConfigurationSettings.AppSettings;
                 var agentProfile = AgentProfile.Instance;
                 var userName = agentProfile.authorizationName;
-                var password = agentProfile.Password;
+                var password = agentProfile.SipPassword;
                 var displayName = agentProfile.displayName;
                 var authName = agentProfile.authorizationName;
                 var localPort = settingObject["localPort"];
@@ -2261,7 +2262,10 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     {
                         mynotifyicon.ShowBalloonTip(1000, "FaceTone - Phone", data.ToString(), ToolTipIcon.Error);
                         Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "OnAgentSuspended"+data, Logger.LogLevel.Error);
-                        MessageBox.Show(data.ToString(), "FaceTone - Phone", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        _agent.AgentCurrentState.OnOffline(ref _agent, "Suspended");
+                        //InOfflineState
+
+//                        MessageBox.Show(data.ToString(), "FaceTone - Phone", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     catch (System.Exception exception)
                     {
@@ -2284,6 +2288,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                             var msg = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(data.ToString());
                             var values = msg["Message"].Split('|');
                             var caller = values[3];
+                            Skill = values[6]; 
                             if (call.CallCurrentState.GetType() == typeof(CallAgentClintConnectedState) || call.CallCurrentState.GetType() == typeof(CallAgentSupConnectedState) || call.CallCurrentState.GetType() == typeof(CallConferenceState)||call.CallCurrentState.GetType() == typeof(CallConnectedState)||call.CallCurrentState.GetType() == typeof(CallHoldState)||call.CallCurrentState.GetType() == typeof(CallRingingState))
                             {
                                 if (!caller.Equals(call.PhoneNo))
@@ -2294,6 +2299,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                             }
 
                             ProcessNotifications(data);
+                            
                         }
                         
                     }
@@ -2330,6 +2336,8 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 AutoAnswer.BackColor = AutoAnswer.Checked ? Color.DarkGreen : Color.Black;
 
                 grdIvrList.DataSource = _agent.Profile.ivrList;
+
+                genarateBreakTypes();
             }
             catch (Exception exception)
             {
@@ -2845,6 +2853,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         {
             try
             {
+                _agent.Profile.Relogin();
                 UninitializePhone();
                 InitializePhone(true);
             }
@@ -3761,6 +3770,50 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
         #region UI State
 
+        private void MenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var item = sender as ToolStripMenuItem;
+                if (item != null)
+                {
+                    _agent.AgentCurrentState.OnRequestAgentBreak(ref _agent, item.Name);
+                }
+                
+            }
+            catch (Exception exception)
+            {
+                Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "MenuItem_Click", exception, Logger.LogLevel.Error);
+            }
+        }
+
+        public void genarateBreakTypes()
+        {
+            try
+            {
+                var menuList = AgentProductivityHandler.GetDynamicBreakTypes();
+                foreach (string item in menuList)
+                {
+                    System.Windows.Forms.ToolStripMenuItem menuItem = new System.Windows.Forms.ToolStripMenuItem();
+                    menuItem.BackColor = System.Drawing.Color.Black;
+                    menuItem.ForeColor = System.Drawing.Color.White;
+                    menuItem.Name = item;
+                    menuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+                    | System.Windows.Forms.Keys.O)));
+                    menuItem.Size = new System.Drawing.Size(217, 22);
+                    menuItem.Text = item;
+                    menuItem.Click += new System.EventHandler(MenuItem_Click);
+
+                    this.breakRequestToolStripMenuItem.DropDownItems.Add(menuItem);
+                }
+               
+            }
+            catch (Exception exception)
+            {
+                Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "genarateBreakTypes", exception, Logger.LogLevel.Error);
+            }
+        }
+
         public void ShowNotifications(ResourceProxyReplyDataResourceProxyReply result)
         {
             try
@@ -3871,6 +3924,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 acwCutdownTimer.Enabled = false;
                 FreezeDurations.Stop();
                 FreezeDurations.Enabled = false;
+                Skill = string.Empty;
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger7, string.Format("in Agent Idle CallSessionId set to Empty . {0}", _agent.CallSessionId), Logger.LogLevel.Debug);
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "CallSessionId set to Empty.", Logger.LogLevel.Info);
             }
@@ -4117,6 +4171,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     answerCallToolStripMenuItem.Enabled = false;
                     rejectCallToolStripMenuItem.Enabled = false;
                     holdCallToolStripMenuItem.Enabled = false;
+                    Skill = string.Empty;
                 })));
 
             }
@@ -4284,7 +4339,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
 
                     txtStatus.ForeColor = Color.DarkMagenta;
-                    txtStatus.Text = "Incoming Call";
+                    txtStatus.Text = Skill==string.Empty?  "Incoming Call" : Skill;
 
                     if (playRingtone)
                         PlayRingTone();
@@ -4444,6 +4499,12 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
 
         #endregion
+
+        private void pRODUCTIVITYToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            AgentProductivity pdv = new AgentProductivity();
+            pdv.Show();
+        }
 
         
 

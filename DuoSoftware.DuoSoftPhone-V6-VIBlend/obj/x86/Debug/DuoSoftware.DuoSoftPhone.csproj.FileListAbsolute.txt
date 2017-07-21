@@ -166,3 +166,4 @@ E:\DuoProject\Applications\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-V
 E:\DuoProject\Applications\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.csproj.GenerateResource.Cache
 E:\DuoProject\Applications\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.exe.manifest
 E:\DuoProject\Applications\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.application
+E:\DuoProject\Applications\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\obj\x86\Debug\DuoSoftware.DuoSoftPhone.Ui.AgentProductivity.resources

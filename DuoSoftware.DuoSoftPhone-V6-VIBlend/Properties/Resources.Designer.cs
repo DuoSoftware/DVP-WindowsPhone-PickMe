@@ -243,6 +243,16 @@ namespace DuoSoftware.DuoSoftPhone.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_button_png_10 {
+            get {
+                object obj = ResourceManager.GetObject("close-button-png-10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_button_red_1412058367_123_231_20_248 {
             get {
                 object obj = ResourceManager.GetObject("close_button_red_1412058367_123_231_20_248", resourceCulture);
@@ -606,6 +616,16 @@ namespace DuoSoftware.DuoSoftPhone.Properties {
         internal static System.Drawing.Bitmap windows_close_program {
             get {
                 object obj = ResourceManager.GetObject("windows_close_program", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap x {
+            get {
+                object obj = ResourceManager.GetObject("x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

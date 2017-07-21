@@ -86,6 +86,16 @@ namespace DuoSoftware.DuoSoftPhone.Controllers
                     }
                 });
 
+                socket.On("agent_connected", (data) =>
+                {
+                    Console.WriteLine(data);
+                });
+
+                socket.On("agent_disconnected", (data) =>
+                {
+                    Console.WriteLine(data);
+                });
+
                 socket.On("agent_found", (data) =>
                 {
                     if (OnAgentFound != null)
@@ -94,7 +104,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers
                     }
                 });
 
-                socket.On("agent_suspended", (data) =>
+                socket.On("agent_rejected", (data) =>
                 {
                     Console.WriteLine(data);
                     if (OnAgentSuspended != null)

@@ -6,6 +6,47 @@ using System.Threading.Tasks;
 
 namespace DuoSoftware.DuoSoftPhone.Controllers.Common
 {
+    public struct BreakInfo
+    {
+        public string BreakType;
+    }
+
+    public struct BreakInfoResponse
+    {
+
+        public string CustomMessage;
+        public Exception Exception;
+        public bool IsSuccess;
+        public BreakInfo[] Result;
+
+    }
+
+    public struct Productivity
+    {
+
+        public int AcwTime ;
+        public int BreakTime;
+        public int HoldTime;
+        public int IdleTime;
+        public int IncomingCallCount;
+        public int MissCallCount;
+        public int OnCallTime;
+        public int OutboundCallTime;
+        public int OutgoingCallCount;
+        public int StaffedTime;
+        public int TransferCallCount;
+    }
+
+    public struct ProductivityResponse
+    {
+
+        public string CustomMessage;
+        public Exception Exception;
+        public bool IsSuccess;
+        public Productivity Result;
+        
+    }
+
     public enum CallFunctions
     {
         MakeCall = 0,

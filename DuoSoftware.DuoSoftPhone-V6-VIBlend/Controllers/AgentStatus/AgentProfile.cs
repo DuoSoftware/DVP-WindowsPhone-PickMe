@@ -12,6 +12,9 @@ using Newtonsoft.Json.Linq;
 using Quobject.Collections.Immutable;
 using Quobject.SocketIoClientDotNet.Client;
 using System.Data;
+using DuoCallTesterLicenseKey;
+using System.Text;
+using System.Security.Cryptography;
 
 namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
 {
@@ -62,7 +65,9 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
         public string id { private set; get; }
         public string localIPAddress { private set; get; }
         public string UserName { private set; get; }
+        public string Extention { private set; get; }
         public string Password { private set; get; }
+        public string SipPassword { private set; get; }
         public string displayName { private set; get; }
         public string authorizationName { private set; get; }
         public string publicIdentity { private set; get; }
@@ -142,6 +147,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
             var data = jsonSerializer.Deserialize<Dictionary<string, dynamic>>(responseData.ToString());
             if (!data["IsSuccess"]) return false;
             veeryFormat = data["Result"];
+            Extention = data["Result"]["Extention"];
             return true;
         }
 
@@ -156,6 +162,42 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
             VeerySetting.Instance.AutoAnswerDelay = (int)TimeSpan.FromMilliseconds(Convert.ToInt16(data["Result"]["autoAnswerDelay"])).TotalMilliseconds;
             
             return data["Result"]["autoAnswer"];
+        }
+
+        
+        private void GetSipPassword()
+        {
+            try
+            {
+                var url = settingObject["sipuserUrl"] + "SipUser/User/" + Extention + "/Password?iv";
+                var responseData = HttpHandler.MakeRequest(url, "Bearer " + server.token, null, "get");
+
+                var data = jsonSerializer.Deserialize<Dictionary<string, dynamic>>(responseData.ToString());
+                SipPassword = LicenseKeyHandler.GetLicenseKey("DuoS123", data["Result"]);
+
+
+                //string encrypted = "U2FsdGVkX1+TO9w41FPHU9EjMkv1HVMly435lCqfGSw=";
+
+                //var sss = Codec.DecryptStringAES();
+                //string decrypted = LicenseKeyHandler.Decrypt<AesManaged>(encrypted, "DuoS123", "5c34d78451312ca4");
+                //Console.Write(decrypted);
+                //var aa = veeryFormat;
+                //var url = settingObject["sipuserUrl"] + "SipUser/User/" + Extention + "/Password";
+                //var responseData = HttpHandler.MakeRequest(url, "Bearer " + server.token, null, "get");
+
+                //var data = jsonSerializer.Deserialize<Dictionary<string, dynamic>>(responseData.ToString());
+
+                //SipPassword = LicenseKeyHandler.OpenSSLDecrypt(data["Result"], "DuoS123"); 
+                //SipPassword = LicenseKeyHandler.GetLicenseKey("DuoS123", data["Result"]);
+
+                
+                
+                
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
         }
 
         private void GetIvrList()
@@ -234,11 +276,16 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
             Console.WriteLine(responseData);
         }
 
+        public bool Relogin()
+        {
+          return  Login(UserName, Password);
+        }
+
         public bool Login(string username, string txtPassword)
         {
             try
             {
-
+                
                 var userServiceUrl = settingObject["userServiceUrl"];
                 var encoded = HttpHandler.Base64Encode("ae849240-2c6d-11e6-b274-a9eec7dab26b:6145813102144258048");
 
@@ -281,6 +328,8 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                 if (retValue)
                     autoAnswer = IsAutoAnswerEnable();
                 GetIvrList();
+                GetSipPassword();
+               
                 return retValue;
             }
             catch (Exception exception)

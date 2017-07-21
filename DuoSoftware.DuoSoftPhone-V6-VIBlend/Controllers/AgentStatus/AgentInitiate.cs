@@ -90,7 +90,13 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
 
         public override void OnOffline(ref Agent agent, string statusText)
         {
-            try { throw new NotImplementedException("Invalid Agent Status."); }
+            try
+            {
+                agent.ErrorMsg = statusText;
+                agent.StatusCode = 0;
+                agent.StatusText = statusText; 
+                agent.AgentCurrentState = new AgentOffline();
+            }
             catch (Exception exception) { Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger2, "AgentInitiate", exception, Logger.LogLevel.Error); }
         }
 

@@ -93,6 +93,7 @@
             this.agentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inboundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outboundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pRODUCTIVITYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelNo = new System.Windows.Forms.Panel();
             this.txtStatus = new System.Windows.Forms.Label();
@@ -618,10 +619,11 @@
             this.AutoAnswer,
             this.logsToolStripMenuItem,
             this.agentListToolStripMenuItem,
-            this.agentToolStripMenuItem});
+            this.agentToolStripMenuItem,
+            this.pRODUCTIVITYToolStripMenuItem});
             this.phoner8ClickMenu.Name = "phoner8ClickMenu";
             this.phoner8ClickMenu.ShowImageMargin = false;
-            this.phoner8ClickMenu.Size = new System.Drawing.Size(167, 202);
+            this.phoner8ClickMenu.Size = new System.Drawing.Size(167, 246);
             // 
             // accountSettingToolStripMenuItem
             // 
@@ -679,6 +681,7 @@
             | System.Windows.Forms.Keys.O)));
             this.officialBreakToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.officialBreakToolStripMenuItem.Text = "Official Break";
+            this.officialBreakToolStripMenuItem.Visible = false;
             this.officialBreakToolStripMenuItem.Click += new System.EventHandler(this.officialBreakToolStripMenuItem_Click);
             // 
             // mealBreakToolStripMenuItem
@@ -690,6 +693,7 @@
             | System.Windows.Forms.Keys.M)));
             this.mealBreakToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.mealBreakToolStripMenuItem.Text = "Meal Break";
+            this.mealBreakToolStripMenuItem.Visible = false;
             this.mealBreakToolStripMenuItem.Click += new System.EventHandler(this.mealBreakToolStripMenuItem_Click);
             // 
             // teaBreakToolStripMenuItem
@@ -701,6 +705,7 @@
             | System.Windows.Forms.Keys.T)));
             this.teaBreakToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.teaBreakToolStripMenuItem.Text = "Tea Break";
+            this.teaBreakToolStripMenuItem.Visible = false;
             this.teaBreakToolStripMenuItem.Click += new System.EventHandler(this.teaBreakToolStripMenuItem_Click);
             // 
             // aUXBreakToolStripMenuItem
@@ -712,6 +717,7 @@
             | System.Windows.Forms.Keys.A)));
             this.aUXBreakToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.aUXBreakToolStripMenuItem.Text = "AUX Break";
+            this.aUXBreakToolStripMenuItem.Visible = false;
             this.aUXBreakToolStripMenuItem.Click += new System.EventHandler(this.aUXBreakToolStripMenuItem_Click);
             // 
             // processRelatedToolStripMenuItem
@@ -723,6 +729,7 @@
             | System.Windows.Forms.Keys.P)));
             this.processRelatedToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.processRelatedToolStripMenuItem.Text = "Process Related";
+            this.processRelatedToolStripMenuItem.Visible = false;
             this.processRelatedToolStripMenuItem.Click += new System.EventHandler(this.processRelatedToolStripMenuItem_Click);
             // 
             // trainingToolStripMenuItem
@@ -735,6 +742,7 @@
             | System.Windows.Forms.Keys.T)));
             this.trainingToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.trainingToolStripMenuItem.Text = "Training";
+            this.trainingToolStripMenuItem.Visible = false;
             this.trainingToolStripMenuItem.Click += new System.EventHandler(this.trainingToolStripMenuItem_Click);
             // 
             // meetingToolStripMenuItem
@@ -747,6 +755,7 @@
             | System.Windows.Forms.Keys.M)));
             this.meetingToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.meetingToolStripMenuItem.Text = "Meeting";
+            this.meetingToolStripMenuItem.Visible = false;
             this.meetingToolStripMenuItem.Click += new System.EventHandler(this.meetingToolStripMenuItem_Click);
             // 
             // cancelRequestToolStripMenuItem
@@ -925,6 +934,14 @@
             this.outboundToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.outboundToolStripMenuItem.Text = "Outbound";
             this.outboundToolStripMenuItem.Click += new System.EventHandler(this.outboundToolStripMenuItem_Click);
+            // 
+            // pRODUCTIVITYToolStripMenuItem
+            // 
+            this.pRODUCTIVITYToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.pRODUCTIVITYToolStripMenuItem.Name = "pRODUCTIVITYToolStripMenuItem";
+            this.pRODUCTIVITYToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.pRODUCTIVITYToolStripMenuItem.Text = "Productivity";
+            this.pRODUCTIVITYToolStripMenuItem.Click += new System.EventHandler(this.pRODUCTIVITYToolStripMenuItem_Click);
             // 
             // panelNo
             // 
@@ -1233,5 +1250,6 @@
         private System.Windows.Forms.DataGridView grdIvrList;
         private System.Windows.Forms.DataGridViewButtonColumn ExtensionName;
         private System.Windows.Forms.DataGridViewButtonColumn Extension;
+        private System.Windows.Forms.ToolStripMenuItem pRODUCTIVITYToolStripMenuItem;
     }
 }

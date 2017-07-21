@@ -124,6 +124,9 @@
   <data name="reject" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reject.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Agentconsole_Duoapp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Agentconsole_Duoapp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="phone-62-32 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phone-62-32 (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,8 +142,8 @@
   <data name="Dial" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dial.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TransferCall" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TransferCall.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ico_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ico_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="notificationok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notificationok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,11 +154,17 @@
   <data name="phone-54-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phone-54-128.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="online" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\online.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Mutemicrophone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mutemicrophone.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="facetone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facetone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close-button-png-10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close-button-png-10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="answer3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\answer3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -171,9 +180,6 @@
   </data>
   <data name="AnswerCall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AnswerCall.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HoldTime" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HoldTime.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="answer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\answer2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,8 +244,8 @@
   <data name="phone-54-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phone-54-48.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phone-54-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phone-54-64.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TransferCall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TransferCall.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mute_mic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mute_mic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,14 +253,11 @@
   <data name="MakeCall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MakeCall.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Agentconsole_Duoapp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Agentconsole_Duoapp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HoldTime" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HoldTime.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IdleTime" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IdleTime.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="online" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\online.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="notificationerror" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notificationerror.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,6 +271,9 @@
   <data name="Language" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Language.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="phone-54-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone-54-64.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="EndCallM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EndCallM.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -280,7 +286,7 @@
   <data name="AgentInboundMode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AgentInboundMode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ico_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ico_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
