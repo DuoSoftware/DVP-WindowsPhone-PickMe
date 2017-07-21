@@ -107,6 +107,11 @@ namespace DuoSoftware.DuoSoftPhone.Controllers
                 socket.On("agent_rejected", (data) =>
                 {
                     Console.WriteLine(data);
+                });
+
+                socket.On("agent_suspended", (data) =>
+                {
+                    Console.WriteLine(data);
                     if (OnAgentSuspended != null)
                     {
                         OnAgentSuspended(data);

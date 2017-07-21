@@ -108,6 +108,7 @@
             this.ExtensionName = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Extension = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnIvrList = new System.Windows.Forms.Button();
+            this.breakMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.gbBreakMode.SuspendLayout();
             this.PhoneStatusStrip.SuspendLayout();
             this.phoner8ClickMenu.SuspendLayout();
@@ -314,6 +315,7 @@
             // 
             this.buttonBackspace.AllowAnimations = true;
             this.buttonBackspace.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBackspace.ContextMenuStrip = this.breakMenu;
             this.buttonBackspace.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBackspace.Location = new System.Drawing.Point(173, 476);
             this.buttonBackspace.Name = "buttonBackspace";
@@ -832,7 +834,7 @@
             this.answerCallToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.answerCallToolStripMenuItem.Name = "answerCallToolStripMenuItem";
             this.answerCallToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.answerCallToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.answerCallToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.answerCallToolStripMenuItem.Text = "AnswerCall";
             this.answerCallToolStripMenuItem.Click += new System.EventHandler(this.menuItemAnswerCall_Click);
             // 
@@ -843,7 +845,7 @@
             this.rejectCallToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.rejectCallToolStripMenuItem.Name = "rejectCallToolStripMenuItem";
             this.rejectCallToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.rejectCallToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.rejectCallToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.rejectCallToolStripMenuItem.Text = "RejectCall";
             this.rejectCallToolStripMenuItem.Click += new System.EventHandler(this.menuItemRejectCall_Click);
             // 
@@ -853,7 +855,7 @@
             this.holdCallToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.holdCallToolStripMenuItem.Name = "holdCallToolStripMenuItem";
             this.holdCallToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.holdCallToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.holdCallToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.holdCallToolStripMenuItem.Text = "HoldCall";
             this.holdCallToolStripMenuItem.Click += new System.EventHandler(this.menuItemHoldCall_Click);
             // 
@@ -922,7 +924,7 @@
             this.inboundToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.inboundToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.inboundToolStripMenuItem.Name = "inboundToolStripMenuItem";
-            this.inboundToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.inboundToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inboundToolStripMenuItem.Text = "Inbound";
             this.inboundToolStripMenuItem.Click += new System.EventHandler(this.inboundToolStripMenuItem_Click);
             // 
@@ -931,7 +933,7 @@
             this.outboundToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.outboundToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.outboundToolStripMenuItem.Name = "outboundToolStripMenuItem";
-            this.outboundToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.outboundToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.outboundToolStripMenuItem.Text = "Outbound";
             this.outboundToolStripMenuItem.Click += new System.EventHandler(this.outboundToolStripMenuItem_Click);
             // 
@@ -1015,6 +1017,7 @@
             // LogoDisplay
             // 
             this.LogoDisplay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LogoDisplay.ContextMenuStrip = this.breakMenu;
             this.LogoDisplay.Location = new System.Drawing.Point(1, 2);
             this.LogoDisplay.Name = "LogoDisplay";
             this.LogoDisplay.Size = new System.Drawing.Size(256, 56);
@@ -1101,6 +1104,15 @@
             this.btnIvrList.TabIndex = 0;
             this.btnIvrList.UseVisualStyleBackColor = true;
             this.btnIvrList.Click += new System.EventHandler(this.btnIvrList_Click);
+            // 
+            // breakMenu
+            // 
+            this.breakMenu.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.breakMenu.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.breakMenu.ImageScalingSize = new System.Drawing.Size(0, 0);
+            this.breakMenu.Name = "phoner8ClickMenu";
+            this.breakMenu.ShowImageMargin = false;
+            this.breakMenu.Size = new System.Drawing.Size(36, 4);
             // 
             // FormDialPad
             // 
@@ -1251,5 +1263,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn ExtensionName;
         private System.Windows.Forms.DataGridViewButtonColumn Extension;
         private System.Windows.Forms.ToolStripMenuItem pRODUCTIVITYToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip breakMenu;
     }
 }

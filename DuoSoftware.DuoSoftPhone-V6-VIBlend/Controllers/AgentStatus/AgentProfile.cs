@@ -329,7 +329,6 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                     autoAnswer = IsAutoAnswerEnable();
                 GetIvrList();
                 GetSipPassword();
-               
                 return retValue;
             }
             catch (Exception exception)

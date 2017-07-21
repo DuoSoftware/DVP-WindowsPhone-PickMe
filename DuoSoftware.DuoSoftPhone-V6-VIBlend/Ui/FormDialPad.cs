@@ -2856,6 +2856,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 _agent.Profile.Relogin();
                 UninitializePhone();
                 InitializePhone(true);
+                _agent.AgentMode = AgentMode.Outbound;
             }
             catch (Exception exception)
             {
@@ -3777,7 +3778,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 var item = sender as ToolStripMenuItem;
                 if (item != null)
                 {
-                    _agent.AgentCurrentState.OnRequestAgentBreak(ref _agent, item.Name);
+                    _agent.AgentCurrentState.OnRequestAgentBreak(ref _agent, item.Text);
                 }
                 
             }
@@ -3798,13 +3799,28 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     menuItem.BackColor = System.Drawing.Color.Black;
                     menuItem.ForeColor = System.Drawing.Color.White;
                     menuItem.Name = item;
-                    menuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
-                    | System.Windows.Forms.Keys.O)));
+                    //menuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+                    //| System.Windows.Forms.Keys.O)));
                     menuItem.Size = new System.Drawing.Size(217, 22);
                     menuItem.Text = item;
                     menuItem.Click += new System.EventHandler(MenuItem_Click);
 
                     this.breakRequestToolStripMenuItem.DropDownItems.Add(menuItem);
+
+
+                    System.Windows.Forms.ToolStripMenuItem menuItemDirect = new System.Windows.Forms.ToolStripMenuItem();
+                    menuItemDirect.BackColor = System.Drawing.Color.Black;
+                    menuItemDirect.ForeColor = System.Drawing.Color.White;
+                    menuItemDirect.Name = item+"Direct";
+                    //menuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+                    //| System.Windows.Forms.Keys.O)));
+                    menuItemDirect.Size = new System.Drawing.Size(217, 22);
+                    menuItemDirect.Text = item;
+                    menuItemDirect.Click += new System.EventHandler(MenuItem_Click);
+
+                    this.breakMenu.Items.Add(menuItemDirect);
+
+                    
                 }
                
             }
