@@ -2076,7 +2076,8 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 rejectCallToolStripMenuItem.Enabled = !IsNotAllowToReject;
                 //new Thread(InitiateTimer).Start();
                 OFFLINE.Visible = false;
-                this.Text = string.Format("{0} : {1}", this.Text, AgentProfile.Instance.UserName);
+                //this.Text = string.Format("{0} : {1}", this.Text, AgentProfile.Instance.UserName);
+                this.Text = AgentProfile.Instance.UserName;
 
                 txtStatus.ForeColor = Color.DarkMagenta;
                 txtStatus.Text = "Initializing...";
@@ -2853,6 +2854,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         {
             try
             {
+                OFFLINE.Enabled = false;
                 _agent.Profile.Relogin();
                 UninitializePhone();
                 InitializePhone(true);
@@ -4008,6 +4010,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 this.Invoke(((MethodInvoker)(() =>
                 {
                     phoner8ClickMenu.Enabled = false;
+                    OFFLINE.Enabled = true;
                     PhoneStatus.Image = Properties.Resources.offline;
                     txtStatus.ForeColor = Color.Red;
                     btnReregister.Visible = true;
@@ -4516,10 +4519,22 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
         #endregion
 
+        AgentProductivity pdv = new AgentProductivity();
         private void pRODUCTIVITYToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            AgentProductivity pdv = new AgentProductivity();
-            pdv.Show();
+            try
+            {
+                if (pdv.IsDisposed)
+                {
+                    pdv = new AgentProductivity();
+                }
+                pdv.Show();
+            }
+            catch (Exception exception)
+            {
+                Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "pRODUCTIVITYToolStripMenuItem_Click", exception, Logger.LogLevel.Error);
+            }
+            
         }
 
         

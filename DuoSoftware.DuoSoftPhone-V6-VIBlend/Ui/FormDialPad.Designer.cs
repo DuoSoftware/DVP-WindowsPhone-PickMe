@@ -43,6 +43,7 @@
             this.button_key_star = new VIBlend.WinForms.Controls.vButton();
             this.button_key_hash = new VIBlend.WinForms.Controls.vButton();
             this.buttonBackspace = new VIBlend.WinForms.Controls.vButton();
+            this.breakMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.buttonHold = new VIBlend.WinForms.Controls.vButton();
             this.buttonConference = new VIBlend.WinForms.Controls.vButton();
             this.buttonEtl = new VIBlend.WinForms.Controls.vButton();
@@ -108,7 +109,6 @@
             this.ExtensionName = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Extension = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnIvrList = new System.Windows.Forms.Button();
-            this.breakMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.gbBreakMode.SuspendLayout();
             this.PhoneStatusStrip.SuspendLayout();
             this.phoner8ClickMenu.SuspendLayout();
@@ -326,6 +326,15 @@
             this.buttonBackspace.UseVisualStyleBackColor = false;
             this.buttonBackspace.VIBlendTheme = VIBlend.Utilities.VIBLEND_THEME.VISTABLUE;
             this.buttonBackspace.Click += new System.EventHandler(this.buttonBackspace_Click);
+            // 
+            // breakMenu
+            // 
+            this.breakMenu.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.breakMenu.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.breakMenu.ImageScalingSize = new System.Drawing.Size(0, 0);
+            this.breakMenu.Name = "phoner8ClickMenu";
+            this.breakMenu.ShowImageMargin = false;
+            this.breakMenu.Size = new System.Drawing.Size(36, 4);
             // 
             // buttonHold
             // 
@@ -625,7 +634,7 @@
             this.pRODUCTIVITYToolStripMenuItem});
             this.phoner8ClickMenu.Name = "phoner8ClickMenu";
             this.phoner8ClickMenu.ShowImageMargin = false;
-            this.phoner8ClickMenu.Size = new System.Drawing.Size(167, 246);
+            this.phoner8ClickMenu.Size = new System.Drawing.Size(167, 224);
             // 
             // accountSettingToolStripMenuItem
             // 
@@ -834,7 +843,7 @@
             this.answerCallToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.answerCallToolStripMenuItem.Name = "answerCallToolStripMenuItem";
             this.answerCallToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.answerCallToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.answerCallToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.answerCallToolStripMenuItem.Text = "AnswerCall";
             this.answerCallToolStripMenuItem.Click += new System.EventHandler(this.menuItemAnswerCall_Click);
             // 
@@ -845,7 +854,7 @@
             this.rejectCallToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.rejectCallToolStripMenuItem.Name = "rejectCallToolStripMenuItem";
             this.rejectCallToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.rejectCallToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rejectCallToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.rejectCallToolStripMenuItem.Text = "RejectCall";
             this.rejectCallToolStripMenuItem.Click += new System.EventHandler(this.menuItemRejectCall_Click);
             // 
@@ -855,7 +864,7 @@
             this.holdCallToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.holdCallToolStripMenuItem.Name = "holdCallToolStripMenuItem";
             this.holdCallToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.holdCallToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.holdCallToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.holdCallToolStripMenuItem.Text = "HoldCall";
             this.holdCallToolStripMenuItem.Click += new System.EventHandler(this.menuItemHoldCall_Click);
             // 
@@ -924,7 +933,7 @@
             this.inboundToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.inboundToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.inboundToolStripMenuItem.Name = "inboundToolStripMenuItem";
-            this.inboundToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inboundToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.inboundToolStripMenuItem.Text = "Inbound";
             this.inboundToolStripMenuItem.Click += new System.EventHandler(this.inboundToolStripMenuItem_Click);
             // 
@@ -933,7 +942,7 @@
             this.outboundToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.outboundToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.outboundToolStripMenuItem.Name = "outboundToolStripMenuItem";
-            this.outboundToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.outboundToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.outboundToolStripMenuItem.Text = "Outbound";
             this.outboundToolStripMenuItem.Click += new System.EventHandler(this.outboundToolStripMenuItem_Click);
             // 
@@ -1105,15 +1114,6 @@
             this.btnIvrList.UseVisualStyleBackColor = true;
             this.btnIvrList.Click += new System.EventHandler(this.btnIvrList_Click);
             // 
-            // breakMenu
-            // 
-            this.breakMenu.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.breakMenu.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.breakMenu.ImageScalingSize = new System.Drawing.Size(0, 0);
-            this.breakMenu.Name = "phoner8ClickMenu";
-            this.breakMenu.ShowImageMargin = false;
-            this.breakMenu.Size = new System.Drawing.Size(36, 4);
-            // 
             // FormDialPad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1157,14 +1157,13 @@
             this.Controls.Add(this.buttonReject);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormDialPad";
             this.Opacity = 0.95D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FaceTone";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDialPad_FormClosing);
             this.Load += new System.EventHandler(this.FormDialPad_Load);
