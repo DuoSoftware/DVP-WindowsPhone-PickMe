@@ -65,7 +65,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
         public string id { private set; get; }
         public string localIPAddress { private set; get; }
         public string UserName { private set; get; }
-        public string Extention { private set; get; }
+        public string ContactName { private set; get; }
         public string Password { private set; get; }
         public string SipPassword { private set; get; }
         public string displayName { private set; get; }
@@ -147,7 +147,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
             var data = jsonSerializer.Deserialize<Dictionary<string, dynamic>>(responseData.ToString());
             if (!data["IsSuccess"]) return false;
             veeryFormat = data["Result"];
-            Extention = data["Result"]["Extention"];
+            ContactName = data["Result"]["ContactName"]; //Extention
             return true;
         }
 
@@ -169,7 +169,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
         {
             try
             {
-                var url = settingObject["sipuserUrl"] + "SipUser/User/" + Extention + "/Password?iv";
+                var url = settingObject["sipuserUrl"] + "SipUser/User/" + ContactName + "/Password?iv";
                 var responseData = HttpHandler.MakeRequest(url, "Bearer " + server.token, null, "get");
 
                 var data = jsonSerializer.Deserialize<Dictionary<string, dynamic>>(responseData.ToString());
