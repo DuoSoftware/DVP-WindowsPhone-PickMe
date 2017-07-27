@@ -1992,7 +1992,8 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     }
                 }
 
-                _agent = new Agent(Guid.NewGuid().ToString(), this) { AgentReqMode = AgentMode.Outbound };
+
+                _agent = new Agent(Guid.NewGuid().ToString(), this) { AgentReqMode = AgentMode.Offline };
                 
 
             }
@@ -2339,6 +2340,12 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 grdIvrList.DataSource = _agent.Profile.ivrList;
 
                 genarateBreakTypes();
+
+                outboundToolStripMenuItem.Enabled = false;
+                inboundToolStripMenuItem.Enabled = true;
+
+               
+                
             }
             catch (Exception exception)
             {
@@ -2639,7 +2646,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 
 
                 _agent.AgentCurrentState.OnEndBreak(ref _agent);
-                inboundToolStripMenuItem_Click(sender, e);
+                //inboundToolStripMenuItem_Click(sender, e);
 
             }
             catch (Exception exception)
@@ -2858,7 +2865,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 _agent.Profile.Relogin();
                 UninitializePhone();
                 InitializePhone(true);
-                _agent.AgentMode = AgentMode.Outbound;
+                _agent.AgentMode = AgentMode.Offline;
             }
             catch (Exception exception)
             {
@@ -2914,6 +2921,13 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         {
             try
             {
+                if (!_agent.Profile.IsAllowToOutbound)
+                {
+                   // txtStatus.Text =
+                //                       "Error on Initializing. exceed maximum retry count. please contact your system administrator.";
+                    mynotifyicon.ShowBalloonTip(1000, "FaceTone - Phone", "You Don't Have Permission To Use This Feature. Please Contact Your System Administrator.", ToolTipIcon.Error);
+                    return;
+                }
                 if (_agent.AgentCurrentState.GetType() == typeof (AgentBreak))
                 {
                     return;
@@ -3043,6 +3057,11 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 }))); mynotifyicon.ShowBalloonTip(1000, "FaceTone - Phone", "Phone Initialized.", ToolTipIcon.Info);
                 call = new Call(string.Empty, this);
                 _agent.AgentCurrentState.OnLogin(ref _agent);
+
+                if (!_agent.Profile.IsAllowToOutbound)
+                {
+                    inboundToolStripMenuItem_Click(null,null);
+                }
                 
             }
             catch (Exception exception)
@@ -4020,6 +4039,9 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     OFFLINE.Visible = true;
                     if (statusCode == -9999)
                         UninitializePhone();
+
+                    outboundToolStripMenuItem.Enabled = false;
+                    inboundToolStripMenuItem.Enabled = false;
                 })));
             }
             catch (Exception exception)
@@ -4395,8 +4417,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             {
                 switch (mode)
                 {
-                    case AgentMode.Offline:
-                        break;
+                    
                     case AgentMode.Inbound:
                         {
                             this.Invoke(new MethodInvoker(() =>
@@ -4410,6 +4431,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                             }));
                         }
                         break;
+                    case AgentMode.Offline:
                     case AgentMode.Outbound:
                         {
                             this.Invoke(new MethodInvoker(() =>

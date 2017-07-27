@@ -11,6 +11,11 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.Service
 {
     class ardsHandler
     {
+        public static bool SendOfflineChangeRequestInbound()
+        {
+            return EndBreak("Offline");
+        }
+
         public static bool SendModeChangeRequestInbound()
         {
             return EndBreak("Inbound");

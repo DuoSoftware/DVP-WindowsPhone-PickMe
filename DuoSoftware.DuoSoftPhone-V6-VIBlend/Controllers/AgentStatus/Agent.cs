@@ -28,8 +28,9 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
 
         private AgentMode _agentMode;
         private AgentMode _agentReqMode;
+
         
-        
+
         private IUiState UiState { get; set; }
         public string IP { get; private set; }
         public string AgentLoginSessionId { get; set; }
@@ -67,6 +68,9 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                         case AgentMode.Inbound:
                             isAccept = ardsHandler.SendModeChangeRequestInbound();
                             break;
+                        //case AgentMode.Offline:
+                        //    isAccept = ardsHandler.SendOfflineChangeRequestInbound();
+                        //    break;
                         case AgentMode.Offline:
                         case AgentMode.Outbound:
                             isAccept = ardsHandler.SendModeChangeRequestOutbound();

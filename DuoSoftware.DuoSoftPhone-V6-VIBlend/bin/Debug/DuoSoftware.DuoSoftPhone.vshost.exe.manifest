@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2233856">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2234880">
       <assemblyIdentity name="DuoSoftware.DuoSoftPhone" version="5.0.0.7" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NrK1//jm5G85c0VwVmXVr7A0mmv8QT2AsMadX3NdCTA=</dsig:DigestValue>
+        <dsig:DigestValue>tNEDQ113jaytMSopJvaoccNGOa4TEVsz7uON96Olp+w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -483,13 +483,13 @@
       <dsig:DigestValue>enpuLqVkc2SCHBgx9vP86a+CvIo8FeksjGwqkwPbAvM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DuoSoftware.DuoSoftPhone.exe.config" size="29430">
+  <file name="DuoSoftware.DuoSoftPhone.exe.config" size="29417">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>+z0ACyqnrpaEnj5gnoFVGfWGEVOF74mBD2h0ICSwqEU=</dsig:DigestValue>
+      <dsig:DigestValue>MXzeUCPV1ldMDG14y37vyY+3I7CRC4BzrburTIoKMkA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SIPSetting.xml" size="430" writeableType="applicationData">

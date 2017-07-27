@@ -77,6 +77,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
         public bool autoAnswer { private set; get; }
         public DataTable ivrList { get; set; }
 
+        public bool IsAllowToOutbound { get; private set; }
         private string GetLocalIPAddress()
         {
             try
@@ -193,6 +194,23 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                 
                 
                 
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+        }
+
+        private void IsAllowToOutboundCall()
+        {
+            try
+            {
+                var url = settingObject["userServiceBaseUrl"] + "User/" + UserName + "/Operations/OutboundMode";
+                var responseData = HttpHandler.MakeRequest(url, "Bearer " + server.token, null, "get");
+
+                var data = jsonSerializer.Deserialize<Dictionary<string, dynamic>>(responseData.ToString());
+                IsAllowToOutbound = data["IsSuccess"];
+
             }
             catch (Exception ex)
             {
@@ -329,6 +347,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                     autoAnswer = IsAutoAnswerEnable();
                 GetIvrList();
                 GetSipPassword();
+                IsAllowToOutboundCall();
                 return retValue;
             }
             catch (Exception exception)
