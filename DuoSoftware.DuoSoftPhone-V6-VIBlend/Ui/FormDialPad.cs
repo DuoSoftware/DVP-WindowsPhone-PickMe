@@ -3056,11 +3056,16 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     //PanelPhone.Enabled = false;
                 }))); mynotifyicon.ShowBalloonTip(1000, "FaceTone - Phone", "Phone Initialized.", ToolTipIcon.Info);
                 call = new Call(string.Empty, this);
+
                 _agent.AgentCurrentState.OnLogin(ref _agent);
 
-                if (!_agent.Profile.IsAllowToOutbound)
+                if (_agent.Profile.IsAllowToOutbound)
                 {
-                    inboundToolStripMenuItem_Click(null,null);
+                    outboundToolStripMenuItem_Click(null,null);
+                }
+                else
+                {
+                    inboundToolStripMenuItem_Click(null, null);
                 }
                 
             }
