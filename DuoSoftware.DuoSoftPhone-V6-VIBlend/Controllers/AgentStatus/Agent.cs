@@ -17,7 +17,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
     public class Agent
     {
         #region Property
-
+        public string BreakReason { get; private set; }
         public bool SipStatus { get; set; }
         public string ErrorMsg { get; set; }
         public string StatusText { get; set; }
@@ -170,7 +170,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                         })
                          .Case<AgentBreak>(b =>
                          {
-                             UiState.InBreakState();
+                             UiState.InBreakState(BreakReason);
                          })
                            .Case<AgentOffline>(b => UiState.InOfflineState(StatusText, ErrorMsg, StatusCode))
                        .Default<AgentEvent>(t => UiState.InOfflineState(StatusText, ErrorMsg, StatusCode));
@@ -275,7 +275,8 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
         {
             try
             {
-               IsBreakRequest = ardsHandler.BreakRequest(breakReason);
+                BreakReason = breakReason;
+                IsBreakRequest = ardsHandler.BreakRequest(breakReason);
                 if (!IsBreakRequest) return;
                 if (AgentCurrentState.GetType() != typeof (AgentIdle)) return;
                 IsBreakRequest = false;

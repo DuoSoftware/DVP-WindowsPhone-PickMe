@@ -61,6 +61,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         private int acwCotdown;
 
         private Agent _agent;
+        frmPasswordChange fchg;
         private Call call;
 
         private DateTime callStarTime;
@@ -1994,7 +1995,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
 
                 _agent = new Agent(Guid.NewGuid().ToString(), this) { AgentReqMode = AgentMode.Offline };
-                
+                fchg = new frmPasswordChange(_agent);
 
             }
             catch (Exception exception)
@@ -4094,7 +4095,8 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "Error" + statusText, Logger.LogLevel.Error);
         }
 
-        public void InBreakState()
+
+        public void InBreakState(string reason)
         {
             try
             {
@@ -4109,6 +4111,8 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     breakRequestToolStripMenuItem.Enabled = false;
                     cancelRequestToolStripMenuItem.Enabled = false;
                     endBreakToolStripMenuItem.Enabled = true;
+                    btnBreakMode.Text = reason;
+                    Console.Write(reason);
                 }));
             }
             catch (Exception exception)
@@ -4562,6 +4566,23 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "pRODUCTIVITYToolStripMenuItem_Click", exception, Logger.LogLevel.Error);
             }
             
+        }
+
+        
+        private void changePasswordToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                if (fchg.IsDisposed)
+                {
+                    fchg = new frmPasswordChange(_agent);
+                }
+                fchg.Show();
+            }
+            catch (Exception exception)
+            {
+                Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "changePasswordToolStripMenuItem_Click", exception, Logger.LogLevel.Error);
+            }
         }
 
         

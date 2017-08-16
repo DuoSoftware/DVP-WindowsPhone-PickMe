@@ -15,6 +15,7 @@ using System.Data;
 using DuoCallTesterLicenseKey;
 using System.Text;
 using System.Security.Cryptography;
+using System.Dynamic;
 
 namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
 {
@@ -358,7 +359,21 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
         }
 
 
+        public bool UpdatePassword(string oldpassword, string newpassword)
+        {
 
+            var url = settingObject["userServiceBaseUrl"] + "Myprofile/Password";
+
+            dynamic postData = new ExpandoObject();
+            postData.oldpassword = oldpassword;
+            postData.newpassword = newpassword;
+
+            var responseData = HttpHandler.MakeRequest(url, "Bearer " + server.token, postData, "put");
+
+            if (responseData == null) return false;
+            var data = jsonSerializer.Deserialize<Dictionary<string, dynamic>>(responseData.ToString());
+            return data["IsSuccess"];
+        }
         
     }
 }

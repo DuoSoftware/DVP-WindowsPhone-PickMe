@@ -18,7 +18,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers
         void InInitiateState();
         void InInitiateMsgState(bool autoAnswerchk, bool autoAnswerEnb, string userName);
         void Error(string statusText);
-        void InBreakState();
+        void InBreakState(string breakReason);
         void InCallAgentClintConnectedState();
         void InCallAgentSupConnectedState(CallActions callAction);
         void InCallConferenceState();

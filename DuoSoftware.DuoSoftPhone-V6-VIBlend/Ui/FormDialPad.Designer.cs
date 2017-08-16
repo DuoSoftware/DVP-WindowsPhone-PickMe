@@ -109,6 +109,7 @@
             this.ExtensionName = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Extension = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnIvrList = new System.Windows.Forms.Button();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbBreakMode.SuspendLayout();
             this.PhoneStatusStrip.SuspendLayout();
             this.phoner8ClickMenu.SuspendLayout();
@@ -488,7 +489,7 @@
             this.btnBreakMode.RoundedCornersMask = ((byte)(15));
             this.btnBreakMode.Size = new System.Drawing.Size(214, 350);
             this.btnBreakMode.TabIndex = 0;
-            this.btnBreakMode.Text = "Break Mode";
+            this.btnBreakMode.Text = "Break Mode1";
             this.btnBreakMode.UseVisualStyleBackColor = false;
             this.btnBreakMode.VIBlendTheme = VIBlend.Utilities.VIBLEND_THEME.VISTABLUE;
             this.btnBreakMode.Click += new System.EventHandler(this.btnBreakMode_Click);
@@ -631,10 +632,11 @@
             this.logsToolStripMenuItem,
             this.agentListToolStripMenuItem,
             this.agentToolStripMenuItem,
-            this.pRODUCTIVITYToolStripMenuItem});
+            this.pRODUCTIVITYToolStripMenuItem,
+            this.changePasswordToolStripMenuItem});
             this.phoner8ClickMenu.Name = "phoner8ClickMenu";
             this.phoner8ClickMenu.ShowImageMargin = false;
-            this.phoner8ClickMenu.Size = new System.Drawing.Size(167, 224);
+            this.phoner8ClickMenu.Size = new System.Drawing.Size(167, 268);
             // 
             // accountSettingToolStripMenuItem
             // 
@@ -1114,6 +1116,15 @@
             this.btnIvrList.UseVisualStyleBackColor = true;
             this.btnIvrList.Click += new System.EventHandler(this.btnIvrList_Click);
             // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.changePasswordToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
             // FormDialPad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1263,5 +1274,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Extension;
         private System.Windows.Forms.ToolStripMenuItem pRODUCTIVITYToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip breakMenu;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
     }
 }

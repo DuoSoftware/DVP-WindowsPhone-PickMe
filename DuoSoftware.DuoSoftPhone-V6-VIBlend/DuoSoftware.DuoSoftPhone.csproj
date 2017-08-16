@@ -319,6 +319,12 @@
     <Compile Include="Ui\FormDialPad.Designer.cs">
       <DependentUpon>FormDialPad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\frmPasswordChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\frmPasswordChange.Designer.cs">
+      <DependentUpon>frmPasswordChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\frmPhoneConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\FormDialPad.resx">
       <DependentUpon>FormDialPad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\frmPasswordChange.resx">
+      <DependentUpon>frmPasswordChange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\frmPhoneConfig.resx">
       <DependentUpon>frmPhoneConfig.cs</DependentUpon>
