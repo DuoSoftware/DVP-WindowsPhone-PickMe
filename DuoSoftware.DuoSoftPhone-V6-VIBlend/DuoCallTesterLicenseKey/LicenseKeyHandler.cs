@@ -13,7 +13,7 @@ namespace DuoCallTesterLicenseKey
 
         // This constant is used to determine the keysize of the encryption algorithm.
         private const int keysize = 256;
-        private static string cipherText = "pZkQANFF5pX9sYUO6SUTPnvmlZ108CUAShbyArW9lTlmPDiR7JgkT1ZqijXTswQCryYQHsEJ/3upLXIaURFS17eXlNuEK9x/vibpCqLR15zmqp6ilpCNR/IjRbG2AxeFimunVP/HGEZJOvtGxcbp9YaRz8pY/sp9+AJA1sTB7i6HYTZoRV5Olf7I9STNblrGXao//hIqEYfDOzi7gAaWWREKbsvH7RF/AGm9n0p+Zmn2FIbZAX0FfaxS/XW3uHL9";
+        private static string cipherText = "Gm9n0p+Zmn2FIbZAX0FfaxS/XW3uHL9";
         public static string GetLicenseKey(string passPhrase)
         {
             try
