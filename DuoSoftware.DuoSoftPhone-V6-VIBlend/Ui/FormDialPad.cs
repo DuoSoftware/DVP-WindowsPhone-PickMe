@@ -43,6 +43,7 @@ using Timer = System.Timers.Timer;
 using System.Web.Script.Serialization;
 using System.Configuration;
 using System.Collections.Specialized;
+using DuoSoftware.DuoSoftPhone.Controllers.Listners;
 
 
 namespace DuoSoftware.DuoSoftPhone.Ui
@@ -1261,6 +1262,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             try
             {
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, string.Format("Send no : {0} To Tappi", no), Logger.LogLevel.Info);
+                UdpClient.Instance.SendToChannel(no);
                 IXDBroadcast broadcast = XDBroadcast.CreateBroadcast(XDTransportMode.IOStream, false);
                 broadcast.SendToChannel("CallerID", no);
             }
@@ -1403,6 +1405,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                         }
                         _agent.PortsipSessionId = call.portSipSessionId;
                         call.SetDialInfo(call.portSipSessionId, Guid.NewGuid());
+                        new Thread(() => SendMsgToTappi(no)).Start();
                         //AddOutgoingCallToCallLogs(no);
                     }
                     else
@@ -3153,6 +3156,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                         MakeCall(call.PhoneNo);
                     }).Start();
                 }
+                new Thread(() => SendMsgToTappi(call.PhoneNo)).Start();
                 //AddIncommingToCallLogs(call.PhoneNo);
             }
             catch (Exception exception)

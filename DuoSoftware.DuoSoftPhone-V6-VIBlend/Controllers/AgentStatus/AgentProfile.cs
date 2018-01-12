@@ -314,6 +314,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                 data.grant_type = "password";
                 data.username = username;
                 data.password = txtPassword;
+                data.companyName = "duoowner";
                 //["all_all", "profile_veeryaccount", "write_ardsresource", "write_notification", "read_myUserProfile", "read_productivity", "profile_veeryaccount", "resourceid"];
                 data.scope =
                     "all_all write_ardsresource write_notification read_myUserProfile read_requestmeta write_sysmonitoring profile_veeryaccount resourceid";

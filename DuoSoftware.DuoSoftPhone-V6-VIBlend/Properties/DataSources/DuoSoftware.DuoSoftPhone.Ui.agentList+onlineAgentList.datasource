@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="agentList+onlineAgentList" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>DuoSoftware.DuoSoftPhone.Ui.agentList+onlineAgentList, DuoSoftware.DuoSoftPhone, Version=5.0.0.7, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>DuoSoftware.DuoSoftPhone.Ui.agentList+onlineAgentList, DuoSoftware.DuoSoftPhone, Version=5.0.0.9, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

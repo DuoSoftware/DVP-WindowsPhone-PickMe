@@ -215,6 +215,7 @@
     <Compile Include="Controllers\DialPadEventArgs.cs" />
     <Compile Include="Controllers\DialPadEventHandler.cs" />
     <Compile Include="Controllers\InterfaceClass.cs" />
+    <Compile Include="Controllers\Listners\UdpClient.cs" />
     <Compile Include="Controllers\SequenceNumberGenerator.cs" />
     <Compile Include="Controllers\Service\ardsHandler.cs" />
     <Compile Include="Controllers\Service\httpHandler.cs" />
@@ -372,6 +373,9 @@
     <EmbeddedResource Include="Ui\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App - Copy.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -569,6 +573,7 @@
     <Content Include="bin\Debug\VIBlend.WinForms.Controls.dll" />
     <Content Include="bin\Debug\VIBlend.WinForms.Utilities.dll" />
     <Content Include="bin\Debug\XDMessaging.dll" />
+    <Content Include="bin\DuoCallTesterLicenseKey.dll" />
     <Content Include="Console App.fw.ico" />
     <None Include="Service References\refEngagement\configuration91.svcinfo" />
     <None Include="Service References\refEngagement\configuration.svcinfo" />

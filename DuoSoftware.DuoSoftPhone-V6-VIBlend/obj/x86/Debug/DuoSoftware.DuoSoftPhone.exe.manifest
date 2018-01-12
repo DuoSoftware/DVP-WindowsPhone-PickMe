@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Console App.fw.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="DuoSoftware.DuoSoftPhone" version="5.0.0.7" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="DuoSoftware.DuoSoftPhone" version="5.0.0.9" language="neutral" processorArchitecture="x86" />
     <commandLine file="DuoSoftware.DuoSoftPhone.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -56,13 +56,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoCallTesterLicenseKey.dll" size="9728">
-      <assemblyIdentity name="DuoCallTesterLicenseKey" version="5.0.0.7" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="DuoCallTesterLicenseKey" version="5.0.0.9" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YOXpqkrZwIJ5cI2eCLVH4//vAsGHUA5UHA1s8+4Ew3U=</dsig:DigestValue>
+        <dsig:DigestValue>t+YKpi1MHj3/uSZIO3Yiy+i6FHdasTtjQAVeC1WRY+s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2611712">
-      <assemblyIdentity name="DuoSoftware.DuoSoftPhone" version="5.0.0.7" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2613248">
+      <assemblyIdentity name="DuoSoftware.DuoSoftPhone" version="5.0.0.9" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>A4LRltIhu/eO4ujMUMiPCTZR13TI6Zi6uGu5k5MvTgU=</dsig:DigestValue>
+        <dsig:DigestValue>lJMqTu5q1Pv3SD0Xd1BDCC2bok8K66zGZdps9X75bcs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -474,6 +474,15 @@
       <dsig:DigestValue>GIHnUZcTO2mSaMsn7PscDbfaPieNKu3CJeh9gArFMw0=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="bin\DuoCallTesterLicenseKey.dll" size="5632">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>7m4hv/Fkjzs3q/gjDWnrclnIDJ8SdI3KoI4jTG0yjDE=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Console App.fw.ico" size="370070">
     <hash>
       <dsig:Transforms>
@@ -483,13 +492,13 @@
       <dsig:DigestValue>enpuLqVkc2SCHBgx9vP86a+CvIo8FeksjGwqkwPbAvM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DuoSoftware.DuoSoftPhone.exe.config" size="29430">
+  <file name="DuoSoftware.DuoSoftPhone.exe.config" size="29484">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>+z0ACyqnrpaEnj5gnoFVGfWGEVOF74mBD2h0ICSwqEU=</dsig:DigestValue>
+      <dsig:DigestValue>uYG7Z7tZZZt0ZALYv9xWfsez0jxsv/e9bqzwZb5291E=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SIPSetting.xml" size="430" writeableType="applicationData">
