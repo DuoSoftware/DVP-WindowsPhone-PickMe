@@ -891,8 +891,18 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             {
                 try
                 {
-                    phoneController.setAudioDeviceId(ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex);
-                    selectedMic = ComboBoxMicrophones.SelectedItem.ToString();
+                    ComboBoxMicrophones.SelectedIndex = ComboBoxMicrophones.FindString(ComboBoxMicrophones.Text);
+                    ComboBoxSpeakers.SelectedIndex = ComboBoxSpeakers.FindString(ComboBoxSpeakers.Text);
+                    if (ComboBoxMicrophones.SelectedIndex < 0 || ComboBoxSpeakers.SelectedIndex<0)
+                    {
+                        MessageBox.Show("Fail To Bind Audio Devices. Please Check Your Audio Settings.");
+                        Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "Fail To Bind Audio Devices. Please Check Your Audio Settings", Logger.LogLevel.Error);
+                        return;
+                    }
+                    phoneController.setAudioDeviceId (ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex);
+                    Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger10, string.Format("Selected Audio Devices Mic Selection - Microphone/Speaker Index : {0}/{1} {2}/{3}", ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex, ComboBoxMicrophones.Text, ComboBoxSpeakers.Text), Logger.LogLevel.Info);
+                  //  phoneController.setAudioDeviceId(ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex);
+                  //  selectedMic = ComboBoxMicrophones.SelectedItem.ToString();
 
                 }
                 catch (Exception exception)
@@ -906,8 +916,18 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             {
                 try
                 {
+                    ComboBoxMicrophones.SelectedIndex = ComboBoxMicrophones.FindString(ComboBoxMicrophones.Text);
+                    ComboBoxSpeakers.SelectedIndex = ComboBoxSpeakers.FindString(ComboBoxSpeakers.Text);
+                    if (ComboBoxMicrophones.SelectedIndex < 0 || ComboBoxSpeakers.SelectedIndex < 0)
+                    {
+                        MessageBox.Show("Fail To Bind Audio Devices. Please Check Your Audio Settings.");
+                        Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "Fail To Bind Audio Devices. Please Check Your Audio Settings", Logger.LogLevel.Error);
+                        return;
+                    }
                     phoneController.setAudioDeviceId(ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex);
-                    selectedSpeaker = ComboBoxSpeakers.SelectedItem.ToString();
+                    Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger10, string.Format("Selected Audio Devices Spk Selection - Microphone/Speaker Index : {0}/{1} {2}/{3}", ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex, ComboBoxMicrophones.Text, ComboBoxSpeakers.Text), Logger.LogLevel.Info);
+                   // phoneController.setAudioDeviceId(ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex);
+                   //selectedSpeaker = ComboBoxSpeakers.SelectedItem.ToString();
                 }
                 catch (Exception exception)
                 {
@@ -1152,6 +1172,9 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 int volume = phoneController.getSpeakerVolume();
 
                 volume = phoneController.getMicVolume();
+
+                
+                
             }
             catch (Exception exception)
             {
