@@ -895,8 +895,12 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     selectedMic = ComboBoxMicrophones.SelectedItem.ToString();
                     if (result < 0)
                     {
-                        Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "Fail to set Audio Devices", Logger.LogLevel.Error);
+                        MessageBox.Show("Fail To Bind Audio Devices. Please Check Your Audio Settings.");
+                        Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, string.Format("Fail To Bind Audio Devices. Please Check Your Audio Settings - Microphone/Speaker Index : {0}/{1} Names : {2}/{3}", ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex, ComboBoxMicrophones.Text, ComboBoxSpeakers.Text), Logger.LogLevel.Error);
+                        return;
                     }
+                    Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger10, string.Format("Selected Audio Devices - Microphone/Speaker Index : {0}/{1} Names : {2}/{3}", ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex, ComboBoxMicrophones.Text, ComboBoxSpeakers.Text), Logger.LogLevel.Info);
+                   
                 }
                 catch (Exception exception)
                 {
@@ -913,8 +917,12 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     selectedSpeaker = ComboBoxSpeakers.SelectedItem.ToString();
                     if (result < 0)
                     {
-                        Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "Fail to set Audio Devices", Logger.LogLevel.Error);
+                        MessageBox.Show("Fail To Bind Audio Devices. Please Check Your Audio Settings.");
+                        Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, string.Format("Fail To Bind Audio Devices. Please Check Your Audio Settings - Microphone/Speaker Index : {0}/{1} Names : {2}/{3}", ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex, ComboBoxMicrophones.Text, ComboBoxSpeakers.Text), Logger.LogLevel.Error);
+                        return;
                     }
+                    Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger10, string.Format("Selected Audio Devices - Microphone/Speaker Index : {0}/{1} Names: {2}/{3}", ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex, ComboBoxMicrophones.Text, ComboBoxSpeakers.Text), Logger.LogLevel.Info);
+                   
                 }
                 catch (Exception exception)
                 {

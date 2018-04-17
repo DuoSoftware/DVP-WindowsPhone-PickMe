@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2613248">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2614272">
       <assemblyIdentity name="DuoSoftware.DuoSoftPhone" version="5.0.0.9" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sxK6RtKDzh3qkD/zi37KMYEg1UtuQ93fiFu4ayxKuRE=</dsig:DigestValue>
+        <dsig:DigestValue>BJsXUIMRi+DHm28ceKaRS1x6QbLtJmgwReADNS2qnxQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -420,13 +420,13 @@
       <dsig:DigestValue>CgkTTgw2iBpH3Pxl0cA2O15QET4VfGe0wv+lh50srv8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Debug\Ringtone.wav" size="1589486">
+  <file name="bin\Debug\Ringtone.wav" size="50338">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>dYEzmDxsLRHeBJALPWQyRvtbHfz3PgVr4Qv5yVd26lE=</dsig:DigestValue>
+      <dsig:DigestValue>V7CbidFaP3UxXYlqnnEqj6CyWMuJksbfJHk4vNZwtkU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="bin\Debug\System.ServiceModel.PollingDuplex.dll" size="186240">
