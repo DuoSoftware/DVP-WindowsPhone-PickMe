@@ -28,21 +28,13 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
         
         
-        public AudioWiz( ComboBox  comboBoxMicrophones, ComboBox comboBoxSpeakers, int micVolume, int speakerVolume,int micIndex,int sepkIndex)
+        public AudioWiz( ComboBox  comboBoxMicrophones, ComboBox comboBoxSpeakers, int micVolume, int speakerVolume)
         {
             InitializeComponent();
             this.GroupBox3.Controls.Add(comboBoxMicrophones);
             this.GroupBox3.Controls.Add(comboBoxSpeakers);
 
-            if (comboBoxMicrophones.Items.Count >= micIndex)
-            {
-                comboBoxMicrophones.SelectedIndex = micIndex;
-            }
-
-            if (comboBoxSpeakers.Items.Count >= sepkIndex)
-            {
-                comboBoxSpeakers.SelectedIndex = sepkIndex;
-            }
+           
 
             TrackBarSpeaker.SetRange(0, 255);
             TrackBarSpeaker.Value = speakerVolume;
