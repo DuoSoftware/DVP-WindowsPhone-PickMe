@@ -74,6 +74,8 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         private bool isCallAnswerd;
         private Dictionary<Guid, CallLog> callLogs;
         
+        private string selectedSpeaker = string.Empty;
+        private string selectedMic = string.Empty;
         private frmIncomingCall alert;
         private ComboBox ComboBoxMicrophones;
         private ComboBox ComboBoxSpeakers;
@@ -860,8 +862,6 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             }
         }
 
-        int SelectedMicrophoneId = -1;
-        int SelectedSpeakerId = -1;
         private void InitAdioWizItems()
         {
             this.ComboBoxMicrophones = new ComboBox();
@@ -886,13 +886,17 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             this.ComboBoxSpeakers.Name = "ComboBoxSpeakers";
             this.ComboBoxSpeakers.Size = new System.Drawing.Size(308, 23);
             this.ComboBoxSpeakers.TabIndex = 48;
-            
+
             this.ComboBoxMicrophones.SelectedIndexChanged += (s, e) =>
             {
                 try
                 {
-                    SelectedMicrophoneId = ComboBoxMicrophones.FindString(((ComboBox)s).Text);
-                    SetAudioDevice();
+                    var result = phoneController.setAudioDeviceId(ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex);
+                    selectedMic = ComboBoxMicrophones.SelectedItem.ToString();
+                    if (result < 0)
+                    {
+                        Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "Fail to set Audio Devices", Logger.LogLevel.Error);
+                    }
                 }
                 catch (Exception exception)
                 {
@@ -905,8 +909,12 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             {
                 try
                 {
-                    SelectedSpeakerId = ComboBoxSpeakers.FindString(((ComboBox)s).Text);
-                    SetAudioDevice();
+                    var result = phoneController.setAudioDeviceId(ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex);
+                    selectedSpeaker = ComboBoxSpeakers.SelectedItem.ToString();
+                    if (result < 0)
+                    {
+                        Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "Fail to set Audio Devices", Logger.LogLevel.Error);
+                    }
                 }
                 catch (Exception exception)
                 {
@@ -917,31 +925,6 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
         }
 
-        private void SetAudioDevice()
-        {
-            try
-            {
-                if (SelectedSpeakerId < 0 || SelectedMicrophoneId < 0)
-                {
-                    MessageBox.Show("Fail To Bind Audio Devices. Invalid Device ID, Please Check Your Audio Settings.");
-                    Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "Fail To Bind Audio Devices. Invalid Device ID, Please Check Your Audio Settings", Logger.LogLevel.Error);
-                    return;
-                }
-                var result = phoneController.setAudioDeviceId(SelectedMicrophoneId, SelectedSpeakerId);
-                if (result < 0)
-                {
-                    MessageBox.Show("Fail To Bind Audio Devices. Please Check Your Audio Settings.");
-                    Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "Fail To Bind Audio Devices. Please Check Your Audio Settings", Logger.LogLevel.Error);
-                    return;
-                }
-                Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger10, string.Format("Selected Audio Devices Spk Selection - Microphone/Speaker Index : {0}/{1} {2}/{3}", ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex, ComboBoxMicrophones.Text, ComboBoxSpeakers.Text), Logger.LogLevel.Info);
-                   
-            }
-            catch (Exception exception)
-            {
-                Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "ComboBoxSpeakers.SelectedIndexChanged", exception, Logger.LogLevel.Error);
-            }
-        }
         private bool DisableRingtone()
         {
             playRingtone = false;
@@ -1020,14 +1003,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 }
 
                 InitAdioWizItems();
-               if(!loadDevices())
-               {
-                   phoneController.releaseCallbackHandlers();
-                   Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger1, "Fail To Bind Audio Devices", Logger.LogLevel.Error);
-                   InitializeError("Phone Initialization failed.", 408);
-                   return;
-               }
-               SetAudioDevice();
+                loadDevices();
                 //phoneController.setAudioDeviceId(0, 0);
                 phoneController.setAudioCodecParameter(AUDIOCODEC_TYPE.AUDIOCODEC_AMRWB, "mode-set=0; octet-align=0; robust-sorting=0");
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger1, string.Format("userName : {0}, authName : {1}, password : {2}, localPort : {3}.............................step 2 : pass.", userName, authName, password, localPort), Logger.LogLevel.Info);
@@ -1145,7 +1121,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         //    }
         //}
 
-        private bool loadDevices()
+        private void loadDevices()
         {
             try
             {
@@ -1160,11 +1136,8 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     if (phoneController.getPlayoutDeviceName(i, deviceName, 256) == 0)
                     {
                         ComboBoxSpeakers.Items.Add(deviceName.ToString());
-                        SelectedSpeakerId = i;
                     }
                 }
-
-           
 
                 num = phoneController.getNumOfRecordingDevices();
                 for (int i = 0; i < num; ++i)
@@ -1174,25 +1147,24 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     if (phoneController.getRecordingDeviceName(i, deviceName, 256) == 0)
                     {
                         ComboBoxMicrophones.Items.Add(deviceName.ToString());
-                        SelectedMicrophoneId = i;
                     }
                 }
 
-                if (ComboBoxMicrophones.Items.Count <= 0 || ComboBoxSpeakers.Items.Count <= 0)
-                {
-                    return false;
-                }
+
+                if (ComboBoxSpeakers.Items.Count > 0)
+                    ComboBoxSpeakers.SelectedIndex = selectedSpeaker.Equals(string.Empty) ? 0 : ComboBoxSpeakers.FindString(selectedSpeaker);
+
+               
+                if (ComboBoxMicrophones.Items.Count > 0)
+                    ComboBoxMicrophones.SelectedIndex = selectedMic.Equals(string.Empty) ? 0 : ComboBoxMicrophones.FindString(selectedMic);
+
                 int volume = phoneController.getSpeakerVolume();
 
                 volume = phoneController.getMicVolume();
-                return true;
-                
-                
             }
             catch (Exception exception)
             {
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "loadDevices", exception, Logger.LogLevel.Error);
-                return false;
             }
         }
 
@@ -1825,9 +1797,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             try
             {
                 if (call.CallCurrentState.GetType() == typeof(CallConnectedState))
-                { var i = phoneController.sendDtmf(_agent.PortsipSessionId, DTMF_METHOD.DTMF_RFC2833, Convert.ToInt16(digit), 160, true);
-                Console.Write(i);
-                }
+                    phoneController.sendDtmf(_agent.PortsipSessionId, DTMF_METHOD.DTMF_RFC2833, Convert.ToInt16(digit),160, true);
             }
             catch (Exception exception)
             {
@@ -2477,7 +2447,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             try
             {
                 loadDevices();
-                var frmAudio = new AudioWiz(ComboBoxMicrophones, ComboBoxSpeakers, phoneController.getMicVolume(), phoneController.getSpeakerVolume());
+                var frmAudio = new AudioWiz(ComboBoxMicrophones, ComboBoxSpeakers, phoneController.getMicVolume(), phoneController.getSpeakerVolume(), ComboBoxMicrophones.FindString(selectedMic), ComboBoxSpeakers.FindString(selectedSpeaker));
 
                 frmAudio.Closing += (s, e1) =>
                 {
