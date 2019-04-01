@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wesJ+xEjrnbBfgOIWQuXREs2SsFo26oukAq1K113S+k=</dsig:DigestValue>
+        <dsig:DigestValue>DWucY1sPQxpXB2VtbHerx7PK+ilV4BYCnFbLbXZj/Wo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BJsXUIMRi+DHm28ceKaRS1x6QbLtJmgwReADNS2qnxQ=</dsig:DigestValue>
+        <dsig:DigestValue>2RU2ncaRWtpzpD+WQiX2sIAe09RGkhUPx6gM6R3lW5U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -492,13 +492,13 @@
       <dsig:DigestValue>enpuLqVkc2SCHBgx9vP86a+CvIo8FeksjGwqkwPbAvM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DuoSoftware.DuoSoftPhone.exe.config" size="29536">
+  <file name="DuoSoftware.DuoSoftPhone.exe.config" size="29456">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>RUpyLg37xu9tajizYAxvUT9IAFLyJKLyufi2pz760b4=</dsig:DigestValue>
+      <dsig:DigestValue>CJxVZTEMxxQT7/wmOpgoZKMX5Hqed0IfSb4yQIFuvEM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SIPSetting.xml" size="430" writeableType="applicationData">

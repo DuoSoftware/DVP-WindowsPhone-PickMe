@@ -57,6 +57,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         private string externalUrl;
         private string Skill;
         private bool enable;
+        private string bowserType;
         SocketConnector socketCon;
         private int acwTime;
         private int acwCotdown;
@@ -187,7 +188,15 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             {
                 if (!enable) return;
                 var url = string.Format(externalUrl, no, direction, skill, sessionId);
-                System.Diagnostics.Process.Start(url);
+                if (string.IsNullOrEmpty(bowserType))
+                {
+                    Process.Start(url);
+                }
+                else
+                {
+                    Process.Start(bowserType, url);
+                }
+                //System.Diagnostics.Process.Start(url);
             }
             catch (System.Exception exception)
             {
@@ -996,7 +1005,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 phoneController = new PortSIPLib(0, 0, this);
                 phoneController.createCallbackHandlers();
                 var rt = phoneController.initialize(TRANSPORT_TYPE.TRANSPORT_UDP,
-                                 PORTSIP_LOG_LEVEL.PORTSIP_LOG_NONE,
+                                 PORTSIP_LOG_LEVEL.PORTSIP_LOG_DEBUG,
                                  Application.StartupPath,
                                  1,
                                  "DuoSoftPhone",
@@ -2339,6 +2348,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                  var section = (NameValueCollection)ConfigurationManager.GetSection("CallExternalUrl");
                  externalUrl = section["url"];
                  enable = section["enable"].Equals("true");
+                 bowserType = section["bowser"];
                  
                 agentList = new AgentList();
                 agentList.OnAgentSelected += (ext) =>

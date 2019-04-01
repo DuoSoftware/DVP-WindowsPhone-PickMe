@@ -23,6 +23,6 @@ E:\DuoProject\Applications\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-V
 E:\DuoProject\Applications\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\bin\Debug\DuoCallTesterLicenseKey.pdb
 E:\DuoProject\Applications\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\bin\Debug\Newtonsoft.Json.dll
 E:\DuoProject\Applications\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\bin\Debug\Newtonsoft.Json.xml
+E:\DuoProject\Applications\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\obj\Debug\DuoCallTesterLicenseKey.csprojResolveAssemblyReference.cache
 E:\DuoProject\Applications\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\obj\Debug\DuoCallTesterLicenseKey.dll
 E:\DuoProject\Applications\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\obj\Debug\DuoCallTesterLicenseKey.pdb
-E:\DuoProject\Applications\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\obj\Debug\DuoCallTesterLicenseKey.csprojResolveAssemblyReference.cache
