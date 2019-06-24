@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DuoSoftware.DuoSoftPhone.Controllers.AgentStatus;
+﻿using DuoSoftware.DuoSoftPhone.Controllers.AgentStatus;
 using DuoSoftware.DuoTools.DuoLogger;
 using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
 
 namespace DuoSoftware.DuoSoftPhone.Controllers.Service
 {
@@ -23,7 +20,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.Service
 
         public static bool SendModeChangeRequestOutbound()
         {
-           return BreakRequest("Outbound");
+            return BreakRequest("Outbound");
         }
 
         public static bool BreakRequest(string reason)
@@ -32,7 +29,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.Service
             {
                 var profile = AgentProfile.Instance;
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger7, string.Format("BreakRequest . Resourceid : {0} :{1}", profile.id, reason.Replace(" ", string.Empty)), Logger.LogLevel.Debug);
-                var url = profile.settingObject["ardsUrl"] + "/" + profile.id + "/state/NotAvailable/reason/" +  reason.Replace(" ",string.Empty);
+                var url = profile.settingObject["ardsUrl"] + "/" + profile.id + "/state/NotAvailable/reason/" + reason.Replace(" ", string.Empty);
                 var responseData = HttpHandler.MakeRequest(url, "Bearer " + profile.server.token, null, "put");
                 var data = profile.jsonSerializer.Deserialize<Dictionary<string, dynamic>>(responseData.ToString());
                 return data["IsSuccess"];
@@ -52,7 +49,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.Service
             {
                 var profile = AgentProfile.Instance;
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger7, string.Format("EndBreak . Resourceid : {0} ", profile.id), Logger.LogLevel.Debug);
-                var url = profile.settingObject["ardsUrl"] + "/" + profile.id + "/state/Available/reason/"+reason;
+                var url = profile.settingObject["ardsUrl"] + "/" + profile.id + "/state/Available/reason/" + reason;
                 var responseData = HttpHandler.MakeRequest(url, "Bearer " + profile.server.token, null, "put");
                 var data = profile.jsonSerializer.Deserialize<Dictionary<string, dynamic>>(responseData.ToString());
                 return data["IsSuccess"];
@@ -65,22 +62,22 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.Service
 
         }
 
-        
-        public static void FreezeAcw(string callSessionId,bool endFreeze)
+
+        public static void FreezeAcw(string callSessionId, bool endFreeze)
         {
             try
             {
                 var profile = AgentProfile.Instance;
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger7, string.Format("FreezeAcw . Resourceid : {0} : {1} : {2}", profile.id, callSessionId, endFreeze ? "EndFreeze" : "Freeze"), Logger.LogLevel.Debug);
-                
+
                 dynamic data = new JObject();
                 data.RequestType = "CALL";
-                data.State = endFreeze? "EndFreeze" :"Freeze";
+                data.State = endFreeze ? "EndFreeze" : "Freeze";
                 data.Reason = "";
                 data.OtherInfo = "";
 
-                var url = profile.settingObject["ardsUrl"] + "/" + profile.id + "/concurrencyslot/session/"+callSessionId;
-               // HttpHandler.MakeRequest(url, "Bearer " + profile.server.token, data, "put");
+                var url = profile.settingObject["ardsUrl"] + "/" + profile.id + "/concurrencyslot/session/" + callSessionId;
+                // HttpHandler.MakeRequest(url, "Bearer " + profile.server.token, data, "put");
 
                 Uri uri = new Uri(url);
                 var d = data.ToString();
@@ -129,6 +126,26 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.Service
                 return false;
             }
 
+        }
+
+        public static bool ReplyToDialerRequest(string key, string msg)
+        {
+            try
+            {
+                dynamic postdata = new JObject();
+                postdata.Tkey = key;
+                postdata.Message = msg;
+                var profile = AgentProfile.Instance;
+                var url = profile.settingObject["notificationUrl"] + "/DVP/API/1.0.0.0/NotificationService/Notification/reply";
+                var responseData = HttpHandler.MakeRequest(url, "Bearer " + profile.server.token, postdata, "post");
+                var data = profile.jsonSerializer.Deserialize<Dictionary<string, dynamic>>(responseData.ToString());
+                return data["IsSuccess"];
+            }
+            catch (Exception exception)
+            {
+                Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "ValidateToken", exception, Logger.LogLevel.Error);
+                return false;
+            }
         }
     }
 }

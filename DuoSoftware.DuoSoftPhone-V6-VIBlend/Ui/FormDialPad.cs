@@ -1,32 +1,18 @@
-﻿using System.Runtime.InteropServices;
-using System.Windows.Forms.VisualStyles;
-using DuoCallTesterLicenseKey;
-using DuoSoftware.DuoSoftPhone.Controllers;
-using DuoSoftware.DuoSoftPhone.Controllers.Service;
-using DuoSoftware.DuoSoftPhone.refResourceProxy;
-using DuoSoftware.DuoSoftPhone.refUserAuth;
-using DuoSoftware.DuoTools.DuoLogger;
-using PortSIP;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using DuoCallTesterLicenseKey;
+﻿using DuoCallTesterLicenseKey;
 using DuoSoftware.DuoSoftPhone.Controllers;
 using DuoSoftware.DuoSoftPhone.Controllers.AgentStatus;
 using DuoSoftware.DuoSoftPhone.Controllers.CallStatus;
 using DuoSoftware.DuoSoftPhone.Controllers.Common;
+using DuoSoftware.DuoSoftPhone.Controllers.Listners;
 using DuoSoftware.DuoSoftPhone.Controllers.Service;
 using DuoSoftware.DuoSoftPhone.refResourceProxy;
-using DuoSoftware.DuoSoftPhone.refUserAuth;
+using DuoSoftware.DuoTools.DuoLogger;
 using PortSIP;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Configuration;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -34,16 +20,13 @@ using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Windows.Forms;
-using Newtonsoft.Json.Linq;
 using TheCodeKing.Net.Messaging;
 using VIBlend.Utilities;
 using AgentMode = DuoSoftware.DuoSoftPhone.Controllers.AgentStatus.AgentMode;
 using Timer = System.Timers.Timer;
-using System.Web.Script.Serialization;
-using System.Configuration;
-using System.Collections.Specialized;
-using DuoSoftware.DuoSoftPhone.Controllers.Listners;
 
 
 namespace DuoSoftware.DuoSoftPhone.Ui
@@ -74,7 +57,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         private Timer acwCutdownTimer;
         private bool isCallAnswerd;
         private Dictionary<Guid, CallLog> callLogs;
-        
+
         private string selectedSpeaker = string.Empty;
         private string selectedMic = string.Empty;
         private frmIncomingCall alert;
@@ -87,8 +70,9 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
 
 
-        
+
         private string filePath = string.Empty;
+        private string previewToneFilePath = string.Empty;
         private string _ringInfilePath = string.Empty;
         private bool playRingtone = false;
         private bool playRingInToneMenually = false;
@@ -97,12 +81,13 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         private bool playingRingIntone = false;
         private bool ShowCallAlert = false;
         private SoundPlayer _wavPlayer;
+        private SoundPlayer _wavPrevSoundPlayer;
         private SoundPlayer _wavPlayerRingIn;
 
         // Create the list to use as the custom source.
         private AutoCompleteStringCollection source = new AutoCompleteStringCollection();
 
-        
+
         private PortSIPLib phoneController;
 
 
@@ -111,6 +96,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         private int X;
         private int Y;
         private int reginTime;
+        private int previewTime;
 
 
         private string _n;
@@ -136,11 +122,11 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
         private void ProcessNotifications(object data)
         {
-            
+
             var msg = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(data.ToString());
             var values = msg["Message"].Split('|');
             var caller = values[3];
-            
+
             var skill = values[6];
             var displayMsg = " Company : " + msg["Company"] + "\n Company No : " + values[5] + "\n Caller : " + caller +
                              "\n Skill : " + skill;
@@ -182,7 +168,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger7, string.Format("ProcessNotifications CallSessionId . {0}", _agent.CallSessionId), Logger.LogLevel.Debug);
         }
 
-        private void CallExternalUrl(string no,string direction,string skill,string sessionId)
+        private void CallExternalUrl(string no, string direction, string skill, string sessionId)
         {
             try
             {
@@ -200,7 +186,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             }
             catch (System.Exception exception)
             {
-               Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "CallExternalUrl", exception, Logger.LogLevel.Error);
+                Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "CallExternalUrl", exception, Logger.LogLevel.Error);
             }
         }
 
@@ -227,7 +213,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         private void applyStyle()
         {
 
-            
+
 
 
             FillStyleGradientEx highlightGradientbtnFreez = new FillStyleGradientEx(Color.LightBlue, Color.LightSeaGreen, Color.DodgerBlue, Color.DarkBlue, 90f, 0.2f, 0.3f);
@@ -450,7 +436,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
 
 
-            
+
             ControlTheme moretheme = ControlTheme.GetDefaultTheme(VIBLEND_THEME.STEEL);
             moretheme.StyleHighlight.FillStyle = hashhighlightGradient;
             moretheme.StyleDisabled.FillStyle = hashdisabledGradient;
@@ -506,7 +492,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                             txtStatus.Text = "Initializing";
                             mynotifyicon.ShowBalloonTip(1000, "FaceTone - Phone", "Phone Reinitializing.", ToolTipIcon.Info);
                         }));
-                        
+
                         UninitializePhone();
                         InitializePhone(true);
                     }
@@ -567,7 +553,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             }
         }
 
-       
+
         private void PlayRingTone()
         {
             try
@@ -688,12 +674,12 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                         {
                             case "SESSIONCREATED":
                                 var sessionId = splitData[1];
-                               // _agent.CallSessionId = sessionId;
+                                // _agent.CallSessionId = sessionId;
                                 _agent.AgentCurrentState.OnMakeCall(ref _agent);
                                 call.CallSessionId = sessionId;
                                 buttonReject.Invoke(new MethodInvoker(delegate { buttonReject.Enabled = true; }));
                                 var jsonString = _agent.PortsipSessionId + "|" + _agent.CallSessionId + "|" + call.PhoneNo;
-                                
+
                                 break;
                         }
                     }
@@ -711,7 +697,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                             call.CallCurrentState.OnOperationFail(ref call);
                             mynotifyicon.ShowBalloonTip(1000, "FaceTone - Phone", "Operation Fail.", ToolTipIcon.Error);
                         }
-                        else if (msgString.ToUpper() == "ROUTEBACK" || msgString == "CALLFAIL") 
+                        else if (msgString.ToUpper() == "ROUTEBACK" || msgString == "CALLFAIL")
                         {
                             call.CallCurrentState.OnReset(ref call);
                             txtStatus.Invoke(new MethodInvoker(delegate
@@ -778,9 +764,9 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             {
                 lock (callLogs)
                 {
-                    callLogs.Add(call.currentCallLogId, new CallLog { Direction = 1, Durations = 0, PhoneNo = no, time = DateTime.Now ,Skill = "Outbound"});
+                    callLogs.Add(call.currentCallLogId, new CallLog { Direction = 1, Durations = 0, PhoneNo = no, time = DateTime.Now, Skill = "Outbound" });
                 }
-                
+
             }
             catch (Exception exception)
             {
@@ -788,7 +774,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             }
         }
 
-        private void AddIncommingToCallLogs(string no,string skill)
+        private void AddIncommingToCallLogs(string no, string skill)
         {
             try
             {
@@ -800,7 +786,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     }
                     callLogs.Add(call.currentCallLogId, new CallLog { Direction = 0, Durations = 0, PhoneNo = no, time = DateTime.Now, Skill = skill });
                 }
-                
+
             }
             catch (Exception exception)
             {
@@ -818,8 +804,8 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 {
                     callLogs.Remove(call.currentCallLogId);
                     callLogs.Add(call.currentCallLogId, log);
-                } 
-                
+                }
+
             }
             catch (Exception exception)
             {
@@ -909,7 +895,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                         return;
                     }
                     Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger10, string.Format("Selected Audio Devices - Microphone/Speaker Index : {0}/{1} Names : {2}/{3}", ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex, ComboBoxMicrophones.Text, ComboBoxSpeakers.Text), Logger.LogLevel.Info);
-                   
+
                 }
                 catch (Exception exception)
                 {
@@ -931,7 +917,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                         return;
                     }
                     Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger10, string.Format("Selected Audio Devices - Microphone/Speaker Index : {0}/{1} Names: {2}/{3}", ComboBoxMicrophones.SelectedIndex, ComboBoxSpeakers.SelectedIndex, ComboBoxMicrophones.Text, ComboBoxSpeakers.Text), Logger.LogLevel.Info);
-                   
+
                 }
                 catch (Exception exception)
                 {
@@ -982,6 +968,33 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 return false;
             }
         }
+        
+        private void SetupPreviewtone()
+        {
+            try
+            {
+                var settingObject = System.Configuration.ConfigurationSettings.AppSettings;
+                previewToneFilePath = settingObject["PreviewToneFilePath"];
+                if (!File.Exists(previewToneFilePath))
+                {
+                    Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, string.Format("SetupPreviewtone> Cannot Find File {0}", previewToneFilePath), Logger.LogLevel.Error);
+                    previewToneFilePath = string.Format(@"{0}\{1}", Application.StartupPath, "Ringtone.wav");
+                }
+
+                _wavPrevSoundPlayer = new SoundPlayer
+                {
+                    SoundLocation = previewToneFilePath,
+                    // @"C:\Users\Public\Music\Sample Music\ALBSlide.wav"
+                };
+                _wavPrevSoundPlayer.LoadCompleted += wavPlayer_LoadCompleted;
+                _wavPrevSoundPlayer.LoadAsync();
+            }
+            catch (Exception exception)
+            {
+                Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "SetupPreviewtone", exception, Logger.LogLevel.Error);
+                
+            }
+        }
 
         private void InitializePhone(bool isReInit)
         {
@@ -1015,7 +1028,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 {
                     phoneController.releaseCallbackHandlers();
                     Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger1, string.Format("userName : {0}, authName : {1}, password : {2}, localPort : {3}.............................Phone Initialization failed. errorCode : {4}", userName, authName, password, localPort, errorCode), Logger.LogLevel.Info);
-                    InitializeError("Phone Initialization failed.",408);
+                    InitializeError("Phone Initialization failed.", 408);
                     return;
                 }
 
@@ -1171,7 +1184,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 if (ComboBoxSpeakers.Items.Count > 0)
                     ComboBoxSpeakers.SelectedIndex = selectedSpeaker.Equals(string.Empty) ? 0 : ComboBoxSpeakers.FindString(selectedSpeaker);
 
-               
+
                 if (ComboBoxMicrophones.Items.Count > 0)
                     ComboBoxMicrophones.SelectedIndex = selectedMic.Equals(string.Empty) ? 0 : ComboBoxMicrophones.FindString(selectedMic);
 
@@ -1194,7 +1207,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
                 if (VeerySetting.Instance.WebSocketlistnerEnable)
                 {
-                    var webSocketlistner = new WebSocketServiceHost(VeerySetting.Instance.WebSocketlistnerPort );
+                    var webSocketlistner = new WebSocketServiceHost(VeerySetting.Instance.WebSocketlistnerPort);
 
                     webSocketlistner.OnRecive += (callFunction, no) =>
                     {
@@ -1207,17 +1220,17 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                             switch (callFunction)
                             {
                                 case CallFunctions.MakeCall:
-                                {
-                                    textBoxNumber.Invoke(new MethodInvoker(delegate
                                     {
-                                        textBoxNumber.Text = no;
-                                        MakeCall(no);
-                                        if (!source.Contains(no))
-                                            source.Add(no);
-                                        source.Remove("");
-                                    }));
-                                    
-                                }
+                                        textBoxNumber.Invoke(new MethodInvoker(delegate
+                                        {
+                                            textBoxNumber.Text = no;
+                                            MakeCall(no);
+                                            if (!source.Contains(no))
+                                                source.Add(no);
+                                            source.Remove("");
+                                        }));
+
+                                    }
                                     break;
 
                                 case CallFunctions.EndCall:
@@ -1302,7 +1315,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         {
             try
             {
-                Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault,string.Format("transferCall_Click-> Session Id : {0} , Status : {1}", call.CallSessionId, call.CallCurrentState),Logger.LogLevel.Info);
+                Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, string.Format("transferCall_Click-> Session Id : {0} , Status : {1}", call.CallSessionId, call.CallCurrentState), Logger.LogLevel.Info);
                 if (!String.IsNullOrEmpty(textBoxNumber.Text))
                 {
                     var setting = VeerySetting.Instance;
@@ -1328,7 +1341,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                         try
                         {
                             SendDTMF(setting.DtmfValues[d]);
-                            
+
                         }
                         catch (Exception exception)
                         {
@@ -1410,13 +1423,13 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             try
             {
 
-                if (_agent.AgentCurrentState.GetType() == typeof(AgentIdle)&& _agent.AgentMode==AgentMode.Outbound)
+                if (_agent.AgentCurrentState.GetType() == typeof(AgentIdle) && _agent.AgentMode == AgentMode.Outbound)
                 {
                     if (!String.IsNullOrEmpty(no))
                     {
                         _agent.AgentCurrentState.OnMakeCall(ref _agent);
                         InAgentBusy(CallDirection.Outgoing);
-                       
+
                         call = new Call(no, this)
                         {
                             portSipSessionId = phoneController.call(no, true, false)
@@ -1451,7 +1464,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                             "Fail to Make Call.\nPlease change Mode to Outbound.", ToolTipIcon.Warning);
                     }
                     Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, string.Format("MakeCall-Fail. AgentCurrentState: {0}, CallCurrentState: {1}", _agent.AgentCurrentState, call.CallCurrentState), Logger.LogLevel.Error);
-                     
+
                 }
 
                 this.Invoke(new MethodInvoker(delegate
@@ -1460,7 +1473,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                         source.Add(no);
                     source.Remove("");
                 }));
-                
+
 
             }
             catch (Exception exception)
@@ -1532,7 +1545,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 }
 
 
-               
+
                 //Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, string.Format("Conference_Click-> Session Id : {0} , Status : {1}", _agent.CallSessionId, call.CallCurrentState), Logger.LogLevel.Info);
                 //if (call.CallCurrentState.GetType() == typeof(CallAgentClintConnectedState))
                 //{
@@ -1587,7 +1600,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 {
                     SendDTMF(setting.DtmfValues[c]);
                 }
-                
+
                 //Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, string.Format("swapCall_Click-> Session Id : {0} , Status : {1}", call.CallSessionId, call.CallCurrentState), Logger.LogLevel.Info);
                 //if (call.CallCurrentState.GetType() == typeof(CallAgentClintConnectedState) || call.CallCurrentState.GetType() == typeof(CallAgentSupConnectedState))
                 //{
@@ -1617,7 +1630,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         {
             try
             {
-                
+
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, string.Format("transferIvr_Click-> Session Id : {0} , Status : {1}", _agent.CallSessionId, call.CallCurrentState), Logger.LogLevel.Info);
                 panelIvrList.Visible = true;
                 //if (this.State != DialerState.NotOnCall)
@@ -1814,7 +1827,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             try
             {
                 if (call.CallCurrentState.GetType() == typeof(CallConnectedState))
-                    phoneController.sendDtmf(_agent.PortsipSessionId, DTMF_METHOD.DTMF_RFC2833, Convert.ToInt16(digit),160, true);
+                    phoneController.sendDtmf(_agent.PortsipSessionId, DTMF_METHOD.DTMF_RFC2833, Convert.ToInt16(digit), 160, true);
             }
             catch (Exception exception)
             {
@@ -1912,7 +1925,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         {
             try
             {
-                
+
             }
             catch (Exception exception)
             {
@@ -1926,7 +1939,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             {
                 if (agentList.IsDisposed)
                 {
-                    agentList=new AgentList();
+                    agentList = new AgentList();
                     agentList.OnAgentSelected += (ext) =>
                     {
                         textBoxNumber.Invoke(((MethodInvoker)(() =>
@@ -1944,7 +1957,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             }
         }
 
-        
+
 
         private void dNDToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1981,7 +1994,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             }
         }
 
-        
+
 
         public FormDialPad()
         {
@@ -2023,7 +2036,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 }
 
 
-                _agent = new Agent(Guid.NewGuid().ToString(), this) { AgentReqMode = AgentMode.Offline };
+                _agent = new Agent(Guid.NewGuid().ToString(), this) { AgentReqMode = AgentMode.Outbound };
                 fchg = new frmPasswordChange(_agent);
 
             }
@@ -2039,8 +2052,8 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         {
             try
             {
-                
-                
+
+
                 // Create and initialize the text box. //64, 64, 64
                 textBoxNumber = new TextBox
                 {
@@ -2092,6 +2105,8 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 _wavPlayer.LoadCompleted += wavPlayer_LoadCompleted;
                 _wavPlayer.LoadAsync();
 
+                
+
                 _wavPlayerRingIn = new SoundPlayer
                 {
                     SoundLocation = _ringInfilePath,
@@ -2101,9 +2116,9 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 _wavPlayerRingIn.LoadAsync();
 
 
-                
+                SetupPreviewtone();
 
-                
+
                 rejectCallToolStripMenuItem.Enabled = !IsNotAllowToReject;
                 //new Thread(InitiateTimer).Start();
                 OFFLINE.Visible = false;
@@ -2113,17 +2128,18 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 txtStatus.ForeColor = Color.DarkMagenta;
                 txtStatus.Text = "Initializing...";
 
-                
+
                 var settingObject = System.Configuration.ConfigurationSettings.AppSettings;
                 ShowCallAlert = settingObject["ShowCallAlert"].Equals("1");
                 reginTime = Convert.ToInt16(settingObject["RingTime"]);
+                previewTime = Convert.ToInt16(settingObject["PreviewTime"]);
 
-               
 
-                
+
+
 
                 callLogs = new Dictionary<Guid, CallLog>();
-                
+
                 #region ACW Timer
 
                 acwCutdownTimer = new Timer(TimeSpan.FromSeconds(1).TotalMilliseconds);
@@ -2137,8 +2153,10 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     {
                         if (acwCotdown <= 0)
                         {
-                            this.Invoke(new MethodInvoker(() => {  txtStatus.Text = string.Empty;
-                                                                    btnFreez.Enabled = false;
+                            this.Invoke(new MethodInvoker(() =>
+                            {
+                                txtStatus.Text = string.Empty;
+                                btnFreez.Enabled = false;
                             }));
                             if (acwCotdown < -1)
                             {
@@ -2153,7 +2171,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                             return;
                         }
                         txtStatus.Invoke(new MethodInvoker(() => { txtStatus.Text = string.Format("ACW : {0}", acwCotdown); }));
-                        
+
                         acwCotdown--;
                     }
                     catch (Exception exception)
@@ -2202,13 +2220,13 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
                 InitializePhone(false);
 
-                
+
 
                 applyStyle();
 
-                
 
-                
+
+
                 var imgPath = string.Format(@"{0}\{1}", Application.StartupPath, "Log250X50pix.png");
                 if (File.Exists(imgPath))
                 {
@@ -2253,12 +2271,12 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                             Logger.Instance.LogMessage(Logger.LogAppender.DuoDeviceMonitor, "OnSoundDeviceRemoveEvent", exception, Logger.LogLevel.Error);
                         }
                     };
-                    device.EnableDeviceArrivedWatcher();;
+                    device.EnableDeviceArrivedWatcher(); ;
 
                 }
                 catch (Exception exception)
                 {
-                    Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "FormDialPad_Load-DeviceMonitor",exception,Logger.LogLevel.Error);
+                    Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "FormDialPad_Load-DeviceMonitor", exception, Logger.LogLevel.Error);
                 }
 
                 #endregion
@@ -2267,7 +2285,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 #region socket Connect
 
                 socketCon = new SocketConnector();
-                
+
                 socketCon.OnAuthenticated += (o) =>
                 {
                     try
@@ -2293,11 +2311,11 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     try
                     {
                         mynotifyicon.ShowBalloonTip(1000, "FaceTone - Phone", data.ToString(), ToolTipIcon.Error);
-                        Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "OnAgentSuspended"+data, Logger.LogLevel.Error);
+                        Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "OnAgentSuspended" + data, Logger.LogLevel.Error);
                         _agent.AgentCurrentState.OnOffline(ref _agent, "Suspended");
                         //InOfflineState
 
-//                        MessageBox.Show(data.ToString(), "FaceTone - Phone", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //                        MessageBox.Show(data.ToString(), "FaceTone - Phone", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     catch (System.Exception exception)
                     {
@@ -2310,61 +2328,85 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     try
                     {
                         Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger7, string.Format("Notification Recive . {0}:{1}:{2}", call.CallCurrentState, _agent.AgentCurrentState, data), Logger.LogLevel.Debug);
-                         
+
                         if (VeerySetting.Instance.NotificationStateValidationIgnore)
                         {
                             ProcessNotifications(data);
                         }
-                        else 
+                        else
                         {
                             var msg = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(data.ToString());
                             var values = msg["Message"].Split('|');
                             var caller = values[3];
-                            Skill = values[6]; 
-                            if (call.CallCurrentState.GetType() == typeof(CallAgentClintConnectedState) || call.CallCurrentState.GetType() == typeof(CallAgentSupConnectedState) || call.CallCurrentState.GetType() == typeof(CallConferenceState)||call.CallCurrentState.GetType() == typeof(CallConnectedState)||call.CallCurrentState.GetType() == typeof(CallHoldState)||call.CallCurrentState.GetType() == typeof(CallRingingState))
+                            Skill = values[6];
+                            if (call.CallCurrentState.GetType() == typeof(CallAgentClintConnectedState) || call.CallCurrentState.GetType() == typeof(CallAgentSupConnectedState) || call.CallCurrentState.GetType() == typeof(CallConferenceState) || call.CallCurrentState.GetType() == typeof(CallConnectedState) || call.CallCurrentState.GetType() == typeof(CallHoldState) || call.CallCurrentState.GetType() == typeof(CallRingingState))
                             {
                                 if (!caller.Equals(call.PhoneNo))
                                 {
-                                    Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, string.Format("Notification Recive invalid State : {0}:{1}:{2}:{3}:{4}", call.PhoneNo, _agent.CallSessionId,call.CallCurrentState, _agent.AgentCurrentState, data), Logger.LogLevel.Error);
+                                    Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, string.Format("Notification Recive invalid State : {0}:{1}:{2}:{3}:{4}", call.PhoneNo, _agent.CallSessionId, call.CallCurrentState, _agent.AgentCurrentState, data), Logger.LogLevel.Error);
                                     return;
                                 }
                             }
 
                             ProcessNotifications(data);
-                            
+
                         }
-                        
+
                     }
                     catch (System.Exception exception)
                     {
-                      Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "OnAgentFound", exception,Logger.LogLevel.Error);
+                        Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "OnAgentFound", exception, Logger.LogLevel.Error);
                     }
                 };
+                PreviewMessage previewMessage = new PreviewMessage();
+                socketCon.OnpreviewDialerMessage += (data) =>
+                {
+                    try
+                    {
+                        Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger7, string.Format("Notification Recive . {0}:{1}:{2}", call.CallCurrentState, _agent.AgentCurrentState, data), Logger.LogLevel.Debug);
 
-                socketCon.Execute();
+                        var msg = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(data.ToString());
+
+                        previewMessage.Tkey = msg["TopicKey"];
+                        previewMessage.PreviewData = msg["Message"];
+                        previewMessage.Message = "";
+                        this.Invoke(((MethodInvoker)(() =>
+                        {
+                            new frmPreviewMessage(previewMessage.Tkey, previewMessage.PreviewData,_wavPrevSoundPlayer, previewTime).ShowDialog(this);
+                        })));
+
+
+                    }
+                    catch (System.Exception exception)
+                    {
+                        Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "OnpreviewDialerMessage", exception, Logger.LogLevel.Error);
+                    }
+                };
+                Task.Delay(1000).ContinueWith(t => socketCon.Execute());
+                
                 #endregion
 
 
-                 var section = (NameValueCollection)ConfigurationManager.GetSection("CallExternalUrl");
-                 externalUrl = section["url"];
-                 enable = section["enable"].Equals("true");
-                 bowserType = section["bowser"];
-                 
+                var section = (NameValueCollection)ConfigurationManager.GetSection("CallExternalUrl");
+                externalUrl = section["url"];
+                enable = section["enable"].Equals("true");
+                bowserType = section["bowser"];
+
                 agentList = new AgentList();
                 agentList.OnAgentSelected += (ext) =>
                 {
-                    textBoxNumber.Invoke(((MethodInvoker) (() =>
+                    textBoxNumber.Invoke(((MethodInvoker)(() =>
                     {
                         textBoxNumber.Text = ext;
                     })));
-                    
+
                 };
 
 
                 InitiateWebSocket();
 
                 AutoAnswer.Enabled = !_agent.Profile.autoAnswer;
-                AutoAnswer.Checked= _agent.Profile.autoAnswer;
+                AutoAnswer.Checked = _agent.Profile.autoAnswer;
                 IsNotAllowToReject = AutoAnswer.Checked;
                 AutoAnswer.BackColor = AutoAnswer.Checked ? Color.DarkGreen : Color.Black;
 
@@ -2375,8 +2417,12 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 outboundToolStripMenuItem.Enabled = false;
                 inboundToolStripMenuItem.Enabled = true;
 
-               
-                
+
+
+
+                // VeeryChatSdk.Instance.connect("wss://oversip.voice.veery.cloud:10443");
+
+
             }
             catch (Exception exception)
             {
@@ -2388,7 +2434,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             }
         }
 
-        
+
 
         private void FormDialPad_DoubleClick(object sender, EventArgs e)
         {
@@ -2441,7 +2487,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             }
         }
 
-        
+
         private void mynotifyicon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             try
@@ -2674,7 +2720,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     txtStatus.Text = "";
 
                 })));
-                
+
 
                 _agent.AgentCurrentState.OnEndBreak(ref _agent);
                 //inboundToolStripMenuItem_Click(sender, e);
@@ -2686,7 +2732,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             }
         }
 
-        
+
         private void btnFreez_Click(object sender, EventArgs e)
         {
             try
@@ -2694,7 +2740,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 var msg = string.Empty;
                 if (btnFreez.Text.Equals("Freeze"))
                 {
-                    
+
                     txtStatus.Text = "Freeze";
                     btnFreez.Text = "End Freeze";
                     msg = "Freeze";
@@ -2754,7 +2800,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
         private void setPhonePanelLocation()
         {
-           // PanelPhone.Location = new Point(this.Width - 249, this.Height - 418);
+            // PanelPhone.Location = new Point(this.Width - 249, this.Height - 418);
         }
 
         private void toolStripStatusDuoPhone_Click(object sender, EventArgs e)
@@ -2766,7 +2812,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
         private void toolStripStatusTools_Click(object sender, EventArgs e)
         {
-           // ultraPopupControlTools.Show();
+            // ultraPopupControlTools.Show();
         }
 
         private void RingtoneOnMenuItem_Click(object sender, EventArgs e)
@@ -2827,7 +2873,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
         {
             try
             {
-                if(IsCallLogOpen)
+                if (IsCallLogOpen)
                     return;
                 logs = new frmCallLogs(callLogs);
                 logs.OnNumberSelect += (no) =>
@@ -2935,7 +2981,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             {
                 if (_agent.AgentMode == AgentMode.Outbound)
                 {
-                    inboundToolStripMenuItem_Click(sender,  e);
+                    inboundToolStripMenuItem_Click(sender, e);
                 }
                 else
                 {
@@ -2954,19 +3000,19 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             {
                 if (!_agent.Profile.IsAllowToOutbound)
                 {
-                   // txtStatus.Text =
-                //                       "Error on Initializing. exceed maximum retry count. please contact your system administrator.";
+                    // txtStatus.Text =
+                    //                       "Error on Initializing. exceed maximum retry count. please contact your system administrator.";
                     mynotifyicon.ShowBalloonTip(1000, "FaceTone - Phone", "You Don't Have Permission To Use This Feature. Please Contact Your System Administrator.", ToolTipIcon.Error);
                     return;
                 }
-                if (_agent.AgentCurrentState.GetType() == typeof (AgentBreak))
+                if (_agent.AgentCurrentState.GetType() == typeof(AgentBreak))
                 {
                     return;
                 }
                 outboundToolStripMenuItem.Enabled = false;
                 inboundToolStripMenuItem.Enabled = false;
                 _agent.AgentCurrentState.OnRequestAgentModeChange(ref _agent, AgentMode.Outbound);
-                
+
             }
             catch (Exception exception)
             {
@@ -3016,7 +3062,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 SipRegisterTryCount++;
 
                 _agent.AgentCurrentState.OnError(ref _agent, statusText, statusCode, "Unable to Communicate With Servers. Please Contact Your System Administrator.");
-                
+
                 //this.Invoke(((MethodInvoker)(() =>
                 //{
                 //    btnReregister.Visible = true;
@@ -3033,7 +3079,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 //                       "Error on Initializing. exceed maximum retry count. please contact your system administrator.";
                 //        mynotifyicon.ShowBalloonTip(1000, "FaceTone - Phone", txtStatus.Text, ToolTipIcon.Error);
                 //        OFFLINE.Visible = true;
-                        
+
                 //    })));
                 //    _agent.AgentCurrentState.OnError(ref _agent);
                 //}
@@ -3050,7 +3096,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 //    UninitializePhone();
                 //    InitializePhone(true);
                 //}
-                
+
             }
             catch (Exception exception)
             {
@@ -3070,7 +3116,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             try
             {
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, "onRegisterSuccess", Logger.LogLevel.Info);
-                
+
                 _SIPLogined = true;
                 _agent.SipStatus = false;
                 SipRegisterTryCount = 0;
@@ -3092,13 +3138,13 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
                 if (_agent.Profile.IsAllowToOutbound)
                 {
-                    outboundToolStripMenuItem_Click(null,null);
+                    outboundToolStripMenuItem_Click(null, null);
                 }
                 else
                 {
                     inboundToolStripMenuItem_Click(null, null);
                 }
-                
+
             }
             catch (Exception exception)
             {
@@ -3109,11 +3155,11 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
         public int onRegisterFailure(int callbackIndex, int callbackObject, string statusText, int statusCode)
         {
-            Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, string.Format("onRegisterFailure. statusText: {0}, statusCode: {1}",statusText,statusCode), Logger.LogLevel.Info);
+            Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, string.Format("onRegisterFailure. statusText: {0}, statusCode: {1}", statusText, statusCode), Logger.LogLevel.Info);
             _agent.SipStatus = false;
             _SIPLogined = false;
-            InitializeError(statusText,statusCode);
-            
+            InitializeError(statusText, statusCode);
+
             return 0;
         }
 
@@ -3129,7 +3175,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     txtStatus.ForeColor = System.Drawing.Color.DarkGreen;
                     txtStatus.Text = statusText;
                 })));
-                
+
             }
             catch (Exception exception)
             {
@@ -3145,7 +3191,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             try
             {
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, string.Format("onInviteIncoming. caller : {0} Agent State : {1}, Call State : {2}", caller, _agent.AgentCurrentState, call.CallCurrentState), Logger.LogLevel.Info);
-                
+
                 if (_agent.AgentCurrentState.GetType() != typeof(AgentIdle))
                 {
                     Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, string.Format("Call receive in Invalid Agent State.. caller : {0}, Agent State : {1}", caller, _agent.AgentCurrentState), Logger.LogLevel.Error);
@@ -3154,7 +3200,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     txtStatus.Text = "";
                     btnFreez.Text = "Freeze";
                     btnFreez.Enabled = false;
-                    _agent.AgentCurrentState =new AgentIdle();
+                    _agent.AgentCurrentState = new AgentIdle();
                     //phoneController.rejectCall(sessionId, 486);
                     //return -1;
                 }
@@ -3170,11 +3216,12 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 call.CallCurrentState.OnIncoming(ref call, callbackIndex, callbackObject, sessionId, calleeDisplayName, caller, calleeDisplayName, callee, audioCodecNames, videoCodecNames, existsAudio, existsVideo);
                 call.currentCallLogId = Guid.NewGuid();
 
-                textBoxNumber.Invoke(((MethodInvoker)(() =>{
+                textBoxNumber.Invoke(((MethodInvoker)(() =>
+                {
                     textBoxNumber.Text = call.PhoneNo;
                 })));
 
-                
+
                 if (AutoAnswer.Checked)
                 {
                     new Thread(() =>
@@ -3200,7 +3247,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, "onInviteTrying", Logger.LogLevel.Info);
                 PlayRingInTone();
                 call.CallCurrentState.OnMakeCall(ref call);
-                
+
             }
             catch (Exception exception)
             {
@@ -3265,7 +3312,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     txtStatus.Text = "Call Rejected from Other End" + reason;
                 })));
                 isCallAnswerd = false;
-                
+
             }
             catch (Exception exception)
             {
@@ -3343,7 +3390,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 StopRingInTone();
                 StopRingTone();
                 call.CallCurrentState.OnDisconnected(ref call);
-                _agent.AgentCurrentState.OnEndCall(ref _agent,isCallAnswerd);
+                _agent.AgentCurrentState.OnEndCall(ref _agent, isCallAnswerd);
                 this.Invoke(((MethodInvoker)(() =>
                 {
                     txtStatus.ForeColor = System.Drawing.Color.DarkGreen;
@@ -3356,7 +3403,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 }
                 AddCallDurations();
                 isCallAnswerd = false;
-                
+
             }
             catch (Exception exception)
             {
@@ -3591,7 +3638,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             {
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, "onRecvInfo", Logger.LogLevel.Info);
                 ReceveMeassge("Receive Information", infoMessage.ToString());
-                
+
             }
             catch (Exception exception)
             {
@@ -3653,7 +3700,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 {
                     string mesageText = GetString(messageData);
                     ReceveMeassge("Receive Information", mesageText);
-                    
+
                 }
             }
             catch (Exception exception)
@@ -3672,7 +3719,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 {
                     string mesageText = GetString(messageData);
                     ReceveMeassge("Receive Information", mesageText);
-                    
+
                 }
             }
             catch (Exception exception)
@@ -3838,7 +3885,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 {
                     _agent.AgentCurrentState.OnRequestAgentBreak(ref _agent, item.Text);
                 }
-                
+
             }
             catch (Exception exception)
             {
@@ -3869,7 +3916,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     System.Windows.Forms.ToolStripMenuItem menuItemDirect = new System.Windows.Forms.ToolStripMenuItem();
                     menuItemDirect.BackColor = System.Drawing.Color.Black;
                     menuItemDirect.ForeColor = System.Drawing.Color.White;
-                    menuItemDirect.Name = item+"Direct";
+                    menuItemDirect.Name = item + "Direct";
                     //menuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
                     //| System.Windows.Forms.Keys.O)));
                     menuItemDirect.Size = new System.Drawing.Size(217, 22);
@@ -3878,9 +3925,9 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
                     this.breakMenu.Items.Add(menuItemDirect);
 
-                    
+
                 }
-               
+
             }
             catch (Exception exception)
             {
@@ -3972,8 +4019,8 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     textBoxNumber.Focus();
                     if (agentPvState != null)
                     {
-                        if (agentPvState.GetType() == typeof (AgentInitiate) ||
-                            agentPvState.GetType() == typeof (AgentOffline))
+                        if (agentPvState.GetType() == typeof(AgentInitiate) ||
+                            agentPvState.GetType() == typeof(AgentOffline))
                         {
                             PhoneStatus.Image = Properties.Resources.online;
                         }
@@ -3982,7 +4029,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     //PanelPhone.Visible = true;
                     panelIvrList.Visible = false;
 
-                    
+
                 })));
 
                 //_agent.CallSessionId = string.Empty;
@@ -4334,7 +4381,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     holdCallToolStripMenuItem.Enabled = false;
                 })));
 
-                if(IsCallLogOpen)
+                if (IsCallLogOpen)
                     logs.Close();
             }
             catch (Exception exception)
@@ -4420,7 +4467,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
 
 
                     txtStatus.ForeColor = Color.DarkMagenta;
-                    txtStatus.Text = Skill==string.Empty?  "Incoming Call" : Skill;
+                    txtStatus.Text = Skill == string.Empty ? "Incoming Call" : Skill;
 
                     if (playRingtone)
                         PlayRingTone();
@@ -4443,7 +4490,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                     }
                 })));
 
-               
+
             }
             catch (Exception exception)
             {
@@ -4457,7 +4504,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             {
                 switch (mode)
                 {
-                    
+
                     case AgentMode.Inbound:
                         {
                             this.Invoke(new MethodInvoker(() =>
@@ -4596,10 +4643,10 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             {
                 Logger.Instance.LogMessage(Logger.LogAppender.DuoDefault, "pRODUCTIVITYToolStripMenuItem_Click", exception, Logger.LogLevel.Error);
             }
-            
+
         }
 
-        
+
         private void changePasswordToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             try
@@ -4616,10 +4663,10 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             }
         }
 
-        
 
-       
 
-       
+
+
+
     }
 }

@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace DuoSoftware.DuoSoftPhone.Controllers.Common
 {
+    public struct PreviewMessage
+    {
+        public string Tkey;
+        public string Message;
+        public string PreviewData;
+    }
+    
     public struct BreakInfo
     {
         public string BreakType;

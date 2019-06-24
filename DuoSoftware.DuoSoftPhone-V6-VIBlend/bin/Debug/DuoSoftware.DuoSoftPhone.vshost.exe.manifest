@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DWucY1sPQxpXB2VtbHerx7PK+ilV4BYCnFbLbXZj/Wo=</dsig:DigestValue>
+        <dsig:DigestValue>x65u36pMD1k2tpfoQjEeJMJxy8dHJa/9s/VkF3jKuLI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2614272">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2614784">
       <assemblyIdentity name="DuoSoftware.DuoSoftPhone" version="5.0.0.9" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2RU2ncaRWtpzpD+WQiX2sIAe09RGkhUPx6gM6R3lW5U=</dsig:DigestValue>
+        <dsig:DigestValue>L78pCLDH8XWrF+octDnt/+Qxpii6hQp+pwTjp+U5M/0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -271,6 +271,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="veery.chat.client.api.dll" size="6144">
+      <assemblyIdentity name="veery.chat.client.api" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>8GCdHaHr37lpTGJ7Qo4eOf+sqYS+l+HGylAEywKmz60=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VIBlend.WinForms.Controls.dll" size="1008640">
       <assemblyIdentity name="VIBlend.WinForms.Controls" version="10.0.0.0" publicKeyToken="6FEEA38FEF5EA0CF" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -315,6 +327,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>LiUy8Aqhg0RVcGbTwqmpXbsOgQk+SJQVRwTeUIB5cNU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="websocket-sharp.dll" size="250368">
+      <assemblyIdentity name="websocket-sharp" version="1.0.2.59611" publicKeyToken="5660B08A1845A91E" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>+wb/zrT4eJyJPS8pLlgQkn3XJm07rWjfLO24d1UA6L4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -492,13 +516,13 @@
       <dsig:DigestValue>enpuLqVkc2SCHBgx9vP86a+CvIo8FeksjGwqkwPbAvM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DuoSoftware.DuoSoftPhone.exe.config" size="29456">
+  <file name="DuoSoftware.DuoSoftPhone.exe.config" size="29729">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>CJxVZTEMxxQT7/wmOpgoZKMX5Hqed0IfSb4yQIFuvEM=</dsig:DigestValue>
+      <dsig:DigestValue>Hj5XD2yPoGPKqg6FOpF3/zpsrGLMVsgWT2Slibtqzqw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SIPSetting.xml" size="430" writeableType="applicationData">

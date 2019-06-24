@@ -35,6 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ProgressBar = new VIBlend.WinForms.Controls.vCircularProgressBar();
             this.button_login = new VIBlend.WinForms.Controls.vButton();
+            this.txtcompanyName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUserName
@@ -43,11 +45,11 @@
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUserName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.ForeColor = System.Drawing.Color.Black;
-            this.txtUserName.Location = new System.Drawing.Point(68, 83);
+            this.txtUserName.Location = new System.Drawing.Point(68, 110);
             this.txtUserName.Multiline = true;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(172, 23);
-            this.txtUserName.TabIndex = 0;
+            this.txtUserName.TabIndex = 1;
             // 
             // txtPassword
             // 
@@ -55,12 +57,12 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(68, 108);
+            this.txtPassword.Location = new System.Drawing.Point(68, 136);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(172, 23);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // label1
@@ -69,7 +71,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(7, 88);
+            this.label1.Location = new System.Drawing.Point(7, 114);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 39;
@@ -81,7 +83,7 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(7, 113);
+            this.label2.Location = new System.Drawing.Point(7, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 40;
@@ -93,12 +95,12 @@
             this.ProgressBar.BackColor = System.Drawing.Color.Transparent;
             this.ProgressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ProgressBar.IndicatorsCount = 8;
-            this.ProgressBar.Location = new System.Drawing.Point(244, 83);
+            this.ProgressBar.Location = new System.Drawing.Point(244, 84);
             this.ProgressBar.Maximum = 100;
             this.ProgressBar.Minimum = 0;
             this.ProgressBar.Name = "ProgressBar";
-            this.ProgressBar.Size = new System.Drawing.Size(55, 48);
-            this.ProgressBar.TabIndex = 41;
+            this.ProgressBar.Size = new System.Drawing.Size(55, 74);
+            this.ProgressBar.TabIndex = 4;
             this.ProgressBar.Text = "vCircularProgressBar1";
             this.ProgressBar.UseThemeBackground = true;
             this.ProgressBar.UseWaitCursor = true;
@@ -110,15 +112,39 @@
             this.button_login.AllowAnimations = true;
             this.button_login.BackColor = System.Drawing.Color.Transparent;
             this.button_login.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_login.Location = new System.Drawing.Point(244, 83);
+            this.button_login.Location = new System.Drawing.Point(244, 84);
             this.button_login.Name = "button_login";
             this.button_login.RoundedCornersMask = ((byte)(15));
-            this.button_login.Size = new System.Drawing.Size(55, 48);
+            this.button_login.Size = new System.Drawing.Size(55, 74);
             this.button_login.TabIndex = 2;
             this.button_login.Text = "Login";
             this.button_login.UseVisualStyleBackColor = false;
             this.button_login.VIBlendTheme = VIBlend.Utilities.VIBLEND_THEME.VISTABLUE;
             this.button_login.Click += new System.EventHandler(this.button_login_Click);
+            // 
+            // txtcompanyName
+            // 
+            this.txtcompanyName.BackColor = System.Drawing.Color.White;
+            this.txtcompanyName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcompanyName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcompanyName.ForeColor = System.Drawing.Color.Black;
+            this.txtcompanyName.Location = new System.Drawing.Point(68, 84);
+            this.txtcompanyName.Multiline = true;
+            this.txtcompanyName.Name = "txtcompanyName";
+            this.txtcompanyName.Size = new System.Drawing.Size(172, 23);
+            this.txtcompanyName.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(7, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "Company :";
             // 
             // Login
             // 
@@ -127,8 +153,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::DuoSoftware.DuoSoftPhone.Properties.Resources.facetone;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(304, 149);
+            this.ClientSize = new System.Drawing.Size(304, 167);
             this.Controls.Add(this.ProgressBar);
+            this.Controls.Add(this.txtcompanyName);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
@@ -156,5 +184,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private VIBlend.WinForms.Controls.vCircularProgressBar ProgressBar;
+        private System.Windows.Forms.TextBox txtcompanyName;
+        private System.Windows.Forms.Label label3;
     }
 }

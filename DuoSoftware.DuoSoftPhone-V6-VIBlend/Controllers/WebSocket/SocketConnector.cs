@@ -1,10 +1,8 @@
-﻿using System;
-using System.Windows.Forms;
-using DuoSoftware.DuoSoftPhone.Controllers.AgentStatus;
+﻿using DuoSoftware.DuoSoftPhone.Controllers.AgentStatus;
 using DuoSoftware.DuoTools.DuoLogger;
 using Newtonsoft.Json.Linq;
-using Quobject.Collections.Immutable;
 using Quobject.SocketIoClientDotNet.Client;
+using System;
 
 
 namespace DuoSoftware.DuoSoftPhone.Controllers
@@ -17,8 +15,9 @@ namespace DuoSoftware.DuoSoftPhone.Controllers
         public event VeerySocketEvent OnMessageReceive;
         public event VeerySocketEvent OnAgentFound;
         public event VeerySocketEvent OnAgentSuspended;
+        public event VeerySocketEvent OnpreviewDialerMessage;
         Socket socket;
-        
+
 
         private void SendAuth()
         {
@@ -49,7 +48,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers
                 };
 
                 socket = IO.Socket(AgentProfile.Instance.settingObject["notificationUrl"], options);//ws://192.168.0.67:8089
-                
+
                 socket.On(Socket.EVENT_ERROR, (data) =>
                 {
                     Console.WriteLine(data);
@@ -115,6 +114,15 @@ namespace DuoSoftware.DuoSoftPhone.Controllers
                     if (OnAgentSuspended != null)
                     {
                         OnAgentSuspended(data);
+                    }
+                });
+
+                socket.On("preview_dialer_message", (data) =>
+                {
+                    Console.WriteLine(data);
+                    if (OnpreviewDialerMessage != null)
+                    {
+                        OnpreviewDialerMessage(data);
                     }
                 });
 

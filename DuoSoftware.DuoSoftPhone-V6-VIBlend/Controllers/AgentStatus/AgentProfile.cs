@@ -65,6 +65,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
         
         public string id { private set; get; }
         public string localIPAddress { private set; get; }
+        public string CompanyName { private set; get; }
         public string UserName { private set; get; }
         public string ContactName { private set; get; }
         public string Password { private set; get; }
@@ -297,10 +298,10 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
 
         public bool Relogin()
         {
-          return  Login(UserName, Password);
+          return  Login(UserName, Password,CompanyName);
         }
 
-        public bool Login(string username, string txtPassword)
+        public bool Login(string username, string txtPassword, string companyName)
         {
             try
             {
@@ -314,7 +315,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                 data.grant_type = "password";
                 data.username = username;
                 data.password = txtPassword;
-                data.companyName = "duoowner";
+                data.companyName = companyName;
                 //["all_all", "profile_veeryaccount", "write_ardsresource", "write_notification", "read_myUserProfile", "read_productivity", "profile_veeryaccount", "resourceid"];
                 data.scope =
                     "all_all write_ardsresource write_notification read_myUserProfile read_requestmeta write_sysmonitoring profile_veeryaccount resourceid";
@@ -333,6 +334,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                 displayName = values[0];
                 UserName = username;
                 Password = txtPassword;
+                CompanyName = companyName;
                 authorizationName = values[0];
                 server = new Server
                 {

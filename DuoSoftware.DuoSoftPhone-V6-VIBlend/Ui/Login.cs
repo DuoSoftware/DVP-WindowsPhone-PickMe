@@ -44,7 +44,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                 button_login.Enabled = false;
                 ProgressBar.Start();
                 ProgressBar.Show();
-                var isSuccess = AgentProfile.Instance.Login(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+                var isSuccess = AgentProfile.Instance.Login(txtUserName.Text.Trim(), txtPassword.Text.Trim(), txtcompanyName.Text.Trim());
                 if (isSuccess)
                 {
                     new Thread(MonitorRestApiHandler.MapResourceToVeery).Start();
@@ -104,7 +104,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
             this.button_login.ForeColor = Color.White;
             this.button_login.PressedTextColor = Color.White;
             ActiveControl = txtUserName;
-            txtUserName.Select();
+            txtcompanyName.Select();
 
             bool ok;
 
