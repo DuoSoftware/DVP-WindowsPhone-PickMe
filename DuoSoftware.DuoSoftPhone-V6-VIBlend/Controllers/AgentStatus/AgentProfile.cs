@@ -16,6 +16,8 @@ using DuoCallTesterLicenseKey;
 using System.Text;
 using System.Security.Cryptography;
 using System.Dynamic;
+using DuoSoftware.DuoSoftPhone.Controllers.Common;
+using Newtonsoft.Json;
 
 namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
 {
@@ -313,17 +315,26 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
 
                 dynamic data = new JObject();
                 data.grant_type = "password";
-                data.username = username;
+                data.userName = username;
                 data.password = txtPassword;
                 data.companyName = companyName;
+                data.console = "AGENT_CONSOLE";
+                data.clientID = "ae849240-2c6d-11e6-b274-a9eec7dab26b:6145813102144258048";
                 //["all_all", "profile_veeryaccount", "write_ardsresource", "write_notification", "read_myUserProfile", "read_productivity", "profile_veeryaccount", "resourceid"];
-                data.scope =
-                    "all_all write_ardsresource write_notification read_myUserProfile read_requestmeta write_sysmonitoring profile_veeryaccount resourceid";
+                data.scope = "all_all write_ardsresource write_notification read_myUserProfile read_requestmeta write_sysmonitoring profile_veeryaccount resourceid";
 
+
+                data.scope = JArray.Parse(@"['all_all', 'profile_veeryaccount', 'write_ardsresource', 'write_notification', 'read_myUserProfile', 'read_productivity', 'profile_veeryaccount', 'resourceid']");
 
                 var token = HttpHandler.MakeRequest(userServiceUrl, "Basic " + encoded, data, "post");
-                var dict = jsonSerializer.Deserialize<Dictionary<string, dynamic>>(token);
-                var tokenData1 = Jose.JWT.Payload<Dictionary<string, dynamic>>(dict["access_token"]);
+                //var dict = jsonSerializer.Deserialize<Dictionary<string, dynamic>>(token);
+                //var tokenData1 = Jose.JWT.Payload<Dictionary<string, dynamic>>(dict["access_token"]);
+
+
+                auth_reply dict = JsonConvert.DeserializeObject<auth_reply>(token);
+                var tokenData1 = Jose.JWT.Payload<Dictionary<string, dynamic>>(dict.token);
+
+
 
                 id = tokenData1["context"]["resourceid"];
                 publicIdentity = "sip:" + tokenData1["context"]["veeryaccount"]["contact"];
@@ -341,7 +352,7 @@ namespace DuoSoftware.DuoSoftPhone.Controllers.AgentStatus
                     domain = values[1],
                     outboundProxy = "",
                     enableRtcwebBreaker = false,
-                    token = dict["access_token"],
+                    token = dict.token,
                     websocketUrl = "wss://" + values[1] + ":7443",
                 };
                 localIPAddress = GetLocalIPAddress();

@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace DuoSoftware.DuoSoftPhone.Controllers.Common
 {
+    public struct auth_reply
+    {
+        public string token;
+        public string state;
+    }
+	
+	
     public struct PreviewMessage
     {
         public string Tkey;
