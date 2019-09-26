@@ -16,14 +16,14 @@
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
         <!--
           UAC Manifest Options
-          If you want to change the Windows User Account Control level replace the 
+          If you want to change the Windows User Account Control level replace the
           requestedExecutionLevel node with one of the following.
 
         <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
         <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
         <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-         If you want to utilize File and Registry Virtualization for backward 
+         If you want to utilize File and Registry Virtualization for backward
          compatibility then delete the requestedExecutionLevel node.
     -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoCallTesterLicenseKey.dll" size="9728">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoCallTesterLicenseKey.dll" size="7680">
       <assemblyIdentity name="DuoCallTesterLicenseKey" version="5.0.0.9" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DWucY1sPQxpXB2VtbHerx7PK+ilV4BYCnFbLbXZj/Wo=</dsig:DigestValue>
+        <dsig:DigestValue>TBHvOP2mmm4A7WhJ7Pa2C/G2dCZ549htrFMtk8unyrc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2614272">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DuoSoftware.DuoSoftPhone.exe" size="2596864">
       <assemblyIdentity name="DuoSoftware.DuoSoftPhone" version="5.0.0.9" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2RU2ncaRWtpzpD+WQiX2sIAe09RGkhUPx6gM6R3lW5U=</dsig:DigestValue>
+        <dsig:DigestValue>dI26EFLNMyQM0MLlylT2d91I0ofCBe+zn5QJABDFiyk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -99,18 +99,6 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>d+YsXFp8/OhSaIlfY6A867lMie48AY0DqmALsB/YRiM=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EncodingUtils.dll" size="5120">
-      <assemblyIdentity name="EncodingUtils" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UZpd85eCFZQojoZU0+OmSO7732nBzyNElCwlq1RdhPE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -319,6 +307,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="websocket-sharp.dll" size="250368">
+      <assemblyIdentity name="websocket-sharp" version="1.0.2.59611" publicKeyToken="5660B08A1845A91E" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>+wb/zrT4eJyJPS8pLlgQkn3XJm07rWjfLO24d1UA6L4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="XDMessaging.dll" size="37376">
       <assemblyIdentity name="XDMessaging" version="3.0.0.0" publicKeyToken="737BC70442F2C4AF" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -474,13 +474,13 @@
       <dsig:DigestValue>GIHnUZcTO2mSaMsn7PscDbfaPieNKu3CJeh9gArFMw0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\DuoCallTesterLicenseKey.dll" size="5632">
+  <file name="bin\DuoCallTesterLicenseKey.dll" size="7680">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>7m4hv/Fkjzs3q/gjDWnrclnIDJ8SdI3KoI4jTG0yjDE=</dsig:DigestValue>
+      <dsig:DigestValue>m1NCueMBnjZhSd5xzwzxlPIi2AY9SofHFv4Skq6KP4Y=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Console App.fw.ico" size="370070">
@@ -492,13 +492,13 @@
       <dsig:DigestValue>enpuLqVkc2SCHBgx9vP86a+CvIo8FeksjGwqkwPbAvM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DuoSoftware.DuoSoftPhone.exe.config" size="29456">
+  <file name="DuoSoftware.DuoSoftPhone.exe.config" size="29729">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>CJxVZTEMxxQT7/wmOpgoZKMX5Hqed0IfSb4yQIFuvEM=</dsig:DigestValue>
+      <dsig:DigestValue>OB6SUMvM55R/PPh4JuDiAlXpRrtM6qSc621nMk+YEq8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SIPSetting.xml" size="430" writeableType="applicationData">

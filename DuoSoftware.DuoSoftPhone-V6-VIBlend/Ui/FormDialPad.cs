@@ -1423,7 +1423,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                         };
                         if (call.portSipSessionId < 0)
                         {
-                            Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, "MakeCall-Fail", Logger.LogLevel.Error);
+                            Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, "MakeCall-Fail : "+ call.portSipSessionId, Logger.LogLevel.Error);
                             mynotifyicon.ShowBalloonTip(1000, "FaceTone - Phone", "Fail to Make Call", ToolTipIcon.Error);
                             _agent.AgentCurrentState.OnFailMakeCall(ref _agent);
                             call.CallCurrentState.OnTimeout(ref call);
@@ -1450,7 +1450,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                         mynotifyicon.ShowBalloonTip(1000, "FaceTone - Phone",
                             "Fail to Make Call.\nPlease change Mode to Outbound.", ToolTipIcon.Warning);
                     }
-                    Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, string.Format("MakeCall-Fail. AgentCurrentState: {0}, CallCurrentState: {1}", _agent.AgentCurrentState, call.CallCurrentState), Logger.LogLevel.Error);
+                    Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, string.Format("MakeCall-Fail..... AgentCurrentState: {0}, CallCurrentState: {1}", _agent.AgentCurrentState, call.CallCurrentState), Logger.LogLevel.Error);
                      
                 }
 
