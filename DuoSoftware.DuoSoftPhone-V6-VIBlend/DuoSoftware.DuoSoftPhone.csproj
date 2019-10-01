@@ -74,7 +74,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Alchemy, Version=2.2.0.238, Culture=neutral, processorArchitecture=MSIL">
@@ -325,12 +325,6 @@
     <Compile Include="Ui\frmIncomingCall.Designer.cs">
       <DependentUpon>frmIncomingCall.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ui\frmPreviewMessage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ui\frmPreviewMessage.Designer.cs">
-      <DependentUpon>frmPreviewMessage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Ui\FormDialPad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,11 +343,11 @@
     <Compile Include="Ui\frmPhoneConfig.Designer.cs">
       <DependentUpon>frmPhoneConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ui\frmPreviewMessageold.cs">
+    <Compile Include="Ui\frmPreviewMessage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ui\frmPreviewMessageold.Designer.cs">
-      <DependentUpon>frmPreviewMessageold.cs</DependentUpon>
+    <Compile Include="Ui\frmPreviewMessage.Designer.cs">
+      <DependentUpon>frmPreviewMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="Ui\Login.cs">
       <SubType>Form</SubType>
@@ -384,9 +378,6 @@
     <EmbeddedResource Include="Ui\frmIncomingCall.resx">
       <DependentUpon>frmIncomingCall.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ui\frmPreviewMessage.resx">
-      <DependentUpon>frmPreviewMessage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Ui\FormDialPad.resx">
       <DependentUpon>FormDialPad.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,8 +387,8 @@
     <EmbeddedResource Include="Ui\frmPhoneConfig.resx">
       <DependentUpon>frmPhoneConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ui\frmPreviewMessageold.resx">
-      <DependentUpon>frmPreviewMessageold.cs</DependentUpon>
+    <EmbeddedResource Include="Ui\frmPreviewMessage.resx">
+      <DependentUpon>frmPreviewMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -781,10 +772,6 @@
     <WCFMetadataStorage Include="Service References\refUserAuth\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\veery.chat.client.api\veery.chat.client.api\veery.chat.client.api.csproj">
-      <Project>{F4567AEF-4B86-4F5E-A239-A3F035C60AC6}</Project>
-      <Name>veery.chat.client.api</Name>
-    </ProjectReference>
     <ProjectReference Include="DuoCallTesterLicenseKey\DuoCallTesterLicenseKey.csproj">
       <Project>{84AB3281-2D97-4CF6-952F-A900386D8359}</Project>
       <Name>DuoCallTesterLicenseKey</Name>

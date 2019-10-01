@@ -1436,7 +1436,7 @@ namespace DuoSoftware.DuoSoftPhone.Ui
                         };
                         if (call.portSipSessionId < 0)
                         {
-                            Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, "MakeCall-Fail", Logger.LogLevel.Error);
+                            Logger.Instance.LogMessage(Logger.LogAppender.DuoLogger4, "MakeCall-Fail : " + call.portSipSessionId, Logger.LogLevel.Error);
                             mynotifyicon.ShowBalloonTip(1000, "FaceTone - Phone", "Fail to Make Call", ToolTipIcon.Error);
                             _agent.AgentCurrentState.OnFailMakeCall(ref _agent);
                             call.CallCurrentState.OnTimeout(ref call);
