@@ -42,3 +42,11 @@ F:\DuoSoftware\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCa
 F:\DuoSoftware\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\obj\Debug\DuoCallTesterLicenseKey.csproj.CopyComplete
 F:\DuoSoftware\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\obj\Debug\DuoCallTesterLicenseKey.dll
 F:\DuoSoftware\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\obj\Debug\DuoCallTesterLicenseKey.pdb
+D:\DuoSoftware\cloud\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\bin\Debug\DuoCallTesterLicenseKey.dll
+D:\DuoSoftware\cloud\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\bin\Debug\DuoCallTesterLicenseKey.pdb
+D:\DuoSoftware\cloud\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\bin\Debug\Newtonsoft.Json.dll
+D:\DuoSoftware\cloud\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\bin\Debug\Newtonsoft.Json.xml
+D:\DuoSoftware\cloud\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\obj\Debug\DuoCallTesterLicenseKey.csprojAssemblyReference.cache
+D:\DuoSoftware\cloud\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\obj\Debug\DuoCallTesterLicenseKey.csproj.CopyComplete
+D:\DuoSoftware\cloud\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\obj\Debug\DuoCallTesterLicenseKey.dll
+D:\DuoSoftware\cloud\DVP-WindowsPhone-PickMe\DuoSoftware.DuoSoftPhone-V6-VIBlend\DuoCallTesterLicenseKey\obj\Debug\DuoCallTesterLicenseKey.pdb
